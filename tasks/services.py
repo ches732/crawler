@@ -1,9 +1,10 @@
+import logging
 import os
 from typing import List
 from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 import aiofiles
-from settings import MAIN_URL, URL_WRONG
+from settings import MAIN_URL, URL_WRONG, DOWNLOADS_DIR
 
 
 async def parser_news(data) -> list[dict[str, str, str]]:
@@ -54,7 +55,7 @@ async def save_data(link_urls):
         links_from_comments = news.links_from_comments
         id = news.id
 
-        folder_name = f'C:/aiohttp_prodject/links/{id}'
+        folder_name = f'{DOWNLOADS_DIR}{id}'
         if not os.path.exists(folder_name):
             os.makedirs(folder_name)
 
@@ -66,3 +67,5 @@ async def save_data(link_urls):
 
         async with aiofiles.open(os.path.join(folder_name, 'links_from_comments.txt'), 'w') as file:
             await file.write(str(links_from_comments))
+
+        logging.debug()

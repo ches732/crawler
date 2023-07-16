@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://hub.sunny.garden/images/favicon.png" />
+<title>What does AUTHORIZED_FETCH actually do? | Sunny Garden Hub</title>
+<meta name="title" content="What does AUTHORIZED_FETCH actually do?" />
+<meta name="description" content="A hopefully more approachable explanation of the Mastodon configuration settings Authorized Fetch and Disallow Unauthenticated API Access" />
+<meta name="keywords" content="" />
+
+
+<meta property="og:title" content="What does AUTHORIZED_FETCH actually do?" />
+<meta property="og:description" content="A hopefully more approachable explanation of the Mastodon configuration settings Authorized Fetch and Disallow Unauthenticated API Access" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hub.sunny.garden/2023/06/28/what-does-authorized_fetch-actually-do/" /><meta property="og:image" content="https://hub.sunny.garden/2023/06/20230628-163109.png" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2023-06-28T17:30:00+09:00" />
+<meta property="article:modified_time" content="2023-06-28T17:30:00+09:00" /><meta property="og:site_name" content="Sunny Garden Hub" />
+
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hub.sunny.garden/2023/06/20230628-163109.png"/>
+
+<meta name="twitter:title" content="What does AUTHORIZED_FETCH actually do?"/>
+<meta name="twitter:description" content="A hopefully more approachable explanation of the Mastodon configuration settings Authorized Fetch and Disallow Unauthenticated API Access"/>
+
+
+
+<meta itemprop="name" content="What does AUTHORIZED_FETCH actually do?">
+<meta itemprop="description" content="A hopefully more approachable explanation of the Mastodon configuration settings Authorized Fetch and Disallow Unauthenticated API Access"><meta itemprop="datePublished" content="2023-06-28T17:30:00+09:00" />
+<meta itemprop="dateModified" content="2023-06-28T17:30:00+09:00" />
+<meta itemprop="wordCount" content="1067"><meta itemprop="image" content="https://hub.sunny.garden/2023/06/20230628-163109.png">
+<meta itemprop="keywords" content="" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #777;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+</style>
+
+<script async defer data-website-id="4b705cbc-9f6a-4e17-924c-55472dd87f92" src="https://stats.bitrot.ca/umami.js"></script>
+
+
+<script defer data-fixlinks="(nospam)" src="https://hub.sunny.garden/fixlinks.js"></script>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Sunny Garden Hub</h2>
+</a>
+<nav><a href="/">Home</a>
+
+<a href="/about/">About</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>
+
+<h1>What does AUTHORIZED_FETCH actually do?</h1>
+<p>
+  <i>
+    <time datetime='2023-06-28' pubdate>
+      2023-06-28
+    </time>
+  </i>
+</p>
+
+<content>
+  <p><em>Disclaimers</em></p>
+<ul>
+<li><em>The behaviour of these settings has changed in the past and may change again in the future, the information in this post applies to versions 4.0.0 and up, as of the date it was published.</em></li>
+</ul>
+<p>There seems to be increased interest lately in the Mastodon configuration settings <code>AUTHORIZED_FETCH</code> and the newer and lesser known <code>DISALLOW_UNAUTHENTICATED_API_ACCESS</code>.</p>
+<p><strong>This post should not be taken as a recommendation to enable either setting. My intent is to explain their function, not encourage you to enable them. I donâ€™t currently have either enabled.</strong></p>
+<p>The <a href="https://docs.joinmastodon.org/admin/config/#authorized_fetch">official Mastodon documentation on these settings</a> provides a very technical description, which may not be helpful to anyone that doesn&rsquo;t have a thorough understanding of the <a href="https://www.w3.org/TR/activitypub/">ActivityPub</a> protocol.</p>
+<p>Both of these settings require command line access to the server&rsquo;s config file <code>.env.production</code>, and cannot be enabled through the server&rsquo;s administration interface.</p>
+<h1 id="authorized-fetch">Authorized Fetch</h1>
+<p>So what does enabling <code>AUTHORIZED_FETCH</code> actually do from a user or admin&rsquo;s point of view?</p>
+<p>The short answer, and the point that I think most people are interested in, is this:</p>
+<p><strong>For server wide blocks, blocked servers are not told that they have been blocked. Blocked servers can still fetch posts unless AUTHORIZED_FETCH mode is enabled.</strong> <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>If a server is suspended, why is it still able to fetch posts from the server blocking it?</p>
+<p>When one server suspends another, the server putting the block in place will:</p>
+<ul>
+<li>Go through every follow relationship between the two servers, and remove it</li>
+<li>Stop <em>sending messages</em> to the suspended server</li>
+<li>Stop <em>processing messages</em> that it receives from the suspended server</li>
+<li><strong>However&hellip;</strong></li>
+</ul>
+<p>By default, requests to fetch public posts and profile information are <em>anonymous</em>, which means a user on a suspended server can still view profiles and public posts of users on a server that is blocking theirs.</p>
+<p><strong>Authorized Fetch requires servers to identify themselves when requesting post and profile information, and disables anonymous requests. This allows the blocking server to recognize and refuse access to suspended servers.</strong></p>
+<h2 id="example-boosting">Example: Boosting</h2>
+<p>Take a situation where there are three servers, <strong>good.example</strong>, <strong>bad.example</strong>, and <strong>medium.example</strong>.</p>
+<p><strong>good.example</strong> blocks <strong>bad.example</strong>, but doesn&rsquo;t block <strong>medium.example</strong>.</p>
+<p>A user on <strong>good.example</strong> posts something publicly, and since they have a follower on <strong>medium.example</strong>, the <strong>good.example</strong> server sends the post to <strong>medium.example</strong>, but doesn&rsquo;t send it to <strong>bad.example</strong>.</p>
+<p>A user on <strong>medium.example</strong> sees the post and boosts it, since that user has a follower on <strong>bad.example</strong>, the <strong>medium.example</strong> server sends the boost to <strong>bad.example</strong>, and tells the server about the original post from <strong>good.example</strong>.</p>
+<p><strong>bad.example</strong> receives the boost, and downloads the content of the post from <strong>good.example</strong>. <strong>good.example</strong> allows <strong>bad.example</strong> to download the post because <em>it doesn&rsquo;t know who is asking</em>.</p>
+<p>Beyond the fact that <strong>bad.example</strong> was able to see posts from <strong>good.example</strong> even though they are suspended, there&rsquo;s another potential problem&hellip;</p>
+<h3 id="second-hand-smoke-2">Second Hand Smoke <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></h3>
+<p>Now that <strong>medium.example</strong> and <strong>bad.example</strong> have both seen the post, they start to have a discussion about it in the replies to that post. Since <strong>good.example</strong> blocks <strong>bad.example</strong>, all of the messages posted by <strong>bad.example</strong> are discarded, but all of the messages posted by <strong>medium.example</strong> are still accepted.</p>
+<p>Even if they can&rsquo;t see the content of <strong>bad.example</strong> messages directly, the users on <strong>good.example</strong> are still made aware the discussion is happening, and it might be obvious what the content of those messages is, based on the replies.</p>
+<p>Additionally, other users on <strong>medium.example</strong> or other servers which don&rsquo;t block <strong>bad.example</strong> may still be exposed to potentially harmful replies from <strong>bad.example</strong>, even if the original poster themselves can&rsquo;t see them.</p>
+<p>These are the problems Authorized Fetch aims to solve, by letting <strong>good.example</strong> stop <strong>bad.example</strong> from receiving the original post.</p>
+<h1 id="disallow-unauthenticated-api-access">Disallow Unauthenticated API Access</h1>
+<p>Enabling Authorized Fetch doesn&rsquo;t entirely prevent blocked users from accessing your server&rsquo;s public content if they want to, although it does make it a little more effort.</p>
+<p>For one thing, they can still click links to view posts on your server&rsquo;s website, and browse around whatever public information is available there.</p>
+<p>But there&rsquo;s a second protocol, the <a href="https://docs.joinmastodon.org/api/guidelines/">Mastodon API</a> that clients and apps use to communicate with Mastodon&rsquo;s server backend.</p>
+<p>Again, by default, anonymous access is allowed to public posts and profile information.  Somebody wanting to circumvent a server suspension can still access public information anonymously through the Mastodon API.</p>
+<p>Turning on the <code>DISALLOW_UNAUTHENTICATED_API_ACCESS</code> setting turns off anonymous access to the API, and requires that a user be logged into your server in order to access the API.</p>
+<p><strong>However, this will also break your server&rsquo;s website for anyone that doesn&rsquo;t have an account on your server.</strong></p>
+<p><img src="/2023/06/20230628-163109.png" alt="the About page of a Mastodon server with unauthenticated API access disabled. there are multiple messages in the corner reading &amp;ldquo;401 This method requries an authenticated user&amp;rdquo;, a message in the middle says &amp;ldquo;Oh no! The requested page could not be rendered.&amp;rdquo;, the Administered By label is blank, and the number of active users reads &amp;ldquo;NaN&amp;rdquo;"></p>
+<p>The Mastodon web interface also uses the Mastodon API, so disabling anonymous API access breaks the public web interface as well. If somebody clicks a link to a post on your server, they will be met with a broken web page. Even the About page won&rsquo;t load correctly.</p>
+<h2 id="disabling-public-timelines-only">Disabling Public Timelines Only</h2>
+<p>There is a similar setting that is available in Mastodon&rsquo;s administration interface, called <strong>Allow unauthenticated access to public timelines</strong>, which can be found under <em>Preferences / Administration / Server Settings / Discovery</em>.</p>
+<p>If you turn this setting <strong>Off</strong>, anonymous users will no longer have access to the <strong>Local</strong> and <strong>Federated</strong> timelines on the website or through the API, but will still have access to the rest of the website, profiles, public posts, etc.</p>
+<h1 id="potential-problems">Potential Problems</h1>
+<p>Enabling Authorized Fetch also has some possible drawbacks, which I am too tired to expand on at the moment. I&rsquo;ll try to add some further explanation later.</p>
+<ol>
+<li>Increased chance of conversation threads appearing to be missing replies if you aren&rsquo;t included in the thread yourself.
+<ul>
+<li>Authorized Fetch disables a feature called <a href="https://www.w3.org/TR/activitypub/#inbox-forwarding"><em>inbox forwarding</em></a> meant to address ghost replies</li>
+</ul>
+</li>
+<li>Compatibility issues with non-Mastodon server software
+<ul>
+<li>pixelfed <a href="https://mastodon.social/@dansup/110612997798718029">gained the ability to handle Authorized Fetch</a> as recently as yesterday</li>
+<li>very old Mastodon versions (pre-3.0.0)</li>
+</ul>
+</li>
+<li>Potential for an increase in server load, or decrease in performance.
+<ul>
+<li>Since every request for a post must now be checked individually for authorization, it&rsquo;s no longer possible to cache a single anonymous result that can be quickly provided to anyone requesting it.</li>
+<li>This is more likely to be a problem for large servers with heavy traffic that rely on caching to improve performance, handle load, and reduce cost.</li>
+</ul>
+</li>
+</ol>
+<p>That said, out of the server admins I&rsquo;ve seen enable Authorized Fetch, I don&rsquo;t recall seeing any particular complaints about any of these issues coming up in practice.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>paraphrasing comments by Mastodon developer Claire from the joinmastodon.org Discord&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://wirebird.com/artiblocks/defining-secondhand-smoke">https://wirebird.com/artiblocks/defining-secondhand-smoke</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+</content>
+<p>
+  
+</p>
+
+  </main>
+  <footer>
+</footer>
+
+    
+</body>
+
+</html>

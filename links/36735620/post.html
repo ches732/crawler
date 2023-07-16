@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>SYNIT</title>
+  <link rel="canonical" href="https://synit.org/">
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css" title="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/style.css" title="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/autumn.css" title="stylesheet">
+  
+  <meta name="author" content="Tony Garnock-Jones">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+</head>
+<body class="frontpage ">
+  <header>
+    <div class="outer-wrapper">
+      <div class="inner-wrapper">
+        <h1><a href="/"><span class="title">SYNIT</span></a> <span class="subtitle">a reactive operating system</span></h1>
+        <nav id="mainnav">
+          <div id="mainnavmenu" class="navmenu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <script>document.getElementById('mainnavmenu').onclick = function() { document.getElementById('mainnav').classList.toggle('open'); };</script>
+          
+
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main class="content">
+    <h1 id="welcome">Welcome!</h1>
+
+<p>Synit is an experiment in applying <strong>pervasive reactivity</strong> and <strong>object capabilities</strong> to the
+<a href="/book/glossary.html#system-layer">System Layer</a> of an operating system for personal
+computers, including laptops, desktops, and mobile phones. Its <a href="/book/architecture.html">architecture</a> follows the principles of the <a href="/book/glossary.html#syndicated-actor-model">Syndicated Actor Model</a>.</p>
+
+<p>Synit builds upon the Linux kernel, but replaces many pieces of
+familiar Linux software, including <code class="highlighter-rouge">systemd</code>, <code class="highlighter-rouge">NetworkManager</code>,
+<code class="highlighter-rouge">D-Bus</code>, and so on. It makes use of many concepts that will be
+familiar to Linux users, but also incorporates many ideas drawn from
+programming languages and operating systems not closely connected with
+Linux’s Unix heritage.</p>
+
+<h2 id="quickstart">Quickstart</h2>
+
+<p>If you have a mobile phone or computer capable of running
+<a href="https://postmarketos.org/">PostmarketOS</a>, then you can <a href="/book/install.html">install</a>
+the software to try it out. You can also run Synit inside a virtual machine.</p>
+
+<p>See the <a href="/book/install.html">installation instructions</a> for a list of supported
+devices.</p>
+
+<h1 id="documentation">Documentation</h1>
+
+<p>See <a href="/book/">the Synit Manual</a>.</p>
+
+
+    <div class="clear"></div>
+  </main>
+  <footer>
+    <div class="outer-wrapper">
+      <div class="inner-wrapper">
+        <p>
+          Copyright &copy; 2021–2022 <a href="https://leastfixedpoint.com/">Tony Garnock-Jones</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

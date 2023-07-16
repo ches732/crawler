@@ -1,6 +1,6 @@
 import aiohttp
 import asyncio
-from aiohttp import ClientPayloadError
+from aiohttp import ClientPayloadError, ClientConnectorError
 from services import parser_news, parser_comment, save_data
 from settings import MAIN_URL, News
 
@@ -23,18 +23,21 @@ async def func():
         d = x["id"]
         list_urls = [News(post=a, comments=b, links_from_comments=c, id=d)]
         await save_data(list_urls)
+        return print(save_data(list_urls))
 
 
-async def process_request(MAIN_URL):
+async def process_request(MAIN_URL) -> str:
     """Запрос по URL и получение данных"""
-    print(MAIN_URL)
     try:
         async with aiohttp.ClientSession() as session:
             async with session.get(MAIN_URL) as response:
+                print(MAIN_URL, response.status)
                 data = await response.text()
             return data
     except ClientPayloadError:
-        return f'Response payload is not completed'
+        return f'Ответ не получен'
+    except ClientConnectorError:
+        return f'Превышен таймаут'
 
 
 async def main():
@@ -42,5 +45,4 @@ async def main():
 
 
 if __name__ == "__main__":
-    asyncio.get_event_loop().run_until_complete(main())
-
+    loop = asyncio.get_event_loop().run_until_complete(main())

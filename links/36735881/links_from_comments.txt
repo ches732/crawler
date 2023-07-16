@@ -1,0 +1,1 @@
+['https://m.youtube.com/watch?v=jbJPIRurJYE', 'https://en.wikipedia.org/wiki/Beat_(acoustics)', 'https://en.m.wikipedia.org/wiki/Overtone_singing', 'https://www.youtube.com/watch?v=vC9Qh709gas', 'https://youtu.be/MfzNJE4CK_s', 'https://woodgears.ca/physics/bell.html']

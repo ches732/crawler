@@ -1,0 +1,1 @@
+['https://braid.org', 'https://syndicate-lang.org/tonyg-dissertation/html/', 'https://dl.acm.org/doi/abs/10.1145/67449.67512', 'https://syndicate-lang.org/tonyg-dissertation/html/#CHAP:PATTERNS', 'https://syndicate-lang.org/projects/2021/system-layer/']

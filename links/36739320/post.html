@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html id="blaskan" class="no-js iem7" lang="en-US"><![endif]-->
+<!--[if lt IE 7 ]><html id="blaskan" class="no-js ie6" lang="en-US"><![endif]-->
+<!--[if IE 7 ]><html id="blaskan" class="no-js ie7" lang="en-US"><![endif]-->
+<!--[if IE 8 ]><html id="blaskan" class="no-js ie8" lang="en-US"><![endif]-->
+<!--[if IE 9 ]><html id="blaskan" class="no-js ie9" lang="en-US"><![endif]-->
+<!--[if (gt IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html id="blaskan" class="no-js" lang="en-US"><!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<title>  Receiving Unintentional Voice Transmissions from GPS Satellites</title>
+<script data-ad-client="ca-pub-7270504595965740" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><meta name='robots' content='max-image-preview:large' />
+<script data-no-defer="1" data-ezscrex="false" data-cfasync="false" data-pagespeed-no-defer>
+                const ctPublicFunctions = {"_ajax_nonce":"abead31044","_rest_nonce":"405759338f","_ajax_url":"\/wp-admin\/admin-ajax.php","_rest_url":"https:\/\/www.rtl-sdr.com\/wp-json\/","data__cookies_type":"none","data__ajax_type":"rest","text__wait_for_decoding":"Decoding the contact data, let us a few seconds to finish. Anti-Spam by CleanTalk","cookiePrefix":""}
+            </script>
+<script data-no-defer="1" data-ezscrex="false" data-cfasync="false" data-pagespeed-no-defer>
+                const ctPublic = {"_ajax_nonce":"abead31044","settings__forms__check_internal":0,"settings__forms__check_external":0,"settings__forms__search_test":1,"blog_home":"https:\/\/www.rtl-sdr.com\/","pixel__setting":"3","pixel__enabled":false,"pixel__url":"https:\/\/moderate6.cleantalk.org\/pixel\/dda145cac9b52019c1a31ecc78b57ddc.gif","data__email_check_before_post":1,"data__cookies_type":"none","data__key_is_ok":true,"data__visible_fields_required":true,"data__to_local_storage":{"apbct_cookies_test":"%7B%22cookies_names%22%3A%5B%22apbct_timestamp%22%2C%22apbct_site_landing_ts%22%5D%2C%22check_value%22%3A%221454dcf854433e41cddd4f288c39e30f%22%7D","apbct_timestamp":"1688707419","apbct_urls":"{\"www.rtl-sdr.com\/broadcasting-color-analgoue-ntsc-tv-with-an-esp8266\/\":[1688692961],\"www.rtl-sdr.com\/tag\/rtlamr\/\":[1688699659],\"rtl-sdr.com\/\":[1688704519,1688704617,1688707416],\"www.rtl-sdr.com\/about-rtl-sdr\":[1688704519,1688704618,1688707417],\"www.rtl-sdr.com\/submit-a-storycontact\":[1688704622,1688707419]}"},"wl_brandname":"Anti-Spam by CleanTalk","wl_brandname_short":"CleanTalk"}
+            </script>
+<script>                function apbct_attach_event_handler__backend(elem, event, callback) {                    if(typeof window.addEventListener === "function") elem.addEventListener(event, callback);                    else                                                elem.attachEvent(event, callback);                }                apbct_attach_event_handler__backend(document, 'DOMContentLoaded', function(){                    if (typeof apbctLocalStorage === "object" && ctPublic.data__key_is_ok) {                        apbctLocalStorage.set('ct_checkjs', '257004736', true );                    } else {                        console.log('APBCT ERROR: apbctLocalStorage object is not loaded.');                    }                  });    </script>
+
+<meta property="og:description" content="Over on dereksgc's YouTube channel we've discovered a few more recent interesting videos from his satellite decoding series that people may be interested in. One from two weeks ago shows how it's possible to receive voice transmissions on navigation satellites such as GPS. Many navigational and meteorological satellites carry a search and rescue (SAR) repeater which is intended to receive UHF emergency locator beacons and rebroadcast them in the L-band or higher. However the repeaters appear to be picking up all sorts of other signals from the ground, including voice transmissions. Dereksgc notes that the theory is that there are">
+<meta property="og:title" content="Receiving Unintentional Voice Transmissions from GPS Satellites">
+<meta property="article_publisher" content="https://www.facebook.com/rtlsdrblog">
+<meta property="fb:app_id" content="529576650555031">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.rtl-sdr.com/receiving-unintentional-voice-transmissions-from-gps-satellites/">
+<meta property="og:site_name" content="rtl-sdr.com">
+<meta property="article:published_time" content="2023-07-07T05:35:38+00:00">
+<meta property="article:modified_time" content="2023-07-07T05:35:38+00:00">
+<meta property="og:updated_time" content="2023-07-07T05:35:38+00:00">
+<meta name="twitter:title" content="Receiving Unintentional Voice Transmissions from GPS Satellites">
+<meta name="twitter:description" content="Over on dereksgc's YouTube channel we've discovered a few more recent interesting videos from his satellite decoding series that people may be interested in. One from two weeks ago shows how it's possible to receive voice transmissions on navigation satellites such as GPS. Many navigational and meteorological satellites carry a search and rescue (SAR) repeater which is intended to receive UHF emergency locator beacons and rebroadcast them in the L-band or higher. However the repeaters appear to be picking up all sorts of other signals from the ground, including voice transmissions. Dereksgc notes that the theory is that there are">
+<meta name="twitter:card" content="summary">
+<style>
+	@font-face {
+		font-family: "sw-icon-font";
+		src:url("https://www.rtl-sdr.com/wp-content/plugins/social-warfare/assets/fonts/sw-icon-font.eot?ver=4.4.1");
+		src:url("https://www.rtl-sdr.com/wp-content/plugins/social-warfare/assets/fonts/sw-icon-font.eot?ver=4.4.1#iefix") format("embedded-opentype"),
+		url("https://www.rtl-sdr.com/wp-content/plugins/social-warfare/assets/fonts/sw-icon-font.woff?ver=4.4.1") format("woff"),
+		url("https://www.rtl-sdr.com/wp-content/plugins/social-warfare/assets/fonts/sw-icon-font.ttf?ver=4.4.1") format("truetype"),
+		url("https://www.rtl-sdr.com/wp-content/plugins/social-warfare/assets/fonts/sw-icon-font.svg?ver=4.4.1#1445203416") format("svg");
+		font-weight: normal;
+		font-style: normal;
+		font-display:block;
+	}
+</style>
+
+<style type='text/css'>
+		/**
+		 * Bulletproof syntax:
+		 * http://www.fontspring.com/blog/further-hardening-of-the-bulletproof-syntax
+		 * Font files generated by Font Squirrel:
+		 * http://www.fontsquirrel.com
+		 * License: Open Font License. See https://www.rtl-sdr.com/wp-content/themes/blaskan2p5/OFL.txt.
+		 */
+		@font-face {
+			font-family: 'LeagueGothic';
+			src: url('https://www.rtl-sdr.com/wp-content/themes/blaskan2p5/fonts/league_gothic-webfont.eot'); /* IE9 Compat Modes */
+			src: url('https://www.rtl-sdr.com/wp-content/themes/blaskan2p5/fonts/league_gothic-webfont.eot?iefix') format('eot'), /* IE6-IE8 */
+			     url('https://www.rtl-sdr.com/wp-content/themes/blaskan2p5/fonts/league_gothic-webfont.woff') format('woff'), /* Modern Browsers */
+			     url('https://www.rtl-sdr.com/wp-content/themes/blaskan2p5/fonts/league_gothic-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+			     url('https://www.rtl-sdr.com/wp-content/themes/blaskan2p5/fonts/league_gothic-webfont.svg#webfont3nLbXkSC') format('svg'); /* Legacy iOS */
+		}
+		</style>
+<link rel='dns-prefetch' href='//stats.wp.com' />
+<link rel='dns-prefetch' href='//moderate.cleantalk.org' />
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel='dns-prefetch' href='//platform.twitter.com' />
+<link rel="alternate" type="application/rss+xml" title="rtl-sdr.com &raquo; Feed" href="https://www.rtl-sdr.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="rtl-sdr.com &raquo; Comments Feed" href="https://www.rtl-sdr.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="rtl-sdr.com &raquo; Receiving Unintentional Voice Transmissions from GPS Satellites Comments Feed" href="https://www.rtl-sdr.com/receiving-unintentional-voice-transmissions-from-gps-satellites/feed/" />
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.rtl-sdr.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.2.2"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){p.clearRect(0,0,i.width,i.height),p.fillText(e,0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(t,0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s("\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!s("\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!s("\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!s("\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff","\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff")}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='blaskan-framework-css' href='https://www.rtl-sdr.com/wp-content/themes/blaskan2p5/framework.css?ver=6.2.2' type='text/css' media='screen' />
+<link rel='stylesheet' id='blaskan-style-css' href='https://www.rtl-sdr.com/wp-content/themes/blaskan2p5/style.css?ver=6.2.2' type='text/css' media='screen' />
+<link rel='stylesheet' id='wp-block-library-css' href='https://www.rtl-sdr.com/wp-includes/css/dist/block-library/style.min.css?ver=6.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='wc-blocks-vendors-style-css' href='https://www.rtl-sdr.com/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-vendors-style.css?ver=10.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='wc-blocks-style-css' href='https://www.rtl-sdr.com/wp-content/plugins/woocommerce/packages/woocommerce-blocks/build/wc-blocks-style.css?ver=10.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://www.rtl-sdr.com/wp-includes/css/classic-themes.min.css?ver=6.2.2' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='better-recent-comments-css' href='https://www.rtl-sdr.com/wp-content/plugins/better-recent-comments/assets/css/better-recent-comments.min.css?ver=6.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='ct_public_css-css' href='https://www.rtl-sdr.com/wp-content/plugins/cleantalk-spam-protect/css/cleantalk-public.min.css?ver=6.12' type='text/css' media='all' />
+<link rel='stylesheet' id='wpa-css-css' href='https://www.rtl-sdr.com/wp-content/plugins/honeypot/includes/css/wpa.css?ver=2.1.4' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-layout-css' href='https://www.rtl-sdr.com/wp-content/plugins/woocommerce/assets/css/woocommerce-layout.css?ver=7.8.0' type='text/css' media='all' />
+<link rel='stylesheet' id='woocommerce-smallscreen-css' href='https://www.rtl-sdr.com/wp-content/plugins/woocommerce/assets/css/woocommerce-smallscreen.css?ver=7.8.0' type='text/css' media='only screen and (max-width: 768px)' />
+<link rel='stylesheet' id='woocommerce-general-css' href='https://www.rtl-sdr.com/wp-content/plugins/woocommerce/assets/css/woocommerce.css?ver=7.8.0' type='text/css' media='all' />
+<style id='woocommerce-inline-inline-css' type='text/css'>
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link rel='stylesheet' id='wp-polls-css' href='https://www.rtl-sdr.com/wp-content/plugins/wp-polls/polls-css.css?ver=2.77.1' type='text/css' media='all' />
+<style id='wp-polls-inline-css' type='text/css'>
+.wp-polls .pollbar {
+	margin: 1px;
+	font-size: 6px;
+	line-height: 8px;
+	height: 8px;
+	background-image: url('https://www.rtl-sdr.com/wp-content/plugins/wp-polls/images/default/pollbg.gif');
+	border: 1px solid #c8c8c8;
+}
+
+</style>
+<link rel='stylesheet' id='wpdiscuz-frontend-css-css' href='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz/themes/default/style.css?ver=7.6.1' type='text/css' media='all' />
+<style id='wpdiscuz-frontend-css-inline-css' type='text/css'>
+ #wpdcom .wpd-blog-administrator .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-administrator .wpd-comment-author, #wpdcom .wpd-blog-administrator .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-administrator .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment.wpd-reply .wpd-comment-wrap.wpd-blog-administrator{border-left:3px solid #00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-administrator .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-administrator .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-administrator .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-editor .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-editor .wpd-comment-author, #wpdcom .wpd-blog-editor .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-editor .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment.wpd-reply .wpd-comment-wrap.wpd-blog-editor{border-left:3px solid #00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-editor .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-editor .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-editor .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-author .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-author .wpd-comment-author, #wpdcom .wpd-blog-author .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-author .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-author .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-author .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-author .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-contributor .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-contributor .wpd-comment-author, #wpdcom .wpd-blog-contributor .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-contributor .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-contributor .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-contributor .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-contributor .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-subscriber .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-subscriber .wpd-comment-author, #wpdcom .wpd-blog-subscriber .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-subscriber .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-subscriber .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom .wpd-blog-customer .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-customer .wpd-comment-author, #wpdcom .wpd-blog-customer .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-customer .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-customer .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-customer .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-customer .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-shop_manager .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-shop_manager .wpd-comment-author, #wpdcom .wpd-blog-shop_manager .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-shop_manager .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-shop_manager .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-shop_manager .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-shop_manager .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-dc_pending_vendor .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-dc_pending_vendor .wpd-comment-author, #wpdcom .wpd-blog-dc_pending_vendor .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-dc_pending_vendor .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-dc_pending_vendor .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-dc_pending_vendor .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-dc_pending_vendor .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-dc_rejected_vendor .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-dc_rejected_vendor .wpd-comment-author, #wpdcom .wpd-blog-dc_rejected_vendor .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-dc_rejected_vendor .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-dc_rejected_vendor .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-dc_rejected_vendor .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-dc_rejected_vendor .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-dc_vendor .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-dc_vendor .wpd-comment-author, #wpdcom .wpd-blog-dc_vendor .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-dc_vendor .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-dc_vendor .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-dc_vendor .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-dc_vendor .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-wpseo_manager .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-wpseo_manager .wpd-comment-author, #wpdcom .wpd-blog-wpseo_manager .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-wpseo_manager .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-wpseo_manager .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-wpseo_manager .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-wpseo_manager .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-wpseo_editor .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-wpseo_editor .wpd-comment-author, #wpdcom .wpd-blog-wpseo_editor .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-wpseo_editor .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-wpseo_editor .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-wpseo_editor .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-wpseo_editor .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-post_author .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-post_author .wpd-comment-author, #wpdcom .wpd-blog-post_author .wpd-comment-author a{color:#00B38F}#wpdcom .wpd-blog-post_author .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-1 .wpd-comment .wpd-blog-post_author .wpd-avatar img{border-color:#00B38F}#wpdcom.wpd-layout-2 .wpd-comment.wpd-reply .wpd-comment-wrap.wpd-blog-post_author{border-left:3px solid #00B38F}#wpdcom.wpd-layout-2 .wpd-comment .wpd-blog-post_author .wpd-avatar img{border-bottom-color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-post_author .wpd-comment-subheader{border-top:1px dashed #00B38F}#wpdcom.wpd-layout-3 .wpd-reply .wpd-blog-post_author .wpd-comment-right{border-left:1px solid #00B38F}#wpdcom .wpd-blog-guest .wpd-comment-label{color:#ffffff;background-color:#00B38F;border:none}#wpdcom .wpd-blog-guest .wpd-comment-author, #wpdcom .wpd-blog-guest .wpd-comment-author a{color:#00B38F}#wpdcom.wpd-layout-3 .wpd-blog-guest .wpd-comment-subheader{border-top:1px dashed #00B38F}#comments, #respond, .comments-area, #wpdcom{}#wpdcom .ql-editor > *{color:#777777}#wpdcom .ql-editor::before{}#wpdcom .ql-toolbar{border:1px solid #DDDDDD;border-top:none}#wpdcom .ql-container{border:1px solid #DDDDDD;border-bottom:none}#wpdcom .wpd-form-row .wpdiscuz-item input[type="text"], #wpdcom .wpd-form-row .wpdiscuz-item input[type="email"], #wpdcom .wpd-form-row .wpdiscuz-item input[type="url"], #wpdcom .wpd-form-row .wpdiscuz-item input[type="color"], #wpdcom .wpd-form-row .wpdiscuz-item input[type="date"], #wpdcom .wpd-form-row .wpdiscuz-item input[type="datetime"], #wpdcom .wpd-form-row .wpdiscuz-item input[type="datetime-local"], #wpdcom .wpd-form-row .wpdiscuz-item input[type="month"], #wpdcom .wpd-form-row .wpdiscuz-item input[type="number"], #wpdcom .wpd-form-row .wpdiscuz-item input[type="time"], #wpdcom textarea, #wpdcom select{border:1px solid #DDDDDD;color:#777777}#wpdcom .wpd-form-row .wpdiscuz-item textarea{border:1px solid #DDDDDD}#wpdcom input::placeholder, #wpdcom textarea::placeholder, #wpdcom input::-moz-placeholder, #wpdcom textarea::-webkit-input-placeholder{}#wpdcom .wpd-comment-text{color:#777777}#wpdcom .wpd-thread-head .wpd-thread-info{border-bottom:2px solid #00B38F}#wpdcom .wpd-thread-head .wpd-thread-info.wpd-reviews-tab svg{fill:#00B38F}#wpdcom .wpd-thread-head .wpdiscuz-user-settings{border-bottom:2px solid #00B38F}#wpdcom .wpd-thread-head .wpdiscuz-user-settings:hover{color:#00B38F}#wpdcom .wpd-comment .wpd-follow-link:hover{color:#00B38F}#wpdcom .wpd-comment-status .wpd-sticky{color:#00B38F}#wpdcom .wpd-thread-filter .wpdf-active{color:#00B38F;border-bottom-color:#00B38F}#wpdcom .wpd-comment-info-bar{border:1px dashed #33c3a6;background:#e6f8f4}#wpdcom .wpd-comment-info-bar .wpd-current-view i{color:#00B38F}#wpdcom .wpd-filter-view-all:hover{background:#00B38F}#wpdcom .wpdiscuz-item .wpdiscuz-rating > label{color:#DDDDDD}#wpdcom .wpdiscuz-item .wpdiscuz-rating:not(:checked) > label:hover, .wpdiscuz-rating:not(:checked) > label:hover ~ label{}#wpdcom .wpdiscuz-item .wpdiscuz-rating > input ~ label:hover, #wpdcom .wpdiscuz-item .wpdiscuz-rating > input:not(:checked) ~ label:hover ~ label, #wpdcom .wpdiscuz-item .wpdiscuz-rating > input:not(:checked) ~ label:hover ~ label{color:#FFED85}#wpdcom .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label:hover, #wpdcom .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label:hover, #wpdcom .wpdiscuz-item .wpdiscuz-rating > label:hover ~ input:checked ~ label, #wpdcom .wpdiscuz-item .wpdiscuz-rating > input:checked + label:hover ~ label, #wpdcom .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label:hover ~ label, .wpd-custom-field .wcf-active-star, #wpdcom .wpdiscuz-item .wpdiscuz-rating > input:checked ~ label{color:#FFD700}#wpd-post-rating .wpd-rating-wrap .wpd-rating-stars svg .wpd-star{fill:#DDDDDD}#wpd-post-rating .wpd-rating-wrap .wpd-rating-stars svg .wpd-active{fill:#FFD700}#wpd-post-rating .wpd-rating-wrap .wpd-rate-starts svg .wpd-star{fill:#DDDDDD}#wpd-post-rating .wpd-rating-wrap .wpd-rate-starts:hover svg .wpd-star{fill:#FFED85}#wpd-post-rating.wpd-not-rated .wpd-rating-wrap .wpd-rate-starts svg:hover ~ svg .wpd-star{fill:#DDDDDD}.wpdiscuz-post-rating-wrap .wpd-rating .wpd-rating-wrap .wpd-rating-stars svg .wpd-star{fill:#DDDDDD}.wpdiscuz-post-rating-wrap .wpd-rating .wpd-rating-wrap .wpd-rating-stars svg .wpd-active{fill:#FFD700}#wpdcom .wpd-comment .wpd-follow-active{color:#ff7a00}#wpdcom .page-numbers{color:#555;border:#555 1px solid}#wpdcom span.current{background:#555}#wpdcom.wpd-layout-1 .wpd-new-loaded-comment > .wpd-comment-wrap > .wpd-comment-right{background:#FFFAD6}#wpdcom.wpd-layout-2 .wpd-new-loaded-comment.wpd-comment > .wpd-comment-wrap > .wpd-comment-right{background:#FFFAD6}#wpdcom.wpd-layout-2 .wpd-new-loaded-comment.wpd-comment.wpd-reply > .wpd-comment-wrap > .wpd-comment-right{background:transparent}#wpdcom.wpd-layout-2 .wpd-new-loaded-comment.wpd-comment.wpd-reply > .wpd-comment-wrap{background:#FFFAD6}#wpdcom.wpd-layout-3 .wpd-new-loaded-comment.wpd-comment > .wpd-comment-wrap > .wpd-comment-right{background:#FFFAD6}#wpdcom .wpd-follow:hover i, #wpdcom .wpd-unfollow:hover i, #wpdcom .wpd-comment .wpd-follow-active:hover i{color:#00B38F}#wpdcom .wpdiscuz-readmore{cursor:pointer;color:#00B38F}.wpd-custom-field .wcf-pasiv-star, #wpcomm .wpdiscuz-item .wpdiscuz-rating > label{color:#DDDDDD}.wpd-wrapper .wpd-list-item.wpd-active{border-top:3px solid #00B38F}#wpdcom.wpd-layout-2 .wpd-comment.wpd-reply.wpd-unapproved-comment .wpd-comment-wrap{border-left:3px solid #FFFAD6}#wpdcom.wpd-layout-3 .wpd-comment.wpd-reply.wpd-unapproved-comment .wpd-comment-right{border-left:1px solid #FFFAD6}#wpdcom .wpd-prim-button{background-color:#07B290;color:#FFFFFF}#wpdcom .wpd_label__check i.wpdicon-on{color:#07B290;border:1px solid #83d9c8}#wpd-bubble-wrapper #wpd-bubble-all-comments-count{color:#1DB99A}#wpd-bubble-wrapper > div{background-color:#1DB99A}#wpd-bubble-wrapper > #wpd-bubble #wpd-bubble-add-message{background-color:#1DB99A}#wpd-bubble-wrapper > #wpd-bubble #wpd-bubble-add-message::before{border-left-color:#1DB99A;border-right-color:#1DB99A}#wpd-bubble-wrapper.wpd-right-corner > #wpd-bubble #wpd-bubble-add-message::before{border-left-color:#1DB99A;border-right-color:#1DB99A}.wpd-inline-icon-wrapper path.wpd-inline-icon-first{fill:#1DB99A}.wpd-inline-icon-count{background-color:#1DB99A}.wpd-inline-icon-count::before{border-right-color:#1DB99A}.wpd-inline-form-wrapper::before{border-bottom-color:#1DB99A}.wpd-inline-form-question{background-color:#1DB99A}.wpd-inline-form{background-color:#1DB99A}.wpd-last-inline-comments-wrapper{border-color:#1DB99A}.wpd-last-inline-comments-wrapper::before{border-bottom-color:#1DB99A}.wpd-last-inline-comments-wrapper .wpd-view-all-inline-comments{background:#1DB99A}.wpd-last-inline-comments-wrapper .wpd-view-all-inline-comments:hover,.wpd-last-inline-comments-wrapper .wpd-view-all-inline-comments:active,.wpd-last-inline-comments-wrapper .wpd-view-all-inline-comments:focus{background-color:#1DB99A}#wpdcom .ql-snow .ql-tooltip[data-mode="link"]::before{content:"Enter link:"}#wpdcom .ql-snow .ql-tooltip.ql-editing a.ql-action::after{content:"Save"}#wpdcom .wpdem-sticker-container.wpdem-sticker-open{height:auto;max-height:200px;padding:15px;-moz-box-shadow:inset 0 0 15px #eee;-webkit-box-shadow:inset 0 0 15px #eee;box-shadow:inset 0 0 15px #eee}#wpdcom .ql-editor img.wpdem-sticker{height:40px;max-height:40px;width:auto}.ql-snow.ql-toolbar button.ql-wpdsticker svg{fill:#07b290;width:17px;height:17px}.ql-snow.ql-toolbar button.ql-wpdsticker:hover svg{fill:#0f997d}.ql-snow.ql-toolbar button.ql-emoji svg{color:#ffa600;width:17px;height:17px}.ql-snow.ql-toolbar button.ql-emoji:hover svg{color:#ff7200}.comments-area{width:auto}
+</style>
+<link rel='stylesheet' id='wpdiscuz-fa-css' href='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz/assets/third-party/font-awesome-5.13.0/css/fa.min.css?ver=7.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wpdiscuz-combo-css-css' href='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz/assets/css/wpdiscuz-combo.min.css?ver=6.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='wpdiscuz-syntax-highlighter-css-css' href='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-syntax-highlighter/assets/highlight/styles/default.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wpdiscuz-flag-css-css' href='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-report-flagging/assets/css/flag.min.css?ver=7.0.11' type='text/css' media='all' />
+<link rel='stylesheet' id='wpdiscuz-smile-css-css' href='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/assets/third-party/quill-emoji/quill-emoji.min.css?ver=7.0.14' type='text/css' media='all' />
+<link rel='stylesheet' id='wpdumc-styles-css' href='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-user-comment-mentioning/css/style.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='wccs-public-css' href='https://www.rtl-sdr.com/wp-content/plugins/easy-woocommerce-discounts-pro/public/css/wccs-public.min.css?ver=6.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='social_warfare-css' href='https://www.rtl-sdr.com/wp-content/plugins/social-warfare/assets/css/style.min.css?ver=4.4.1' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.rtl-sdr.com/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2' id='wp-polyfill-inert-js'></script>
+<script type='text/javascript' src='https://www.rtl-sdr.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.11' id='regenerator-runtime-js'></script>
+<script type='text/javascript' src='https://www.rtl-sdr.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' src='https://www.rtl-sdr.com/wp-includes/js/dist/hooks.min.js?ver=4169d3cf8e8d95a3d6d5' id='wp-hooks-js'></script>
+<script type='text/javascript' src='https://stats.wp.com/w.js?ver=202327' id='woo-tracks-js'></script>
+<script type='text/javascript' src='https://www.rtl-sdr.com/wp-content/themes/blaskan2p5/js/libs/modernizr.min.js?ver=6.2.2' id='modernizr-js'></script>
+<script type='text/javascript' src='https://www.rtl-sdr.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.4' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://www.rtl-sdr.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://www.rtl-sdr.com/wp-content/themes/blaskan2p5/js/libs/jquery.fitvids.js?ver=6.2.2' id='jquery-fitvids-js'></script>
+<script type='text/javascript' src='https://www.rtl-sdr.com/wp-content/themes/blaskan2p5/js/mylibs/helper.js?ver=6.2.2' id='mobile-boilerplate-helper-js'></script>
+<script type='text/javascript' id='blaskan-js-extra'>
+/* <![CDATA[ */
+var objectL10n = {"blaskan_navigation_title":"- Navigation -"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rtl-sdr.com/wp-content/themes/blaskan2p5/js/script.js?ver=6.2.2' id='blaskan-js'></script>
+<script type='text/javascript' data-pagespeed-no-defer src='https://www.rtl-sdr.com/wp-content/plugins/cleantalk-spam-protect/js/apbct-public-bundle.min.js?ver=6.12' id='ct_public_functions-js'></script>
+<script type='text/javascript' src='https://moderate.cleantalk.org/ct-bot-detector-wrapper.js' id='ct_bot_detector-js'></script>
+<link rel="https://api.w.org/" href="https://www.rtl-sdr.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.rtl-sdr.com/wp-json/wp/v2/posts/58164" /><link rel="canonical" href="https://www.rtl-sdr.com/receiving-unintentional-voice-transmissions-from-gps-satellites/" />
+<link rel='shortlink' href='https://www.rtl-sdr.com/?p=58164' />
+<link rel="alternate" type="application/json+oembed" href="https://www.rtl-sdr.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.rtl-sdr.com%2Freceiving-unintentional-voice-transmissions-from-gps-satellites%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.rtl-sdr.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.rtl-sdr.com%2Freceiving-unintentional-voice-transmissions-from-gps-satellites%2F&#038;format=xml" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> <meta name="viewport" content="width=device-width"> <link rel="pingback" href="https://www.rtl-sdr.com/xmlrpc.php"> <noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+<meta name="twitter:partner" content="tfwp" />
+<meta name="twitter:card" content="summary" /><meta name="twitter:title" content="Receiving Unintentional Voice Transmissions from GPS Satellites" /><meta name="twitter:description" content="Over on dereksgc&#039;s YouTube channel we&#039;ve discovered a few more recent interesting videos from his satellite decoding series that people may be interested in. One from two weeks ago shows how it&#039;s possible to receive voice transmissions on navigation satellites such as GPS. Many navigational and meteorological satellites carry a search and rescue (SAR) repeater&hellip;" />
+<style id="sccss">/* Enter Your Custom CSS Here */
+.video_center {
+   margin-left: auto !important;
+   margin-right: auto !important;
+   display: table !important;
+}
+ins {
+    background-color: #FFFFFF !important;
+}
+
+.shopify-buy__layout-vertical { 
+  display: inline-block !important; 
+}
+
+.shopify-buy__btn-wrapper { 
+  margin: 0px !important; 
+}
+
+#preloader_uris{
+display: none !important;
+}
+
+
+.woocommerce #content input.button.alt:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, .woocommerce-page #content input.button.alt:hover, .woocommerce-page #respond input#submit.alt:hover, .woocommerce-page a.button.alt:hover, .woocommerce-page button.button.alt:hover, .woocommerce-page input.button.alt:hover {
+
+background:red !important;
+
+background-color:red !important;
+
+color:white !important;
+
+text-shadow: transparent !important;
+
+box-shadow: none;
+
+border-color:#ca0606 !important;
+
+}
+
+.woocommerce #content input.button:hover, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce-page #content input.button:hover, .woocommerce-page #respond input#submit:hover, .woocommerce-page a.button:hover, .woocommerce-page button.button:hover, .woocommerce-page input.button:hover {
+
+background:red !important;
+
+background-color:red !important;
+
+color:white !important;
+
+text-shadow: transparent !important;
+
+box-shadow: none;
+
+border-color:#ca0606 !important;
+  
+
+}
+
+.woocommerce #content input.button, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce-page #content input.button, .woocommerce-page #respond input#submit, .woocommerce-page a.button, .woocommerce-page button.button, .woocommerce-page input.button {
+
+background: red !important;
+
+color:white !important;
+
+text-shadow: transparent !important;
+
+border-color:#ca0606 !important;
+
+}
+
+.woocommerce #content input.button.alt:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, .woocommerce-page #content input.button.alt:hover, .woocommerce-page #respond input#submit.alt:hover, .woocommerce-page a.button.alt:hover, .woocommerce-page button.button.alt:hover, .woocommerce-page input.button.alt:hover {
+
+background: red !important;
+
+box-shadow: none;
+
+text-shadow: transparent !important;
+
+color:white !important;
+
+border-color:#ca0606 !important;
+
+}
+
+.woocommerce .woocommerce-error .button, .woocommerce .woocommerce-info .button, .woocommerce .woocommerce-message .button, .woocommerce-page .woocommerce-error .button, .woocommerce-page .woocommerce-info .button, .woocommerce-page .woocommerce-message .button { display: none !important; }
+
+input[type="checkbox"] {
+  vertical-align: text-bottom !important;
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.woocommerce form .form-row .required { text-decoration: none; }
+
+.woocommerce-checkout #payment .payment_method_paypal .about_paypal { display: none; }
+
+.woocommerce-checkout #payment ul.payment_methods li img { float: right; margin: -2px 0 5px 0.5em; }
+
+.woocommerce-checkout #payment div.payment_box { clear: right; }
+
+.woocommerce-checkout #payment .payment_method_paypal label[for=payment_method_paypal] { display: contents; }
+
+.woocommerce-checkout #payment .payment_method_express_checkout label[for=payment_method_express_checkout] { display: contents; }
+
+.woocommerce-checkout #payment .payment_method_gourlpayments label[for=payment_method_gourlpayments] { display: contents; }
+
+span.swp_label { text-align: left !important; }
+
+tbody th { border-bottom: 0px; }
+
+label {
+	color: #000;
+	font-size: 15px;
+	font-weight: bold;
+	margin: 0 0 5px;
+}
+
+.woocommerce form .form-row-last, .woocommerce-page form .form-row-last { float: none !important }</style> </head>
+<body data-rsssl=1 class="post-template-default single single-post postid-58164 single-format-standard theme-blaskan2p5 woocommerce-no-js advanced-menu content-wide sidebar content-wide-sidebar footer-widgets">
+<div id="site">
+<div id="wrapper">
+<header id="header" role="banner">
+<div id="site-name"><a href="https://www.rtl-sdr.com/" title="rtl-sdr.com" rel="home">rtl-sdr.com</a></div><div id="header-message">RTL-SDR (RTL2832U) and software defined radio news and projects. Also featuring Airspy, HackRF, FCD, SDRplay and more.</div><nav id="nav" role="navigation"><div class="menu"><ul id="menu-home-1"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-902"><a href="https://www.rtl-sdr.com/">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1274"><a href="https://www.rtl-sdr.com/about-rtl-sdr/">About RTL-SDR</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1272"><a href="https://www.rtl-sdr.com/rtl-sdr-quick-start-guide/">Quick Start Guide</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1926"><a href="https://www.rtl-sdr.com/category/article/">Featured Articles</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-4697"><a href="https://www.rtl-sdr.com/category/tutorial/">Tutorials</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-16722"><a href="https://rtl-sdr.com">Air and Marine</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2857"><a href="https://www.rtl-sdr.com/adsb-aircraft-radar-with-rtl-sdr/">ADS-B Aircraft Radar</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2859"><a href="https://www.rtl-sdr.com/rtl-sdr-radio-scanner-tutorial-receiving-airplane-data-with-acars/">ACARS Decoding</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2854"><a href="https://www.rtl-sdr.com/rtl-sdr-tutorial-cheap-ais-ship-tracking/">AIS Ship Tracking</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2849"><a href="https://www.rtl-sdr.com/receiving-weather-balloon-data-with-rtl-sdr/">Decoding Weather Balloons</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-16720"><a href="https://www.rtl-sdr.com/category/satellite/">Satellite</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2853"><a href="https://www.rtl-sdr.com/rtl-sdr-tutorial-receiving-noaa-weather-satellite-images/">NOAA Weather Satellites</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4345"><a href="https://www.rtl-sdr.com/rtl-sdr-tutorial-receiving-meteor-m-n2-lrpt-weather-satellite-images-rtl-sdr/">Meteor-M Weather Satellites</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-34654"><a target="_blank" rel="noopener" href="https://www.rtl-sdr.com/rtl-sdr-com-goes-16-17-and-gk-2a-weather-satellite-reception-comprehensive-tutorial/">GOES 16/17 and GK-2A Weather Satellite Tutorial</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9652"><a href="https://www.rtl-sdr.com/rtl-sdr-tutorial-decoding-inmarsat-std-c-egc-messages/">Inmarsat STD-C NCS EGC Decoding</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24021"><a href="https://www.rtl-sdr.com/rtl-sdr-tutorial-gps-decoding-plotting/">Decoding and Plotting GPS</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24020"><a href="https://www.rtl-sdr.com/a-video-tutorial-about-receiving-hrpt-weather-satellite-images/">Decoding HRPT Weather Satellite Images</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-16721"><a href="https://rtl-sdr.com">Terrestrial</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2858"><a href="https://www.rtl-sdr.com/rtl-sdr-radio-scanner-tutorial-decoding-digital-voice-p25-with-dsd/">P25 P1 Digital Voice Decoding</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24017"><a href="https://www.rtl-sdr.com/tutorial-on-setting-up-op25-for-p25-phase-2-digital-voice-decoding/">P25 P2 Decoding with OP25</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4218"><a href="https://www.rtl-sdr.com/rtl-sdr-tutorial-following-trunked-radio-unitrunker/">Trunked Radio Following</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2851"><a href="https://www.rtl-sdr.com/rtl-sdr-tutorial-pocsag-pager-decoding/">POCSAG Pager Decoding</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4672"><a href="https://www.rtl-sdr.com/rtl-sdr-tutorial-listening-tetra-radio-channels/">TETRA Voice Decoding</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2850"><a href="https://www.rtl-sdr.com/rtl-sdr-tutorial-analyzing-gsm-with-airprobe-and-wireshark/">Analyzing GSM Signals</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2855"><a href="https://www.rtl-sdr.com/tutorial-drm-radio-using-rtl-sdr/">DRM Radio Decoding</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24018"><a href="https://www.rtl-sdr.com/video-tutorial-about-decoding-433-mhz-ism-devices-with-rtl_433/">Decoding 433 MHz ISM Band Weather Stations</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-23111"><a href="https://rtl-sdr.com">Single Board Computer</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-23110"><a href="https://www.rtl-sdr.com/tutorial-setting-up-a-low-cost-qrp-ft8-jt9-wspr-etc-monitoring-station-with-an-rtl-sdr-v3-and-raspberry-pi-3/">QRP (FT8, JT9, WSPR etc) Monitoring Station</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16719"><a href="https://www.rtl-sdr.com/tutorial-replay-attacks-with-an-rtl-sdr-raspberry-pi-and-rpitx/">Performing Replay Attacks with RTL-SDR and RpiTX</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2852"><a href="https://www.rtl-sdr.com/rtl-sdr-for-budget-radio-astronomy/">Radio Astronomy</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40600"><a href="https://www.rtl-sdr.com/rtl-sdr-for-budget-radio-astronomy/">Radio Astronomy Overview</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40599"><a href="https://www.rtl-sdr.com/cheap-and-easy-hydrogen-line-radio-astronomy-with-a-rtl-sdr-wifi-parabolic-grid-dish-lna-and-sdrsharp/">Hydrogen Line Galactic Radio Astronomy</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-16723"><a href="https://rtl-sdr.com">Other</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5590"><a href="https://www.rtl-sdr.com/rtl-sdr-tutorial-measuring-filter-characteristics-and-antenna-vswr-with-an-rtl-sdr-and-noise-source/">Measuring Filter Characteristics &#038; VSWR</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17319"><a href="https://www.rtl-sdr.com/rtl-sdr-tutorial-setting-up-and-using-the-spyserver-remote-streaming-server-with-an-rtl-sdr/">SpyServer Tutorial</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24019"><a href="https://www.rtl-sdr.com/getting-the-v3-bias-tee-to-activate-on-piaware-ads-b-images/">Using the V3 Bias Tee on PiAware</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24022"><a href="https://www.rtl-sdr.com/tutorial-on-properly-positioning-a-preamp-lna-in-a-radio-system/">Properly Positioning a Preamp/LNA</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-11414"><a href="https://www.rtl-sdr.com">Product Reviews</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-16727"><a href="https://rtl-sdr.com">SDRs</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16666"><a href="https://www.rtl-sdr.com/our-review-of-the-airspy-hf-compared-against-colibrinano-airspy-mini-rsp2-rtl-sdr/">Airspy HF+ Review</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12137"><a href="https://www.rtl-sdr.com/review-airspy-vs-sdrplay-rsp-vs-hackrf/">Airspy vs. SDRplay vs. HackRF</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17575"><a href="https://www.rtl-sdr.com/a-review-of-the-sdrplay-rsp1a/">SDRplay RSP1A</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14815"><a href="https://www.rtl-sdr.com/sdrplay-rsp2-release-announcement-and-review/">SDRplay RSP2</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12756"><a href="https://www.rtl-sdr.com/review-flightaware-ads-b-rtl-sdr-lna-positioning/">FlightAware ADS-B RTL-SDR</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15929"><a href="https://www.rtl-sdr.com/testing-the-outernet-dreamcatcher-linux-based-arm-pc-with-built-in-rtl-sdr/">Outernet Dreamcatcher</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15930"><a href="https://www.rtl-sdr.com/limesdr-unboxing-initial-review/">LimeSDR Review</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20470"><a href="https://www.rtl-sdr.com/limesdr-mini-unboxing-initial-review/">LimeSDR Mini</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14812"><a href="https://www.rtl-sdr.com/review-of-the-thumbnet-n3/">ThumbNet N3</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13076"><a href="https://www.rtl-sdr.com/review-airspy-mini/">Airspy Mini</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16669"><a href="https://www.rtl-sdr.com/adalm-pluto-sdr-unboxing-and-initial-testing/">PlutoSDR Unboxing</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16668"><a href="https://www.rtl-sdr.com/some-further-tests-with-the-adalm-pluto-sdr/">PlutoSDR Tests</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16670"><a href="https://www.rtl-sdr.com/a-review-of-the-kiwisdr-10-khz-30-mhz-wideband-network-sdr/">KiwiSDR Review</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14813"><a href="https://www.rtl-sdr.com/flightaware-prostick-vs-flightaware-prostick-plus-review/">FlightAware Prostick vs Prostick Plus</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23749"><a href="https://www.rtl-sdr.com/a-review-of-the-hackrf-portapack-with-havok-firmware/">HackRF PortaPack Review</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11415"><a href="https://www.rtl-sdr.com/review-of-the-spyverter-upconverter/">SpyVerter Upconverter</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11417"><a href="https://www.rtl-sdr.com/review-of-adam-9a4qvs-folded-monopole-ads-b-antenna/">9A4QV Folded Monopole ADS-B Antenna</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12757"><a href="https://www.rtl-sdr.com/review-flightaware-ads-b-antenna-and-filter/">FlightAware ADS-B Antenna and Filter</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13555"><a href="https://www.rtl-sdr.com/review-outernet-lna-and-patch-antenna/">Outernet LNA and Patch Antenna</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-22552"><a href="https://www.rtl-sdr.com/morfeus-a-low-cost-wideband-signal-generator-and-frequency-mixer/">moRFeus Review</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4834"><a href="https://rtl-sdr.com">Interesting</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-17628"><a href="https://www.rtl-sdr.com/tempestsdr-a-sdr-tool-for-eavesdropping-on-computer-screens-via-unintentionally-radiated-rf/">TEMPEST with SDR</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15931"><a href="https://www.rtl-sdr.com/decoding-and-listening-to-hd-radio-nrsc-5-with-an-rtl-sdr/">Listening to HD Radio</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4835"><a href="https://www.rtl-sdr.com/receiving-dead-satellites-rtl-sdr/">Receiving Dead Satellites</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5348"><a href="https://www.rtl-sdr.com/listening-sca-hdsdr-sdr-rtl-sdr/">Listening to SCA Broadcasts</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5443"><a href="https://www.rtl-sdr.com/ads-b-onboard-737-realtime-primary-flight-navigation-display/">Live ADS-B Aircraft Cockpit</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10263"><a href="https://www.rtl-sdr.com/transmitting-fm-am-ssb-sstv-and-fsq-with-just-a-raspberry-pi/">Transmitting with a Raspberry Pi</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-16925"><a href="https://rtl-sdr.com">Quick Start Guides</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16927"><a href="https://rtl-sdr.com/qsg">RTL-SDR QSG</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16928"><a href="https://www.rtl-sdr.com/rtl-sdr-blog-v-3-dongles-user-guide/">V3 Features Users Guide</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21937"><a href="https://www.rtl-sdr.com/sdrsharp-users-guide/">SDRSharp Users Guide</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16926"><a href="https://www.rtl-sdr.com/plutosdr-quickstart-guide/">PlutoSDR QSG</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2856"><a href="https://www.rtl-sdr.com/rtl-sdr-direct-sampling-mode/">Direct Sampling Mod</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4157"><a href="https://www.rtl-sdr.com/roundup-software-defined-radios/">Roundup of Software Defined Radios</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-40391"><a href="https://www.rtl-sdr.com/?s=kerberossdr">KerberosSDR</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40392"><a href="https://www.rtl-sdr.com/ksdr/">KerberosSDR Quickstart Guide</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40395"><a href="https://www.rtl-sdr.com/kerberossdr-app-update-heatmap-precise-tx-localizing-turn-by-turn-navigation-demo-videos/">Direction Finding Android Demo</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40396"><a href="https://www.rtl-sdr.com/kerberossdr-direction-finding-with-android-app-demo-and-tutorial/">Direction Finding Android Tutorial</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40397"><a href="https://www.rtl-sdr.com/signalseverywhere-kerberossdr-direction-finding-video-tutorial/">SignalsEverywhere Direction Finding Tutorial</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40393"><a href="https://www.rtl-sdr.com/networked-radio-direction-finding-with-kerberossdr-and-rdfmapper/">Networked Direction Finding</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-40394"><a href="https://www.rtl-sdr.com/measuring-traffic-in-a-neighborhood-with-kerberossdr-and-passive-radar/">Measuring Traffic Volumes with Passive Radar</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2636"><a href="https://www.rtl-sdr.com/big-list-rtl-sdr-supported-software/">Software</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2860"><a href="https://www.rtl-sdr.com/big-list-rtl-sdr-supported-software/">RTL-SDR Supported Software</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2861"><a href="https://www.rtl-sdr.com/sdrsharp-plugins/">List of SDRSharp Plugins</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-5344"><a>Experimental Drivers</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4838"><a href="https://www.rtl-sdr.com/new-experimental-r820t-rtl-sdr-driver-tunes-13-mhz-lower/">Experimental HF Driver</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5345"><a href="https://www.rtl-sdr.com/new-sdr-rtl-sdr-driver-lnamixervga-gain-settings-decimation/">Manual gain controls and decimation driver</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14811"><a href="https://www.rtl-sdr.com/an-rtl-sdr-extio-with-decimation-and-tuner-bandwidth-controls/">ExtIO with Decimation &#038; Tuner Bandwidth Controls</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5346"><a href="https://www.rtl-sdr.com/testing-keenerds-rtl-sdr-drivers/">Keenerds Driver</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13077"><a href="https://www.rtl-sdr.com/beta-testing-a-modified-rtl-sdr-driver-for-l-band-heat-issues/">L-Band Heat Issue Driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3642"><a target="_blank" rel="noopener" href="http://www.sigidwiki.com">Signal ID Wiki</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1616"><a target="_blank" rel="noopener" href="https://www.rtl-sdr.com/forum">Forum</a></li>
+<li class="redback menu-item menu-item-type-post_type menu-item-object-page menu-item-1273"><a href="https://www.rtl-sdr.com/buy-rtl-sdr-dvb-t-dongles/">RTL-SDR Store</a></li>
+<li class="redback menu-item menu-item-type-custom menu-item-object-custom menu-item-3491"><a target="_blank" rel="noopener" href="https://www.amazon.com/gp/product/B00KCDF1QI/ref=as_li_tl?ie=UTF8&#038;camp=1789&#038;creative=390957&#038;creativeASIN=B00KCDF1QI&#038;linkCode=as2&#038;tag=book0674-20&#038;linkId=XHRIQAZC3JVLUJWM">Guide Book</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5397"><a href="https://www.rtl-sdr.com/submit-a-storycontact/">Contact</a></li>
+</ul></div></nav> </header>
+
+<section id="content" role="main">
+<article id="post-58164" class="post-58164 post type-post status-publish format-standard hentry category-antennas category-applications category-hackrf-2 category-rtl-sdr category-satellite tag-beidou tag-elektro-l tag-glonass tag-gps tag-l-band tag-rtl-sdr-2 tag-rtl2832 tag-rtl2832u">
+<header>
+<time datetime="2023-07-07T05:35:38+00:00" pubdate>July 7, 2023</time>
+<h1>Receiving Unintentional Voice Transmissions from GPS Satellites</h1>
+</header>
+<div class="content">
+<p>Over on dereksgc&#8217;s YouTube channel we&#8217;ve discovered a few more recent interesting videos from his satellite decoding series that people may be interested in. One from two weeks ago shows how it&#8217;s possible to receive voice transmissions on navigation satellites such as GPS.</p>
+<p>Many navigational and meteorological satellites carry a search and rescue (SAR) repeater which is intended to receive UHF emergency locator beacons and rebroadcast them in the L-band or higher. However the repeaters appear to be picking up all sorts of other signals from the ground, including voice transmissions. Dereksgc notes that the theory is that there are some land based communications systems in some countries that are sharing frequencies that emergency locator beacons use, or that malicious pirates may be actively using these SAR repeaters for their own communications.</p>
+<p>Dereksgc shows examples of retransmitted signals on the Beidou, GLONASS and Elektro-L satellite downlinks at 1.5442 GHz and at 2.226 MHz for the GPS satellites. He also shows what sort of satellite dish and feed setup you need. In the video he uses a HackRF as the SDR, but you could also use an RTL-SDR for the satellites that transmit at 1.5442 GHz.</p>
+<div class="lyte-wrapper" title="Receiving voice transmissions from GPS satellites || Satellite reception pt.10" style="width:1280px;max-width:100%;margin:5px auto;"><div class="lyMe hidef" id="WYL_U_pCHTeamn8"><div id="lyte_U_pCHTeamn8" data-src="https://www.rtl-sdr.com/wp-content/plugins/wp-youtube-lyte/lyteCache.php?origThumbUrl=https%3A%2F%2Fi.ytimg.com%2Fvi%2FU_pCHTeamn8%2Fmaxresdefault.jpg" class="pL"><div class="tC"><div class="tT">Receiving voice transmissions from GPS satellites || Satellite reception pt.10</div></div><div class="play"></div><div class="ctrl"><div class="Lctrl"></div><div class="Rctrl"></div></div></div><noscript><a href="https://youtu.be/U_pCHTeamn8" rel="nofollow"><img src="https://www.rtl-sdr.com/wp-content/plugins/wp-youtube-lyte/lyteCache.php?origThumbUrl=https%3A%2F%2Fi.ytimg.com%2Fvi%2FU_pCHTeamn8%2F0.jpg" alt="Receiving voice transmissions from GPS satellites || Satellite reception pt.10" width="1280" height="700" /><br />Watch this video on YouTube</a></noscript></div></div><div class="lL" style="max-width:100%;width:1280px;margin:5px auto;"></div></p>
+<div class="swp_social_panel swp_horizontal_panel swp_flat_fresh  swp_default_full_color swp_other_full_color swp_individual_full_color scale-100 scale-full_width" data-min-width="1100" data-float-color="#ffffff" data-float="none" data-float-mobile="none" data-transition="slide" data-post-id="58164"><div class="nc_tweetContainer swp_share_button swp_twitter" data-network="twitter"><a class="nc_tweet swp_share_link" rel="nofollow noreferrer noopener" target="_blank" href="https://twitter.com/intent/tweet?text=Receiving+Unintentional+Voice+Transmissions+from+GPS+Satellites&url=https%3A%2F%2Fwww.rtl-sdr.com%2Freceiving-unintentional-voice-transmissions-from-gps-satellites%2F" data-link="https://twitter.com/intent/tweet?text=Receiving+Unintentional+Voice+Transmissions+from+GPS+Satellites&url=https%3A%2F%2Fwww.rtl-sdr.com%2Freceiving-unintentional-voice-transmissions-from-gps-satellites%2F"><span class="swp_count swp_hide"><span class="iconFiller"><span class="spaceManWilly"><i class="sw swp_twitter_icon"></i><span class="swp_share">Tweet</span></span></span></span></a></div><div class="nc_tweetContainer swp_share_button swp_facebook" data-network="facebook"><a class="nc_tweet swp_share_link" rel="nofollow noreferrer noopener" target="_blank" href="https://www.facebook.com/share.php?u=https%3A%2F%2Fwww.rtl-sdr.com%2Freceiving-unintentional-voice-transmissions-from-gps-satellites%2F" data-link="https://www.facebook.com/share.php?u=https%3A%2F%2Fwww.rtl-sdr.com%2Freceiving-unintentional-voice-transmissions-from-gps-satellites%2F"><span class="swp_count swp_hide"><span class="iconFiller"><span class="spaceManWilly"><i class="sw swp_facebook_icon"></i><span class="swp_share">Share</span></span></span></span></a></div><div class="nc_tweetContainer swp_share_button swp_reddit" data-network="reddit"><a class="nc_tweet swp_share_link" rel="nofollow noreferrer noopener" target="_blank" href="https://www.reddit.com/submit?url=https%3A%2F%2Fwww.rtl-sdr.com%2Freceiving-unintentional-voice-transmissions-from-gps-satellites%2F" data-link="https://www.reddit.com/submit?url=https%3A%2F%2Fwww.rtl-sdr.com%2Freceiving-unintentional-voice-transmissions-from-gps-satellites%2F"><span class="swp_count swp_hide"><span class="iconFiller"><span class="spaceManWilly"><i class="sw swp_reddit_icon"></i><span class="swp_share">Reddit</span></span></span></span></a></div><div class="nc_tweetContainer swp_share_button swp_hacker_news" data-network="hacker_news"><a class="nc_tweet swp_share_link" rel="nofollow noreferrer noopener" target="_blank" href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fwww.rtl-sdr.com%2Freceiving-unintentional-voice-transmissions-from-gps-satellites%2F&t=Receiving%20Unintentional%20Voice%20Transmissions%20from%20GPS%20Satellites" data-link="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fwww.rtl-sdr.com%2Freceiving-unintentional-voice-transmissions-from-gps-satellites%2F&t=Receiving%20Unintentional%20Voice%20Transmissions%20from%20GPS%20Satellites"><span class="swp_count swp_hide"><span class="iconFiller"><span class="spaceManWilly"><i class="sw swp_hacker_news_icon"></i><span class="swp_share">Vote</span></span></span></span></a></div><div class="nc_tweetContainer swp_share_button swp_email" data-network="email"><a class="nc_tweet noPop swp_share_link" rel="nofollow noreferrer noopener" href="/cdn-cgi/l/email-protection#ead5999f88808f899ed7b88f898f839c83848dcfd8dabf8483849e8f849e8385848b86cfd8dabc8583898fcfd8dabe988b84998783999983858499cfd8da8c988587cfd8daadbab9cfd8dab98b9e8f8686839e8f99cc88858e93d7a59c8f98cfd8da8584cfd8da8e8f988f81998d89cfd8dd99cfd8dab3859fbe9f888fcfd8da89828b84848f86cfd8da9d8fcfd8dd9c8fcfd8da8e839989859c8f988f8ecfd8da8bcfd8da8c8f9dcfd8da8785988fcfd8da988f898f849ecfd8da83849e8f988f999e83848dcfd8da9c838e8f8599cfd8da8c988587cfd8da828399cfd8da998b9e8f8686839e8fcfd8da8e8f89858e83848dcfd8da998f98838f99cfd8da9e828b9ecfd8da9a8f859a868fcfd8da878b93cfd8da888fcfd8da83849e8f988f999e8f8ecfd8da8384c4cfd8daa5848fcfd8da8c988587cfd8da9e9d85cfd8da9d8f8f8199cfd8da8b8d85cfd8da9982859d99cfd8da82859dcfd8da839ecfd8dd99cfd8da9a8599998388868fcfd8da9e85cfd8da988f898f839c8fcfd8da9c8583898fcfd8da9e988b84998783999983858499cfd8da8584cfd8da848b9c838d8b9e838584cfd8da998b9e8f8686839e8f99cfd8da999f8982cfd8da8b99cfd8daadbab9c4cfd8daa78b8493cfd8da848b9c838d8b9e8385848b86cfd8da8b848ecfd8da878f9e8f85988586858d83898b86cfd8da998b9e8f8686839e8f99cfd8da898b989893cfd8da8bcfd8da998f8b988982cfd8da8b848ecfd8da988f99899f8fcfd8dacfd8d2b9abb8cfd8d3cfd8da988f9a8f8b9e8f98cfd8da9d82838982cfd8da8399cfd8da83849e8f848e8f8ecfd8da9e85cfd8da988f898f839c8fcfd8dabfa2accfd8da8f878f988d8f848993cfd8da8685898b9e8598cfd8da888f8b89858499cfd8da8b848ecfd8da988f8898858b8e898b999ecfd8da9e828f87cfd8da8384cfd8da9e828fcfd8daa6c7888b848ecfd8da8598cfd8da82838d828f98c4cfd8daa2859d8f9c8f98cfd8da9e828fcfd8da988f9a8f8b9e8f9899cfd8da8b9a9a8f8b98cfd8da9e85cfd8da888fcfd8da9a83898183848dcfd8da9f9acfd8da8b8686cfd8da9985989e99cfd8da858ccfd8da859e828f98cfd8da99838d848b8699cfd8da8c988587cfd8da9e828fcfd8da8d98859f848ecfd8a9cfd8da838489869f8e83848dcfd8da9c8583898fcfd8da9e988b84998783999983858499c4cfd8daae8f988f81998d89cfd8da84859e8f99cfd8da9e828b9ecfd8da9e828fcfd8da9e828f859893cfd8da8399cfd8da9e828b9ecfd8da9e828f988fcfd8da8b988fcfdaaecfdaabcfdaaecfdaabb88f8b8ecaa785988fcaa28f988fd0cacfd8da829e9e9a99cfd9abcfd8accfd8ac9d9d9dc4989e86c7998e98c4898587cfd8ac988f898f839c83848dc79f8483849e8f849e8385848b86c79c8583898fc79e988b84998783999983858499c78c988587c78d9a99c7998b9e8f8686839e8f99cfd8ac" target="_blank"><span class="swp_count swp_hide"><span class="iconFiller"><span class="spaceManWilly"><i class="sw swp_email_icon"></i><span class="swp_share">Email</span></span></span></span></a></div><div class="nc_tweetContainer swp_share_button total_shares total_sharesalt"><span class="swp_count ">0 <span class="swp_label">Shares</span></span></div></div><div class="swp-content-locator"></div><div class='yarpp yarpp-related yarpp-related-website yarpp-template-list'>
+
+<h3>Related posts:</h3><ol>
+<li><a href="https://www.rtl-sdr.com/youtube-video-a-tutorial-on-receiving-and-decoding-noaa-and-meteor-satellites/" rel="bookmark" title="YouTube Video: A Tutorial on Receiving and Decoding NOAA and METEOR Satellites">YouTube Video: A Tutorial on Receiving and Decoding NOAA and METEOR Satellites </a></li>
+<li><a href="https://www.rtl-sdr.com/receiving-analog-tv-from-turkmenistan-unintentionally-bouncing-off-a-russian-military-satellite/" rel="bookmark" title="Receiving Analog TV from Turkmenistan Unintentionally Bouncing off a Russian Military Satellite">Receiving Analog TV from Turkmenistan Unintentionally Bouncing off a Russian Military Satellite </a></li>
+<li><a href="https://www.rtl-sdr.com/receiving-smog-p-and-atl-1-nano-satellites-with-an-rtl-sdr/" rel="bookmark" title="Receiving SMOG-P and ATL-1 Nano Satellites with an RTL-SDR">Receiving SMOG-P and ATL-1 Nano Satellites with an RTL-SDR </a></li>
+<li><a href="https://www.rtl-sdr.com/detecting-starlink-satellites-with-a-portable-raspberry-pi-rtl-sdr/" rel="bookmark" title="Detecting Starlink Satellites with a Portable Raspberry Pi + RTL-SDR">Detecting Starlink Satellites with a Portable Raspberry Pi + RTL-SDR </a></li>
+<li><a href="https://www.rtl-sdr.com/hacking-iridium-satellites-with-iridium-toolkit/" rel="bookmark" title="Hacking Iridium Satellites With Iridium Toolkit">Hacking Iridium Satellites With Iridium Toolkit </a></li>
+</ol>
+</div>
+</div>
+
+<footer>
+<span class="author"><span class="author-label">Written by</span> <a href="https://www.rtl-sdr.com/author/rtlsdr/" title="Posts by admin" rel="author">admin</a></span>
+<span class="categories">
+<span class="categories-label">Posted in</span> <a href="https://www.rtl-sdr.com/category/antennas/" rel="category tag">Antennas</a>, <a href="https://www.rtl-sdr.com/category/applications/" rel="category tag">Applications</a>, <a href="https://www.rtl-sdr.com/category/hackrf-2/" rel="category tag">HackRF</a>, <a href="https://www.rtl-sdr.com/category/rtl-sdr/" rel="category tag">RTL-SDR</a>, <a href="https://www.rtl-sdr.com/category/satellite/" rel="category tag">Satellite</a> </span>
+<span class="tags">
+<span class="tags-label">Tagged with</span> <a href="https://www.rtl-sdr.com/tag/beidou/" rel="tag">Beidou</a>, <a href="https://www.rtl-sdr.com/tag/elektro-l/" rel="tag">Elektro-L</a>, <a href="https://www.rtl-sdr.com/tag/glonass/" rel="tag">GLONASS</a>, <a href="https://www.rtl-sdr.com/tag/gps/" rel="tag">GPS</a>, <a href="https://www.rtl-sdr.com/tag/l-band/" rel="tag">l-band</a>, <a href="https://www.rtl-sdr.com/tag/rtl-sdr-2/" rel="tag">rtl-sdr</a>, <a href="https://www.rtl-sdr.com/tag/rtl2832/" rel="tag">rtl2832</a>, <a href="https://www.rtl-sdr.com/tag/rtl2832u/" rel="tag">rtl2832u</a> </span>
+</footer>
+</article>
+
+<div class="wpdiscuz_top_clearing"></div>
+<div id='comments' class='comments-area'><div id='respond' style='width: 0;height: 0;clear: both;margin: 0;padding: 0;'></div> <div id="wpdcom" class="wpdiscuz_unauth wpd-default wpd-layout-2 wpd-comments-open">
+<div class="wc_social_plugin_wrapper">
+</div>
+<div class="wpd-form-wrap">
+<div class="wpd-form-head">
+<div class="wpd-sbs-toggle">
+<i class="far fa-envelope"></i> <span class="wpd-sbs-title">Subscribe</span> <i class="fas fa-caret-down"></i>
+</div>
+<div class="wpd-auth">
+<div class="wpd-login">
+<a href="https://www.rtl-sdr.com/thelogin/?redirect_to=https%3A%2F%2Fwww.rtl-sdr.com%2Freceiving-unintentional-voice-transmissions-from-gps-satellites%2F"><i class='fas fa-sign-in-alt'></i> Login</a> </div>
+</div>
+</div>
+<div class="wpdiscuz-subscribe-bar wpdiscuz-hidden">
+<form action="https://www.rtl-sdr.com/wp-admin/admin-ajax.php?action=wpdAddSubscription" method="post" id="wpdiscuz-subscribe-form">
+<div class="wpdiscuz-subscribe-form-intro">Notify of </div>
+<div class="wpdiscuz-subscribe-form-option" style="width:40%;">
+<select class="wpdiscuz_select" name="wpdiscuzSubscriptionType">
+<option value="post">new follow-up comments</option>
+<option value="all_comment">new replies to my comments</option>
+</select>
+</div>
+<div class="wpdiscuz-item wpdiscuz-subscribe-form-email">
+ <input class="email" type="email" name="wpdiscuzSubscriptionEmail" required="required" value="" placeholder="Email" />
+</div>
+<div class="wpdiscuz-subscribe-form-button">
+<input id="wpdiscuz_subscription_button" class="wpd-prim-button wpd_not_clicked" type="submit" value="&rsaquo;" name="wpdiscuz_subscription_button" />
+</div>
+<input type="hidden" id="wpdiscuz_subscribe_form_nonce" name="wpdiscuz_subscribe_form_nonce" value="2576742d9b" /><input type="hidden" name="_wp_http_referer" value="/receiving-unintentional-voice-transmissions-from-gps-satellites/" /> <input id='wpdiscuz-recaptcha-field-subscribe-form' type='hidden' name='g-recaptcha-response' value="" class="wpdiscuz_reset" />
+</form>
+</div>
+<div class="wpd-form wpd-form-wrapper wpd-main-form-wrapper" id='wpd-main-form-wrapper-0_0'>
+<form method="post" enctype="multipart/form-data" data-uploading="false" class="wpd_comm_form wpd_main_comm_form">
+<div class="wpd-field-comment">
+<div class="wpdiscuz-item wc-field-textarea">
+<div class="wpdiscuz-textarea-wrap ">
+<div class="wpd-avatar">
+<img alt='guest' src='https://secure.gravatar.com/avatar/?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo avatar-default' height='56' width='56' loading='lazy' decoding='async' /> </div>
+<div id="wpd-editor-wraper-0_0" style="display: none;">
+<div id="wpd-editor-char-counter-0_0" class="wpd-editor-char-counter"></div>
+<label style="display: none;" for="wc-textarea-0_0">Label</label>
+<textarea id="wc-textarea-0_0" name="wc_comment" class="wc_comment wpd-field"></textarea>
+<div id="wpd-editor-0_0"></div>
+<div id="wpd-editor-toolbar-0_0">
+<button title="Bold" class="ql-bold"></button>
+<button title="Italic" class="ql-italic"></button>
+<button title="Underline" class="ql-underline"></button>
+<button title="Strike" class="ql-strike"></button>
+<button title="Ordered List" class="ql-list" value='ordered'></button>
+<button title="Unordered List" class="ql-list" value='bullet'></button>
+<button title="Blockquote" class="ql-blockquote"></button>
+<button title="Code Block" class="ql-code-block"></button>
+<button title="Link" class="ql-link"></button>
+<button title="Source Code" class="ql-sourcecode" data-wpde_button_name='sourcecode'>{}</button>
+<button title="Spoiler" class="ql-spoiler" data-wpde_button_name='spoiler'>[+]</button>
+<button title="" class="ql-emoji"><svg xmlns="https://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smile"><title>Emoji</title><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg></button>
+<button title="" class="ql-wpdsticker" data-wpde_button_name='sticker'><svg viewBox="0 0 24 24"><title>Stickers</title><path d="M5.5,2C3.56,2 2,3.56 2,5.5V18.5C2,20.44 3.56,22 5.5,22H16L22,16V5.5C22,3.56 20.44,2 18.5,2H5.5M5.75,4H18.25A1.75,1.75 0 0,1 20,5.75V15H18.5C16.56,15 15,16.56 15,18.5V20H5.75A1.75,1.75 0 0,1 4,18.25V5.75A1.75,1.75 0 0,1 5.75,4M14.44,6.77C14.28,6.77 14.12,6.79 13.97,6.83C13.03,7.09 12.5,8.05 12.74,9C12.79,9.15 12.86,9.3 12.95,9.44L16.18,8.56C16.18,8.39 16.16,8.22 16.12,8.05C15.91,7.3 15.22,6.77 14.44,6.77M8.17,8.5C8,8.5 7.85,8.5 7.7,8.55C6.77,8.81 6.22,9.77 6.47,10.7C6.5,10.86 6.59,11 6.68,11.16L9.91,10.28C9.91,10.11 9.89,9.94 9.85,9.78C9.64,9 8.95,8.5 8.17,8.5M16.72,11.26L7.59,13.77C8.91,15.3 11,15.94 12.95,15.41C14.9,14.87 16.36,13.25 16.72,11.26Z" /></svg></button>
+<div class="wpd-editor-buttons-right">
+<span class='wmu-upload-wrap' wpd-tooltip='Attach an image to this comment' wpd-tooltip-position='left'><label class='wmu-add'><i class='far fa-image'></i><input style='display:none;' class='wmu-add-files' type='file' name='wmu_files[]' accept='image/*' /></label></span> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="wpd-form-foot" style='display:none;'>
+<div class="wpdiscuz-textarea-foot">
+<div class="wpdiscuz-button-actions"><div class='wmu-action-wrap'><div class='wmu-tabs wmu-images-tab wmu-hide'></div></div></div>
+</div>
+<div class="wpd-form-row">
+<div class="wpd-form-col-left">
+<div class="wpdiscuz-item wc_name-wrapper wpd-has-icon">
+<div class="wpd-field-icon"><i class="fas fa-user"></i></div>
+<input id="wc_name-0_0" value="" required='required' aria-required='true' class="wc_name wpd-field" type="text" name="wc_name" placeholder="Name*" maxlength="50" pattern='.{3,50}' title="">
+<label for="wc_name-0_0" class="wpdlb">Name*</label>
+</div>
+<div class="wpdiscuz-item wc_email-wrapper wpd-has-icon">
+<div class="wpd-field-icon"><i class="fas fa-at"></i></div>
+<input id="wc_email-0_0" value="" required='required' aria-required='true' class="wc_email wpd-field" type="email" name="wc_email" placeholder="Email*" />
+<label for="wc_email-0_0" class="wpdlb">Email*</label>
+</div>
+<div class="wpdiscuz-item wc_website-wrapper wpd-has-icon">
+<div class="wpd-field-icon"><i class="fas fa-link"></i></div>
+<input id="wc_website-0_0" value="" class="wc_website wpd-field" type="text" name="wc_website" placeholder="Website" />
+<label for="wc_website-0_0" class="wpdlb">Website</label>
+</div>
+</div>
+<div class="wpd-form-col-right">
+<div class="wc-field-submit">
+<label class="wpd_label" wpd-tooltip="Notify of new replies to this comment">
+<input id="wc_notification_new_comment-0_0" class="wc_notification_new_comment-0_0 wpd_label__checkbox" value="comment" type="checkbox" name="wpdiscuz_notification_type" />
+<span class="wpd_label__text">
+<span class="wpd_label__check">
+<i class="fas fa-bell wpdicon wpdicon-on"></i>
+<i class="fas fa-bell-slash wpdicon wpdicon-off"></i>
+</span>
+</span>
+</label>
+<input id="wpd-field-submit-0_0" class="wc_comm_submit wpd_not_clicked wpd-prim-button" type="submit" name="submit" value="Post Comment" />
+</div>
+</div>
+<div class="clearfix"></div>
+</div>
+</div>
+<input type="hidden" class="wpdiscuz_unique_id" value="0_0" name="wpdiscuz_unique_id">
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="fb0e7fc66a" /></p><input type="hidden" id="ct_checkjs_979d472a84804b9f647bc185a877a8b5" name="ct_checkjs" value="0" /><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>setTimeout(function(){var ct_input_name = "ct_checkjs_979d472a84804b9f647bc185a877a8b5";if (document.getElementById(ct_input_name) !== null) {var ct_input_value = document.getElementById(ct_input_name).value;document.getElementById(ct_input_name).value = document.getElementById(ct_input_name).value.replace(ct_input_value, '257004736');}}, 1000);</script><p style="display: none !important;"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="166" /><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p> </form>
+</div>
+<div id="wpdiscuz_hidden_secondary_form" style="display: none;">
+<div class="wpd-form wpd-form-wrapper wpd-secondary-form-wrapper" id='wpd-secondary-form-wrapper-wpdiscuzuniqueid' style='display: none;'>
+<div class="wpd-secondary-forms-social-content"></div>
+<div class="clearfix"></div>
+<form method="post" enctype="multipart/form-data" data-uploading="false" class="wpd_comm_form wpd-secondary-form-wrapper">
+<div class="wpd-field-comment">
+<div class="wpdiscuz-item wc-field-textarea">
+<div class="wpdiscuz-textarea-wrap ">
+<div class="wpd-avatar">
+<img alt='guest' src='https://secure.gravatar.com/avatar/?s=56&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/?s=112&#038;d=mm&#038;r=g 2x' class='avatar avatar-56 photo avatar-default' height='56' width='56' loading='lazy' decoding='async' /> </div>
+<div id="wpd-editor-wraper-wpdiscuzuniqueid" style="display: none;">
+<div id="wpd-editor-char-counter-wpdiscuzuniqueid" class="wpd-editor-char-counter"></div>
+<label style="display: none;" for="wc-textarea-wpdiscuzuniqueid">Label</label>
+<textarea id="wc-textarea-wpdiscuzuniqueid" name="wc_comment" class="wc_comment wpd-field"></textarea>
+<div id="wpd-editor-wpdiscuzuniqueid"></div>
+<div id="wpd-editor-toolbar-wpdiscuzuniqueid">
+<button title="Bold" class="ql-bold"></button>
+<button title="Italic" class="ql-italic"></button>
+<button title="Underline" class="ql-underline"></button>
+<button title="Strike" class="ql-strike"></button>
+<button title="Ordered List" class="ql-list" value='ordered'></button>
+<button title="Unordered List" class="ql-list" value='bullet'></button>
+<button title="Blockquote" class="ql-blockquote"></button>
+<button title="Code Block" class="ql-code-block"></button>
+ <button title="Link" class="ql-link"></button>
+<button title="Source Code" class="ql-sourcecode" data-wpde_button_name='sourcecode'>{}</button>
+<button title="Spoiler" class="ql-spoiler" data-wpde_button_name='spoiler'>[+]</button>
+<button title="" class="ql-emoji"><svg xmlns="https://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smile"><title>Emoji</title><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg></button>
+<button title="" class="ql-wpdsticker" data-wpde_button_name='sticker'><svg viewBox="0 0 24 24"><title>Stickers</title><path d="M5.5,2C3.56,2 2,3.56 2,5.5V18.5C2,20.44 3.56,22 5.5,22H16L22,16V5.5C22,3.56 20.44,2 18.5,2H5.5M5.75,4H18.25A1.75,1.75 0 0,1 20,5.75V15H18.5C16.56,15 15,16.56 15,18.5V20H5.75A1.75,1.75 0 0,1 4,18.25V5.75A1.75,1.75 0 0,1 5.75,4M14.44,6.77C14.28,6.77 14.12,6.79 13.97,6.83C13.03,7.09 12.5,8.05 12.74,9C12.79,9.15 12.86,9.3 12.95,9.44L16.18,8.56C16.18,8.39 16.16,8.22 16.12,8.05C15.91,7.3 15.22,6.77 14.44,6.77M8.17,8.5C8,8.5 7.85,8.5 7.7,8.55C6.77,8.81 6.22,9.77 6.47,10.7C6.5,10.86 6.59,11 6.68,11.16L9.91,10.28C9.91,10.11 9.89,9.94 9.85,9.78C9.64,9 8.95,8.5 8.17,8.5M16.72,11.26L7.59,13.77C8.91,15.3 11,15.94 12.95,15.41C14.9,14.87 16.36,13.25 16.72,11.26Z" /></svg></button>
+<div class="wpd-editor-buttons-right">
+<span class='wmu-upload-wrap' wpd-tooltip='Attach an image to this comment' wpd-tooltip-position='left'><label class='wmu-add'><i class='far fa-image'></i><input style='display:none;' class='wmu-add-files' type='file' name='wmu_files[]' accept='image/*' /></label></span> </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="wpd-form-foot" style='display:none;'>
+<div class="wpdiscuz-textarea-foot">
+<div class="wpdiscuz-button-actions"><div class='wmu-action-wrap'><div class='wmu-tabs wmu-images-tab wmu-hide'></div></div></div>
+</div>
+<div class="wpd-form-row">
+<div class="wpd-form-col-left">
+<div class="wpdiscuz-item wc_name-wrapper wpd-has-icon">
+<div class="wpd-field-icon"><i class="fas fa-user"></i></div>
+<input id="wc_name-wpdiscuzuniqueid" value="" required='required' aria-required='true' class="wc_name wpd-field" type="text" name="wc_name" placeholder="Name*" maxlength="50" pattern='.{3,50}' title="">
+<label for="wc_name-wpdiscuzuniqueid" class="wpdlb">Name*</label>
+</div>
+<div class="wpdiscuz-item wc_email-wrapper wpd-has-icon">
+<div class="wpd-field-icon"><i class="fas fa-at"></i></div>
+<input id="wc_email-wpdiscuzuniqueid" value="" required='required' aria-required='true' class="wc_email wpd-field" type="email" name="wc_email" placeholder="Email*" />
+<label for="wc_email-wpdiscuzuniqueid" class="wpdlb">Email*</label>
+</div>
+<div class="wpdiscuz-item wc_website-wrapper wpd-has-icon">
+<div class="wpd-field-icon"><i class="fas fa-link"></i></div>
+<input id="wc_website-wpdiscuzuniqueid" value="" class="wc_website wpd-field" type="text" name="wc_website" placeholder="Website" />
+<label for="wc_website-wpdiscuzuniqueid" class="wpdlb">Website</label>
+</div>
+</div>
+<div class="wpd-form-col-right">
+<div class="wc-field-submit">
+<label class="wpd_label" wpd-tooltip="Notify of new replies to this comment">
+<input id="wc_notification_new_comment-wpdiscuzuniqueid" class="wc_notification_new_comment-wpdiscuzuniqueid wpd_label__checkbox" value="comment" type="checkbox" name="wpdiscuz_notification_type" />
+<span class="wpd_label__text">
+<span class="wpd_label__check">
+<i class="fas fa-bell wpdicon wpdicon-on"></i>
+<i class="fas fa-bell-slash wpdicon wpdicon-off"></i>
+</span>
+</span>
+</label>
+<input id="wpd-field-submit-wpdiscuzuniqueid" class="wc_comm_submit wpd_not_clicked wpd-prim-button" type="submit" name="submit" value="Post Comment" />
+</div>
+</div>
+<div class="clearfix"></div>
+</div>
+</div>
+<input type="hidden" class="wpdiscuz_unique_id" value="wpdiscuzuniqueid" name="wpdiscuz_unique_id">
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="fb0e7fc66a" /></p><input type="hidden" id="ct_checkjs_2dea61eed4bceec564a00115c4d21334" name="ct_checkjs" value="0" /><script>setTimeout(function(){var ct_input_name = "ct_checkjs_2dea61eed4bceec564a00115c4d21334";if (document.getElementById(ct_input_name) !== null) {var ct_input_value = document.getElementById(ct_input_name).value;document.getElementById(ct_input_name).value = document.getElementById(ct_input_name).value.replace(ct_input_value, '257004736');}}, 1000);</script><p style="display: none !important;"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_2" name="ak_js" value="113" /><script>document.getElementById( "ak_js_2" ).setAttribute( "value", ( new Date() ).getTime() );</script></p> </form>
+</div>
+</div>
+</div>
+<div id="wpd-threads" class="wpd-thread-wrapper">
+<div class="wpd-thread-head">
+<div class="wpd-thread-info " data-comments-count="0">
+<span class='wpdtc' title='0'>0</span> Comments </div>
+<div class="wpd-space"></div>
+<div class="wpd-thread-filter">
+<div class="wpd-filter wpdf-reacted wpd_not_clicked" wpd-tooltip="Most reacted comment"><i class="fas fa-bolt"></i></div>
+<div class="wpd-filter wpdf-hottest wpd_not_clicked" wpd-tooltip="Hottest comment thread"><i class="fas fa-fire"></i></div>
+</div>
+</div>
+<div class="wpd-comment-info-bar">
+<div class="wpd-current-view"><i class="fas fa-quote-left"></i> Inline Feedbacks</div>
+<div class="wpd-filter-view-all">View all comments</div>
+</div>
+<div class="wpd-thread-list">
+<div class="wpdiscuz-comment-pagination">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wpdiscuz-loading-bar" class="wpdiscuz-loading-bar-unauth"></div>
+<div id="wpdiscuz-comment-message" class="wpdiscuz-comment-message-unauth"></div> 
+<nav class="post-nav" role="navigation">
+<div class="nav-previous"><a href="https://www.rtl-sdr.com/video-on-meteor-m2-3-lrpt-hrpt-and-telemetry-reception/" rel="prev"><span class="meta-nav"></span> Video on Meteor M2-3 LRPT, HRPT and Telemetry Reception</a></div>
+<div class="nav-next"></div>
+</nav>
+
+</section>
+
+<aside id="primary" role="complementary">
+<section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><center><a href="https://www.crowdsupply.com/krakenrf/krakensdr" target="_blank" rel="noopener"><img class="wp-image-4347 size-full" alt="Kerberos Ad" src="https://www.rtl-sdr.com/wp-content/uploads/2022/11/krakensdr_sidebar_2.png" /></a></center></div></section><section id="text-15" class="widget widget_text"><h3 class="title">Follow Us</h3> <div class="textwidget"><div><a target="_blank" rel="nofollow noopener" title="Follow us on Facebook" href="https://www.facebook.com/rtlsdrblog" style="font-size: 0px; width:48px;height:48px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt=facebook title="Follow us on Facebook" width=48 height=48 style="display: inline; width:48px;height:48px; margin: 0; padding: 0; border: none; box-shadow: none;" src="//rtl-sdr.com/wp-content/uploads/2014/07/facebook.png" /></a><a target="_blank" rel="nofollow noopener" title="Follow us on Twitter" href="https://twitter.com/rtlsdrblog" style="font-size: 0px; width:48px;height:48px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt=twitter title="Follow us on Twitter" width=48 height=48 style="display: inline; width:48px;height:48px; margin: 0; padding: 0; border: none; box-shadow: none;" src="//rtl-sdr.com/wp-content/uploads/2014/07/twitter.png" /></a><a target="_blank" rel="nofollow noopener" title="Follow us on Google+" href="https://plus.google.com/+rtlsdrblog" style="font-size: 0px; width:48px;height:48px;margin:0;margin-bottom:5px;"><img alt=rss title="Follow us on Google+" width=48 height=48 style="display: inline; width:48px;height:48px; margin: 0;margin-right:5px; padding: 0; border: none; box-shadow: none;" src="//rtl-sdr.com/wp-content/uploads/2015/02/gp.png" /></a><a target="_blank" rel="nofollow noopener" title="Subscribe to our RSS Feed" href="https://www.rtl-sdr.com/feed/" style="font-size: 0px; width:48px;height:48px;margin:0;margin-bottom:5px;"><img alt=rss title="Subscribe to our RSS Feed" width=48 height=48 style="display: inline; width:48px;height:48px; margin: 0; padding: 0; border: none; box-shadow: none;" src="//rtl-sdr.com/wp-content/uploads/2014/07/rss.png" /></a></div>
+</section><section id="text-16" class="widget widget_text"><h3 class="title">Weekly Newsletter + Product Updates</h3> <div class="textwidget"><form action="//rtl-sdr.us10.list-manage.com/subscribe/post?u=530549bd996794b0e66e49fa5&amp;id=5d8eaa5dca" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<div class="mc-field-group">
+<label for="mce-EMAIL"></label>
+<input type="email" value="Enter your email address..." onfocus="if(this.value=='Enter your email address...'){this.value=''}" onblur="if(this.value==''){this.value='Enter your email address...'}" name="EMAIL" class="required email" id="mce-EMAIL">
+<input type="submit" value="Subscribe" />
+</form></div>
+<div id="mce-responses" class="clear"><div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="display:none"></div>
+</div></form></div>
+</section><section id="search-4" class="widget widget_search"><h3 class="title">Search</h3><form role="search" method="get" id="searchform" class="searchform" action="https://www.rtl-sdr.com/">
+<div>
+<label class="screen-reader-text" for="s">Search for:</label>
+<input type="text" value="" name="s" id="s" />
+<input type="submit" id="searchsubmit" value="Search" />
+</div>
+<label class="apbct_special_field" id="apbct_label_id55333" for="apbct__email_id__search_form_55333">55333</label><input id="apbct__email_id__search_form_55333" class="apbct_special_field apbct__email_id__search_form" autocomplete="off" name="apbct__email_id__search_form_55333" type="text" value="55333" size="30" apbct_event_id="55333" maxlength="200" /><input id="apbct_submit_id__search_form_55333" class="apbct_special_field apbct__email_id__search_form" name="apbct_submit_id__search_form_55333" type="submit" size="30" maxlength="200" value="55333" /></form></section>
+<section id="recent-posts-2" class="widget widget_recent_entries">
+<h3 class="title">Recent Posts</h3>
+<ul>
+<li>
+<a href="/receiving-unintentional-voice-transmissions-from-gps-satellites/" aria-current="page">Receiving Unintentional Voice Transmissions from GPS Satellites</a>
+</li>
+<li>
+<a href="/video-on-meteor-m2-3-lrpt-hrpt-and-telemetry-reception/">Video on Meteor M2-3 LRPT, HRPT and Telemetry Reception</a>
+</li>
+<li>
+<a href="/andre-shares-his-qo-100-ground-station-and-hf-vhf-uhf-station/">André shares his QO-100 Ground Station and HF/VHF/UHF Station</a>
+</li>
+<li>
+<a href="/saveitforparts-receiving-images-from-the-new-russian-satellite-meteor-m2-3/">Saveitforparts: Receiving Images from the new Russian Satellite Meteor M2-3</a>
+</li>
+<li>
+<a href="/krakensdr-low-power-fm-transmitter-hunt/">KrakenSDR Low Power FM Transmitter Hunt</a>
+</li>
+</ul>
+</section><section id="better_recent_comments-2" class="widget widget_recent_comments"><h3 class="title">Recent Comments</h3><ul id="better-recent-comments" class="recent-comments-list"><li class="recentcomments recent-comment"><div class="comment-wrap"><span class="comment-author-link">willmore</span> on <span class="comment-post"><a href="https://www.rtl-sdr.com/saveitforparts-receiving-images-from-the-new-russian-satellite-meteor-m2-3/#comment-240509">Saveitforparts: Receiving Images from the new Russian Satellite Meteor M2-3</a></span>: &ldquo;<span class="comment-excerpt">I want to do this as well. What do I need for an antenna? I assume something with a hemispheric&hellip;</span>&rdquo; <span class="comment-date">Jul 6, 17:34</span></div></li><li class="recentcomments recent-comment"><div class="comment-wrap"><span class="comment-author-link">Big Jon</span> on <span class="comment-post"><a href="https://www.rtl-sdr.com/testing-dab-decoders-sdrangel-versus-welle-io/#comment-240485">Testing DAB Decoders: SDRAngel versus Welle.io</a></span>: &ldquo;<span class="comment-excerpt">You can see 1:02! Picture is full, no &#8220;Scratches&#8221; on the received photo. But audio has difficulty!</span>&rdquo; <span class="comment-date">Jul 6, 04:21</span></div></li><li class="recentcomments recent-comment"><div class="comment-wrap"><span class="comment-author-link">harm t</span> on <span class="comment-post"><a href="https://www.rtl-sdr.com/submit-a-storycontact/#comment-240482">Submit a Story/Contact</a></span>: &ldquo;<span class="comment-excerpt">Can you help me on the DMR Plugin? https://www.rtl-sdr.com/simple-dpmr-decoder-plugin-for-sdr-released/ Link is not working http://www.rtl-sdr.ru/page/novyj-plagin-simple-dpmr</span>&rdquo; <span class="comment-date">Jul 5, 23:27</span></div></li><li class="recentcomments recent-comment"><div class="comment-wrap"><span class="comment-author-link">hamzit</span> on <span class="comment-post"><a href="https://www.rtl-sdr.com/techminds-building-a-handheld-milsat-satcom-antenna-with-3d-printed-parts-and-tape-measures/#comment-240471">TechMinds: Building a Handheld MILSAT SATCOM Antenna with 3D Printed Parts and Tape Measures</a></span>: &ldquo;<span class="comment-excerpt">20hrs printing!</span>&rdquo; <span class="comment-date">Jul 5, 09:53</span></div></li><li class="recentcomments recent-comment"><div class="comment-wrap"><span class="comment-author-link">William Keller</span> on <span class="comment-post"><a href="https://www.rtl-sdr.com/meteor-m2-3-now-in-orbit-and-transmitting-weather-images/#comment-240466">Meteor M2-3 Now In Orbit and Transmitting Weather Images</a></span>: &ldquo;<span class="comment-excerpt">Compiled Linux version is just as unstable although the DPI scale works fine.</span>&rdquo; <span class="comment-date">Jul 4, 15:37</span></div></li><li class="recentcomments recent-comment"><div class="comment-wrap"><span class="comment-author-link">Jeegoos</span> on <span class="comment-post"><a href="https://www.rtl-sdr.com/big-list-rtl-sdr-supported-software/#comment-240423">The BIG List of RTL-SDR Supported Software</a></span>: &ldquo;<span class="comment-excerpt">I feel like you should put sdr++ above sdr# since nowadays it&#8217;s just a cluttered closed source mess. The sdr#&hellip;</span>&rdquo; <span class="comment-date">Jul 3, 06:08</span></div></li><li class="recentcomments recent-comment"><div class="comment-wrap"><span class="comment-author-link">Xi=WinnieThePooh=Xi</span> on <span class="comment-post"><a href="https://www.rtl-sdr.com/techminds-a-brief-review-of-the-sdr-101-a-clone-of-deepsdr-101/#comment-240379">TechMinds: A Brief Review of the SDR 101, a Clone of DeepSDR 101</a></span>: &ldquo;<span class="comment-excerpt">Let&#8217;s be honest here, there are no original designs in china. They copied it from somewhere else. Your average chinese&hellip;</span>&rdquo; <span class="comment-date">Jul 1, 00:57</span></div></li></ul></section><section id="twitter-timeline-profile-3" class="widget widget_twitter-timeline-profile"><div class="twitter-timeline-profile"><a class="twitter-timeline" data-lang="en" data-height="600" href="https://twitter.com/rtlsdrblog?ref_src=twsrc%5Etfw">Tweets by rtlsdrblog</a></div></section><section id="categories-2" class="widget widget_categories"><h3 class="title">Categories</h3><form action="https://www.rtl-sdr.com" method="get"><label class="screen-reader-text" for="cat">Categories</label><select name='cat' id='cat' class='postform'>
+<option value='-1'>Select Category</option>
+<option class="level-0" value="2">Airband&nbsp;&nbsp;(202)</option>
+<option class="level-0" value="735">Airspy&nbsp;&nbsp;(211)</option>
+<option class="level-0" value="104">Amateur Radio&nbsp;&nbsp;(264)</option>
+<option class="level-0" value="1380">Antennas&nbsp;&nbsp;(194)</option>
+<option class="level-0" value="229">Applications&nbsp;&nbsp;(1,304)</option>
+<option class="level-0" value="1538">bladeRF&nbsp;&nbsp;(19)</option>
+<option class="level-0" value="35">Broadcast Radio&nbsp;&nbsp;(82)</option>
+<option class="level-0" value="2027">CaribouLite&nbsp;&nbsp;(2)</option>
+<option class="level-0" value="21">Digital Signals&nbsp;&nbsp;(385)</option>
+<option class="level-0" value="133">Featured Article&nbsp;&nbsp;(24)</option>
+<option class="level-0" value="1473">FL2K-SDR&nbsp;&nbsp;(9)</option>
+<option class="level-0" value="2168">Flipper Zero&nbsp;&nbsp;(2)</option>
+<option class="level-0" value="336">HackRF&nbsp;&nbsp;(185)</option>
+<option class="level-0" value="62">HF&nbsp;&nbsp;(247)</option>
+<option class="level-0" value="1535">KerberosSDR&nbsp;&nbsp;(44)</option>
+<option class="level-0" value="1407">KiwiSDR&nbsp;&nbsp;(16)</option>
+<option class="level-0" value="1958">KrakenSDR&nbsp;&nbsp;(22)</option>
+<option class="level-0" value="1013">LimeSDR&nbsp;&nbsp;(70)</option>
+<option class="level-0" value="103">Marine&nbsp;&nbsp;(34)</option>
+<option class="level-0" value="29">Mobile&nbsp;&nbsp;(54)</option>
+<option class="level-0" value="1692">NanoVNA&nbsp;&nbsp;(15)</option>
+<option class="level-0" value="20">News&nbsp;&nbsp;(314)</option>
+<option class="level-0" value="84">Other&nbsp;&nbsp;(286)</option>
+<option class="level-0" value="1280">PlutoSDR&nbsp;&nbsp;(54)</option>
+<option class="level-0" value="198">Radio Astronomy&nbsp;&nbsp;(97)</option>
+<option class="level-0" value="821">Reviews&nbsp;&nbsp;(55)</option>
+<option class="level-0" value="3">RTL-SDR&nbsp;&nbsp;(2,031)</option>
+<option class="level-0" value="50">Satellite&nbsp;&nbsp;(402)</option>
+<option class="level-0" value="787">SDRplay&nbsp;&nbsp;(165)</option>
+<option class="level-0" value="416">Security&nbsp;&nbsp;(206)</option>
+<option class="level-0" value="1714">TangerineSDR&nbsp;&nbsp;(3)</option>
+<option class="level-0" value="1374">Transceivers&nbsp;&nbsp;(4)</option>
+<option class="level-0" value="1867">TTGO&nbsp;&nbsp;(2)</option>
+<option class="level-0" value="4">Tutorial&nbsp;&nbsp;(72)</option>
+</select>
+</form>
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+	var dropdown = document.getElementById( "cat" );
+	function onCatChange() {
+		if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
+			dropdown.parentNode.submit();
+		}
+	}
+	dropdown.onchange = onCatChange;
+})();
+/* ]]> */
+</script>
+</section><section id="archives-3" class="widget widget_archive"><h3 class="title">Archives</h3> <label class="screen-reader-text" for="archives-dropdown-3">Archives</label>
+<select id="archives-dropdown-3" name="archive-dropdown">
+<option value="">Select Month</option>
+<option value='https://www.rtl-sdr.com/2023/07/'> July 2023 </option>
+<option value='https://www.rtl-sdr.com/2023/06/'> June 2023 </option>
+<option value='https://www.rtl-sdr.com/2023/05/'> May 2023 </option>
+<option value='https://www.rtl-sdr.com/2023/04/'> April 2023 </option>
+<option value='https://www.rtl-sdr.com/2023/03/'> March 2023 </option>
+<option value='https://www.rtl-sdr.com/2023/02/'> February 2023 </option>
+<option value='https://www.rtl-sdr.com/2023/01/'> January 2023 </option>
+<option value='https://www.rtl-sdr.com/2022/12/'> December 2022 </option>
+<option value='https://www.rtl-sdr.com/2022/11/'> November 2022 </option>
+<option value='https://www.rtl-sdr.com/2022/10/'> October 2022 </option>
+<option value='https://www.rtl-sdr.com/2022/09/'> September 2022 </option>
+<option value='https://www.rtl-sdr.com/2022/08/'> August 2022 </option>
+<option value='https://www.rtl-sdr.com/2022/07/'> July 2022 </option>
+<option value='https://www.rtl-sdr.com/2022/06/'> June 2022 </option>
+<option value='https://www.rtl-sdr.com/2022/05/'> May 2022 </option>
+<option value='https://www.rtl-sdr.com/2022/04/'> April 2022 </option>
+<option value='https://www.rtl-sdr.com/2022/03/'> March 2022 </option>
+<option value='https://www.rtl-sdr.com/2022/02/'> February 2022 </option>
+<option value='https://www.rtl-sdr.com/2022/01/'> January 2022 </option>
+<option value='https://www.rtl-sdr.com/2021/12/'> December 2021 </option>
+<option value='https://www.rtl-sdr.com/2021/11/'> November 2021 </option>
+<option value='https://www.rtl-sdr.com/2021/10/'> October 2021 </option>
+<option value='https://www.rtl-sdr.com/2021/09/'> September 2021 </option>
+<option value='https://www.rtl-sdr.com/2021/08/'> August 2021 </option>
+<option value='https://www.rtl-sdr.com/2021/07/'> July 2021 </option>
+<option value='https://www.rtl-sdr.com/2021/06/'> June 2021 </option>
+<option value='https://www.rtl-sdr.com/2021/05/'> May 2021 </option>
+<option value='https://www.rtl-sdr.com/2021/04/'> April 2021 </option>
+<option value='https://www.rtl-sdr.com/2021/03/'> March 2021 </option>
+<option value='https://www.rtl-sdr.com/2021/02/'> February 2021 </option>
+<option value='https://www.rtl-sdr.com/2021/01/'> January 2021 </option>
+<option value='https://www.rtl-sdr.com/2020/12/'> December 2020 </option>
+<option value='https://www.rtl-sdr.com/2020/11/'> November 2020 </option>
+<option value='https://www.rtl-sdr.com/2020/10/'> October 2020 </option>
+<option value='https://www.rtl-sdr.com/2020/09/'> September 2020 </option>
+<option value='https://www.rtl-sdr.com/2020/08/'> August 2020 </option>
+<option value='https://www.rtl-sdr.com/2020/07/'> July 2020 </option>
+<option value='https://www.rtl-sdr.com/2020/06/'> June 2020 </option>
+<option value='https://www.rtl-sdr.com/2020/05/'> May 2020 </option>
+<option value='https://www.rtl-sdr.com/2020/04/'> April 2020 </option>
+<option value='https://www.rtl-sdr.com/2020/03/'> March 2020 </option>
+<option value='https://www.rtl-sdr.com/2020/02/'> February 2020 </option>
+<option value='https://www.rtl-sdr.com/2020/01/'> January 2020 </option>
+<option value='https://www.rtl-sdr.com/2019/12/'> December 2019 </option>
+<option value='https://www.rtl-sdr.com/2019/11/'> November 2019 </option>
+<option value='https://www.rtl-sdr.com/2019/10/'> October 2019 </option>
+<option value='https://www.rtl-sdr.com/2019/09/'> September 2019 </option>
+<option value='https://www.rtl-sdr.com/2019/08/'> August 2019 </option>
+<option value='https://www.rtl-sdr.com/2019/07/'> July 2019 </option>
+<option value='https://www.rtl-sdr.com/2019/06/'> June 2019 </option>
+<option value='https://www.rtl-sdr.com/2019/05/'> May 2019 </option>
+<option value='https://www.rtl-sdr.com/2019/04/'> April 2019 </option>
+<option value='https://www.rtl-sdr.com/2019/03/'> March 2019 </option>
+<option value='https://www.rtl-sdr.com/2019/02/'> February 2019 </option>
+<option value='https://www.rtl-sdr.com/2019/01/'> January 2019 </option>
+<option value='https://www.rtl-sdr.com/2018/12/'> December 2018 </option>
+<option value='https://www.rtl-sdr.com/2018/11/'> November 2018 </option>
+<option value='https://www.rtl-sdr.com/2018/10/'> October 2018 </option>
+<option value='https://www.rtl-sdr.com/2018/09/'> September 2018 </option>
+<option value='https://www.rtl-sdr.com/2018/08/'> August 2018 </option>
+<option value='https://www.rtl-sdr.com/2018/07/'> July 2018 </option>
+<option value='https://www.rtl-sdr.com/2018/06/'> June 2018 </option>
+<option value='https://www.rtl-sdr.com/2018/05/'> May 2018 </option>
+<option value='https://www.rtl-sdr.com/2018/04/'> April 2018 </option>
+<option value='https://www.rtl-sdr.com/2018/03/'> March 2018 </option>
+<option value='https://www.rtl-sdr.com/2018/02/'> February 2018 </option>
+<option value='https://www.rtl-sdr.com/2018/01/'> January 2018 </option>
+<option value='https://www.rtl-sdr.com/2017/12/'> December 2017 </option>
+<option value='https://www.rtl-sdr.com/2017/11/'> November 2017 </option>
+<option value='https://www.rtl-sdr.com/2017/10/'> October 2017 </option>
+<option value='https://www.rtl-sdr.com/2017/09/'> September 2017 </option>
+<option value='https://www.rtl-sdr.com/2017/08/'> August 2017 </option>
+<option value='https://www.rtl-sdr.com/2017/07/'> July 2017 </option>
+<option value='https://www.rtl-sdr.com/2017/06/'> June 2017 </option>
+<option value='https://www.rtl-sdr.com/2017/05/'> May 2017 </option>
+<option value='https://www.rtl-sdr.com/2017/04/'> April 2017 </option>
+<option value='https://www.rtl-sdr.com/2017/03/'> March 2017 </option>
+<option value='https://www.rtl-sdr.com/2017/02/'> February 2017 </option>
+<option value='https://www.rtl-sdr.com/2017/01/'> January 2017 </option>
+<option value='https://www.rtl-sdr.com/2016/12/'> December 2016 </option>
+<option value='https://www.rtl-sdr.com/2016/11/'> November 2016 </option>
+<option value='https://www.rtl-sdr.com/2016/10/'> October 2016 </option>
+<option value='https://www.rtl-sdr.com/2016/09/'> September 2016 </option>
+<option value='https://www.rtl-sdr.com/2016/08/'> August 2016 </option>
+<option value='https://www.rtl-sdr.com/2016/07/'> July 2016 </option>
+<option value='https://www.rtl-sdr.com/2016/06/'> June 2016 </option>
+<option value='https://www.rtl-sdr.com/2016/05/'> May 2016 </option>
+<option value='https://www.rtl-sdr.com/2016/04/'> April 2016 </option>
+<option value='https://www.rtl-sdr.com/2016/03/'> March 2016 </option>
+<option value='https://www.rtl-sdr.com/2016/02/'> February 2016 </option>
+<option value='https://www.rtl-sdr.com/2016/01/'> January 2016 </option>
+<option value='https://www.rtl-sdr.com/2015/12/'> December 2015 </option>
+<option value='https://www.rtl-sdr.com/2015/11/'> November 2015 </option>
+<option value='https://www.rtl-sdr.com/2015/10/'> October 2015 </option>
+<option value='https://www.rtl-sdr.com/2015/09/'> September 2015 </option>
+<option value='https://www.rtl-sdr.com/2015/08/'> August 2015 </option>
+<option value='https://www.rtl-sdr.com/2015/07/'> July 2015 </option>
+<option value='https://www.rtl-sdr.com/2015/06/'> June 2015 </option>
+<option value='https://www.rtl-sdr.com/2015/05/'> May 2015 </option>
+<option value='https://www.rtl-sdr.com/2015/04/'> April 2015 </option>
+<option value='https://www.rtl-sdr.com/2015/03/'> March 2015 </option>
+<option value='https://www.rtl-sdr.com/2015/02/'> February 2015 </option>
+<option value='https://www.rtl-sdr.com/2015/01/'> January 2015 </option>
+<option value='https://www.rtl-sdr.com/2014/12/'> December 2014 </option>
+<option value='https://www.rtl-sdr.com/2014/11/'> November 2014 </option>
+<option value='https://www.rtl-sdr.com/2014/10/'> October 2014 </option>
+<option value='https://www.rtl-sdr.com/2014/09/'> September 2014 </option>
+<option value='https://www.rtl-sdr.com/2014/08/'> August 2014 </option>
+<option value='https://www.rtl-sdr.com/2014/07/'> July 2014 </option>
+<option value='https://www.rtl-sdr.com/2014/06/'> June 2014 </option>
+<option value='https://www.rtl-sdr.com/2014/05/'> May 2014 </option>
+<option value='https://www.rtl-sdr.com/2014/04/'> April 2014 </option>
+<option value='https://www.rtl-sdr.com/2014/03/'> March 2014 </option>
+<option value='https://www.rtl-sdr.com/2014/02/'> February 2014 </option>
+<option value='https://www.rtl-sdr.com/2014/01/'> January 2014 </option>
+<option value='https://www.rtl-sdr.com/2013/12/'> December 2013 </option>
+<option value='https://www.rtl-sdr.com/2013/11/'> November 2013 </option>
+<option value='https://www.rtl-sdr.com/2013/10/'> October 2013 </option>
+<option value='https://www.rtl-sdr.com/2013/09/'> September 2013 </option>
+<option value='https://www.rtl-sdr.com/2013/08/'> August 2013 </option>
+<option value='https://www.rtl-sdr.com/2013/07/'> July 2013 </option>
+<option value='https://www.rtl-sdr.com/2013/06/'> June 2013 </option>
+<option value='https://www.rtl-sdr.com/2013/05/'> May 2013 </option>
+<option value='https://www.rtl-sdr.com/2013/04/'> April 2013 </option>
+</select>
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+	var dropdown = document.getElementById( "archives-dropdown-3" );
+	function onSelectChange() {
+		if ( dropdown.options[ dropdown.selectedIndex ].value !== '' ) {
+			document.location.href = this.options[ this.selectedIndex ].value;
+		}
+	}
+	dropdown.onchange = onSelectChange;
+})();
+/* ]]> */
+</script>
+</section><section id="text-21" class="widget widget_text"> <div class="textwidget"><a href="https://www.rtl-sdr.com/archives/" target="_blank" rel="noopener">Full Archives List</a></div>
+</section><section id="tag_cloud-3" class="widget widget_tag_cloud"><h3 class="title">Tags</h3><div class="tagcloud"><a href="https://www.rtl-sdr.com/tag/ads-b/" class="tag-cloud-link tag-link-83 tag-link-position-1" style="font-size: 13.569060773481pt;" aria-label="ads-b (156 items)">ads-b</a>
+<a href="https://www.rtl-sdr.com/tag/airspy/" class="tag-cloud-link tag-link-485 tag-link-position-2" style="font-size: 14.033149171271pt;" aria-label="airspy (181 items)">airspy</a>
+<a href="https://www.rtl-sdr.com/tag/ais/" class="tag-cloud-link tag-link-106 tag-link-position-3" style="font-size: 8.3867403314917pt;" aria-label="AIS (33 items)">AIS</a>
+<a href="https://www.rtl-sdr.com/tag/amateur-radio-2/" class="tag-cloud-link tag-link-114 tag-link-position-4" style="font-size: 10.243093922652pt;" aria-label="amateur radio (58 items)">amateur radio</a>
+<a href="https://www.rtl-sdr.com/tag/android/" class="tag-cloud-link tag-link-32 tag-link-position-5" style="font-size: 9.5469613259669pt;" aria-label="android (47 items)">android</a>
+<a href="https://www.rtl-sdr.com/tag/antenna/" class="tag-cloud-link tag-link-66 tag-link-position-6" style="font-size: 8.7734806629834pt;" aria-label="antenna (37 items)">antenna</a>
+<a href="https://www.rtl-sdr.com/tag/apt/" class="tag-cloud-link tag-link-138 tag-link-position-7" style="font-size: 8.6961325966851pt;" aria-label="APT (36 items)">APT</a>
+<a href="https://www.rtl-sdr.com/tag/automatic-dependent-surveillance-broadcast/" class="tag-cloud-link tag-link-675 tag-link-position-8" style="font-size: 12.331491712707pt;" aria-label="Automatic dependent surveillance broadcast (109 items)">Automatic dependent surveillance broadcast</a>
+<a href="https://www.rtl-sdr.com/tag/bladerf/" class="tag-cloud-link tag-link-217 tag-link-position-9" style="font-size: 8pt;" aria-label="bladerf (29 items)">bladerf</a>
+<a href="https://www.rtl-sdr.com/tag/dab/" class="tag-cloud-link tag-link-117 tag-link-position-10" style="font-size: 8.3867403314917pt;" aria-label="DAB (33 items)">DAB</a>
+<a href="https://www.rtl-sdr.com/tag/direction-finding/" class="tag-cloud-link tag-link-930 tag-link-position-11" style="font-size: 8.9281767955801pt;" aria-label="direction finding (39 items)">direction finding</a>
+<a href="https://www.rtl-sdr.com/tag/dsd/" class="tag-cloud-link tag-link-23 tag-link-position-12" style="font-size: 8pt;" aria-label="dsd (29 items)">dsd</a>
+<a href="https://www.rtl-sdr.com/tag/e4000/" class="tag-cloud-link tag-link-45 tag-link-position-13" style="font-size: 8.0773480662983pt;" aria-label="E4000 (30 items)">E4000</a>
+<a href="https://www.rtl-sdr.com/tag/gnu-radio/" class="tag-cloud-link tag-link-150 tag-link-position-14" style="font-size: 10.939226519337pt;" aria-label="gnu radio (72 items)">gnu radio</a>
+<a href="https://www.rtl-sdr.com/tag/goes/" class="tag-cloud-link tag-link-383 tag-link-position-15" style="font-size: 8.8508287292818pt;" aria-label="GOES (38 items)">GOES</a>
+<a href="https://www.rtl-sdr.com/tag/gps/" class="tag-cloud-link tag-link-387 tag-link-position-16" style="font-size: 8.6187845303867pt;" aria-label="GPS (35 items)">GPS</a>
+<a href="https://www.rtl-sdr.com/tag/hackrf/" class="tag-cloud-link tag-link-186 tag-link-position-17" style="font-size: 13.955801104972pt;" aria-label="hackrf (178 items)">hackrf</a>
+<a href="https://www.rtl-sdr.com/tag/hf/" class="tag-cloud-link tag-link-1169 tag-link-position-18" style="font-size: 13.259668508287pt;" aria-label="HF (143 items)">HF</a>
+<a href="https://www.rtl-sdr.com/tag/hydrogen-line/" class="tag-cloud-link tag-link-195 tag-link-position-19" style="font-size: 8pt;" aria-label="hydrogen line (29 items)">hydrogen line</a>
+<a href="https://www.rtl-sdr.com/tag/inmarsat/" class="tag-cloud-link tag-link-870 tag-link-position-20" style="font-size: 9.4696132596685pt;" aria-label="inmarsat (46 items)">inmarsat</a>
+<a href="https://www.rtl-sdr.com/tag/kerberossdr/" class="tag-cloud-link tag-link-1536 tag-link-position-21" style="font-size: 8.6187845303867pt;" aria-label="kerberossdr (35 items)">kerberossdr</a>
+<a href="https://www.rtl-sdr.com/tag/l-band/" class="tag-cloud-link tag-link-902 tag-link-position-22" style="font-size: 10.088397790055pt;" aria-label="l-band (55 items)">l-band</a>
+<a href="https://www.rtl-sdr.com/tag/limesdr/" class="tag-cloud-link tag-link-994 tag-link-position-23" style="font-size: 10.861878453039pt;" aria-label="limesdr (70 items)">limesdr</a>
+<a href="https://www.rtl-sdr.com/tag/lna/" class="tag-cloud-link tag-link-87 tag-link-position-24" style="font-size: 8.6961325966851pt;" aria-label="LNA (36 items)">LNA</a>
+<a href="https://www.rtl-sdr.com/tag/noaa/" class="tag-cloud-link tag-link-137 tag-link-position-25" style="font-size: 11.24861878453pt;" aria-label="NOAA (78 items)">NOAA</a>
+<a href="https://www.rtl-sdr.com/tag/outernet/" class="tag-cloud-link tag-link-852 tag-link-position-26" style="font-size: 8.8508287292818pt;" aria-label="outernet (38 items)">outernet</a>
+<a href="https://www.rtl-sdr.com/tag/p25/" class="tag-cloud-link tag-link-27 tag-link-position-27" style="font-size: 8.7734806629834pt;" aria-label="P25 (37 items)">P25</a>
+<a href="https://www.rtl-sdr.com/tag/passive-radar/" class="tag-cloud-link tag-link-438 tag-link-position-28" style="font-size: 8.0773480662983pt;" aria-label="passive radar (30 items)">passive radar</a>
+<a href="https://www.rtl-sdr.com/tag/plutosdr/" class="tag-cloud-link tag-link-1181 tag-link-position-29" style="font-size: 9.8563535911602pt;" aria-label="plutosdr (52 items)">plutosdr</a>
+<a href="https://www.rtl-sdr.com/tag/r820t/" class="tag-cloud-link tag-link-44 tag-link-position-30" style="font-size: 8.8508287292818pt;" aria-label="R820T (38 items)">R820T</a>
+<a href="https://www.rtl-sdr.com/tag/radio-astronomy/" class="tag-cloud-link tag-link-194 tag-link-position-31" style="font-size: 11.171270718232pt;" aria-label="radio astronomy (77 items)">radio astronomy</a>
+<a href="https://www.rtl-sdr.com/tag/raspberry-pi/" class="tag-cloud-link tag-link-134 tag-link-position-32" style="font-size: 11.24861878453pt;" aria-label="raspberry pi (78 items)">raspberry pi</a>
+<a href="https://www.rtl-sdr.com/tag/reverse-engineering/" class="tag-cloud-link tag-link-464 tag-link-position-33" style="font-size: 10.552486187845pt;" aria-label="reverse engineering (64 items)">reverse engineering</a>
+<a href="https://www.rtl-sdr.com/tag/rtl-sdr-2/" class="tag-cloud-link tag-link-9 tag-link-position-34" style="font-size: 22pt;" aria-label="rtl-sdr (1,964 items)">rtl-sdr</a>
+<a href="https://www.rtl-sdr.com/tag/rtl2832/" class="tag-cloud-link tag-link-257 tag-link-position-35" style="font-size: 21.613259668508pt;" aria-label="rtl2832 (1,731 items)">rtl2832</a>
+<a href="https://www.rtl-sdr.com/tag/rtl2832u/" class="tag-cloud-link tag-link-113 tag-link-position-36" style="font-size: 21.845303867403pt;" aria-label="rtl2832u (1,877 items)">rtl2832u</a>
+<a href="https://www.rtl-sdr.com/tag/satellite-2/" class="tag-cloud-link tag-link-124 tag-link-position-37" style="font-size: 14.651933701657pt;" aria-label="satellite (216 items)">satellite</a>
+<a href="https://www.rtl-sdr.com/tag/sdr/" class="tag-cloud-link tag-link-25 tag-link-position-38" style="font-size: 13.259668508287pt;" aria-label="sdr# (143 items)">sdr#</a>
+<a href="https://www.rtl-sdr.com/tag/sdrplay/" class="tag-cloud-link tag-link-768 tag-link-position-39" style="font-size: 13.569060773481pt;" aria-label="sdrplay (158 items)">sdrplay</a>
+<a href="https://www.rtl-sdr.com/tag/sdrsharp/" class="tag-cloud-link tag-link-53 tag-link-position-40" style="font-size: 10.939226519337pt;" aria-label="sdrsharp (72 items)">sdrsharp</a>
+<a href="https://www.rtl-sdr.com/tag/security/" class="tag-cloud-link tag-link-375 tag-link-position-41" style="font-size: 11.480662983425pt;" aria-label="security (84 items)">security</a>
+<a href="https://www.rtl-sdr.com/tag/software-defined-radio/" class="tag-cloud-link tag-link-10 tag-link-position-42" style="font-size: 11.171270718232pt;" aria-label="Software-defined radio (76 items)">Software-defined radio</a>
+<a href="https://www.rtl-sdr.com/tag/upconverter/" class="tag-cloud-link tag-link-63 tag-link-position-43" style="font-size: 10.397790055249pt;" aria-label="upconverter (60 items)">upconverter</a>
+<a href="https://www.rtl-sdr.com/tag/usrp/" class="tag-cloud-link tag-link-401 tag-link-position-44" style="font-size: 8pt;" aria-label="usrp (29 items)">usrp</a>
+<a href="https://www.rtl-sdr.com/tag/weather-satellite/" class="tag-cloud-link tag-link-724 tag-link-position-45" style="font-size: 11.558011049724pt;" aria-label="weather satellite (87 items)">weather satellite</a></div>
+</section><section id="rss-2" class="widget widget_rss"><h3 class="title"><a class="rsswidget rss-widget-feed" href="https://www.rtl-sdr.com/forum/feed.php"><img class="rss-widget-icon" style="border:0" width="14" height="14" src="https://www.rtl-sdr.com/wp-includes/images/rss.png" alt="RSS" loading="lazy" /></a> <a class="rsswidget rss-widget-title" href="https://www.rtl-sdr.com/forum/index.php">Latest Forum Posts</a></h3><ul><li><a class='rsswidget' href='https://www.rtl-sdr.com/forum/viewtopic.php?p=19156#p19156'>Troubleshooting Help • Re: SDR# 1913 problems</a></li><li><a class='rsswidget' href='https://www.rtl-sdr.com/forum/viewtopic.php?p=19155#p19155'>KerberosSDR • The KerberosSDR forum will be closed soon</a></li><li><a class='rsswidget' href='https://www.rtl-sdr.com/forum/viewtopic.php?p=19154#p19154'>KerberosSDR • Re: Compass issues Chrome v90 (DOA)</a></li><li><a class='rsswidget' href='https://www.rtl-sdr.com/forum/viewtopic.php?p=19153#p19153'>Troubleshooting Help • Re: SDR# 1913 problems</a></li><li><a class='rsswidget' href='https://www.rtl-sdr.com/forum/viewtopic.php?p=19152#p19152'>KerberosSDR • Re: What do the samples look like?</a></li></ul></section><section id="text-8" class="widget widget_text"><h3 class="title">Submit a Story/Contact</h3> <div class="textwidget"><a href="https://www.rtl-sdr.com/submit-a-storycontact/">Submit a Story/Contact</a></div>
+</section><section id="text-13" class="widget widget_text"> <div class="textwidget"><center><a href="https://www.amazon.com/gp/product/B00KCDF1QI/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B00KCDF1QI&amp;linkCode=as2&amp;tag=book0674-20&amp;linkId=RSP53QLYXP4IS32X" target="_blank" rel="noopener"><img class="wp-image-4347 size-full" src="//rtl-sdr.com/wp-content/uploads/2013/04/The-Hobbyists-Guide-PSD-_-MODDED_THUMB1.png" /></a></center></div>
+</section> </aside>
+
+<footer id="footer">
+<div id="footer-widgets" role="complementary"><section id="meta-2" class="widget widget_meta"><h3 class="title">Meta</h3>
+<ul>
+<li><a href="https://www.rtl-sdr.com/thelogin/?action=register">Register</a></li> <li><a href="https://www.rtl-sdr.com/thelogin/">Log in</a></li>
+<li><a href="https://www.rtl-sdr.com/feed/">Entries feed</a></li>
+<li><a href="https://www.rtl-sdr.com/comments/feed/">Comments feed</a></li>
+<li><a href="https://wordpress.org/">WordPress.org</a></li>
+</ul>
+</section><section id="text-7" class="widget widget_text"><h3 class="title">What is RTL-SDR</h3> <div class="textwidget">The RTL-SDR is an ultra cheap software defined radio based on DVB-T TV tuners with RTL2832U chips. The RTL-SDR can be used as a wide band radio scanner. It may interest ham radio enthusiasts, hardware hackers, tinkerers and anyone interested in RF.</div>
+</section></div>
+<nav id="footer-nav" role="navigation"><ul id="menu-footer" class="menu"><li id="menu-item-22446" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-22446"><a rel="privacy-policy" href="https://www.rtl-sdr.com/privacy-policy/">Privacy Policy</a></li>
+</ul></nav> </footer>
+
+</div>
+
+</div>
+
+<img alt="Cleantalk Pixel" id="apbct_pixel" style="display: none;" src="https://moderate6.cleantalk.org/pixel/dda145cac9b52019c1a31ecc78b57ddc.gif"><a nofollow noindex href='javascript:void(0);' id='wpdUserContentInfoAnchor' style='display:none;' rel='#wpdUserContentInfo' data-wpd-lity>wpDiscuz</a><div id='wpdUserContentInfo' style='overflow:auto;background:#FDFDF6;padding:20px;width:600px;max-width:100%;border-radius:6px;' class='lity-hide'></div><div id='wpd-bubble-wrapper'><span id='wpd-bubble-all-comments-count' style='display:none;' title='0'>0</span><div id='wpd-bubble-count'><svg xmlns='https://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path class='wpd-bubble-count-first' d='M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z' /><path class='wpd-bubble-count-second' d='M0 0h24v24H0z' /></svg><span class='wpd-new-comments-count'>0</span></div><div id='wpd-bubble'><svg xmlns='https://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path class='wpd-bubble-plus-first' d='M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z' /><path class='wpd-bubble-plus-second' d='M0 0h24v24H0z' /></svg><div id='wpd-bubble-add-message'>Would love your thoughts, please comment.<span id='wpd-bubble-add-message-close'><a href='#'>x</a></span></div></div><div id='wpd-bubble-notification'><svg xmlns='https://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path class='wpd-bubble-notification-first' d='M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z' /><path class='wpd-bubble-notification-second' d='M0 0h24v24H0z' /></svg><div id='wpd-bubble-notification-message'><div id='wpd-bubble-author'><div><span id='wpd-bubble-author-avatar'></span><span id='wpd-bubble-author-name'></span><span id='wpd-bubble-comment-date'>(<span class='wpd-bubble-spans'></span>)</span></div><span id='wpd-bubble-comment-close'><a href='#'>x</a></span></div><div id='wpd-bubble-comment'><span id='wpd-bubble-comment-text'></span><span id='wpd-bubble-comment-reply-link'>| <a href='#'>Reply</a></span></div></div></div></div><div id='wpd-editor-source-code-wrapper-bg'></div><div id='wpd-editor-source-code-wrapper'><textarea id='wpd-editor-source-code'></textarea><button id='wpd-insert-source-code'>Insert</button><input type='hidden' id='wpd-editor-uid' /></div> <div id="wpdem-sticker-contaniner-main" style="display: none;">
+<div class="wpdem-sticker-body" style=""><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/smile.svg' alt=':wpds_smile:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/grin.svg' alt=':wpds_grin:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/wink.svg' alt=':wpds_wink:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/mrgreen.svg' alt=':wpds_mrgreen:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/neutral.svg' alt=':wpds_neutral:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/twisted.svg' alt=':wpds_twisted:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/arrow.svg' alt=':wpds_arrow:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/shock.svg' alt=':wpds_shock:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/unamused.svg' alt=':wpds_unamused:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/cool.svg' alt=':wpds_cool:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/evil.svg' alt=':wpds_evil:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/oops.svg' alt=':wpds_oops:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/razz.svg' alt=':wpds_razz:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/roll.svg' alt=':wpds_roll:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/cry.svg' alt=':wpds_cry:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/eek.svg' alt=':wpds_eek:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/lol.svg' alt=':wpds_lol:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/mad.svg' alt=':wpds_mad:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/sad.svg' alt=':wpds_sad:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/exclamation.svg' alt=':wpds_exclamation:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/question.svg' alt=':wpds_question:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/idea.svg' alt=':wpds_idea:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/hmm.svg' alt=':wpds_hmm:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/beg.svg' alt=':wpds_beg:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/whew.svg' alt=':wpds_whew:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/chuckle.svg' alt=':wpds_chuckle:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/silly.svg' alt=':wpds_silly:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/envy.svg' alt=':wpds_envy:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /><img src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/emoticons/img/shutmouth.svg' alt=':wpds_shutmouth:' class='wpdem-editor-sticker' style='width:40px;max-width:40px;' /></div>
+</div>
+<script>
+	MBP.scaleFix();
+	MBP.hideUrlBar();
+	</script>
+<!--[if (lt IE 9) & (!IEMobile)]><script type="text/javascript" src="https://www.rtl-sdr.com/wp-content/themes/blaskan2p5/js/libs/selectivizr.1.0.3b.js"></script><script type="text/javascript" src="https://www.rtl-sdr.com/wp-content/themes/blaskan2p5/js/libs/respond.min.js"></script><![endif]--> <script type="text/javascript">
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+<script type="text/javascript" data-cfasync="false">var bU="https://www.rtl-sdr.com/wp-content/plugins/wp-youtube-lyte/lyte/";var mOs=null;style = document.createElement("style");style.type = "text/css";rules = document.createTextNode(".lyte-wrapper-audio div, .lyte-wrapper div {margin:0px; overflow:hidden;} .lyte,.lyMe{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;background-color:#777;} .fourthree .lyMe, .fourthree .lyte {padding-bottom:75%;} .lidget{margin-bottom:5px;} .lidget .lyte, .widget .lyMe {padding-bottom:0!important;height:100%!important;} .lyte-wrapper-audio .lyte{height:38px!important;overflow:hidden;padding:0!important} .lyMe iframe, .lyte iframe,.lyte .pL{position:absolute !important;top:0;left:0;width:100%;height:100%!important;background:no-repeat scroll center #000;background-size:cover;cursor:pointer} .tC{left:0;position:absolute;top:0;width:100%} .tC{background-image:linear-gradient(to bottom,rgba(0,0,0,0.6),rgba(0,0,0,0))} .tT{color:#FFF;font-family:Roboto,sans-serif;font-size:16px;height:auto;text-align:left;padding:5px 10px 50px 10px} .play{background:no-repeat scroll 0 0 transparent;width:88px;height:63px;position:absolute;left:43%;left:calc(50% - 44px);left:-webkit-calc(50% - 44px);top:38%;top:calc(50% - 31px);top:-webkit-calc(50% - 31px);} .widget .play {top:30%;top:calc(45% - 31px);top:-webkit-calc(45% - 31px);transform:scale(0.6);-webkit-transform:scale(0.6);-ms-transform:scale(0.6);} .lyte:hover .play{background-position:0 -65px;} .lyte-audio .pL{max-height:38px!important} .lyte-audio iframe{height:438px!important} .lyte .ctrl{background:repeat scroll 0 -220px rgba(0,0,0,0.3);width:100%;height:40px;bottom:0px;left:0;position:absolute;} .lyte-wrapper .ctrl{display:none}.Lctrl{background:no-repeat scroll 0 -137px transparent;width:158px;height:40px;bottom:0;left:0;position:absolute} .Rctrl{background:no-repeat scroll -42px -179px transparent;width:117px;height:40px;bottom:0;right:0;position:absolute;padding-right:10px;}.lyte-audio .play{display:none}.lyte-audio .ctrl{background-color:rgba(0,0,0,1)}.lyte .hidden{display:none}");if(style.styleSheet) { style.styleSheet.cssText = rules.nodeValue;} else {style.appendChild(rules);}document.getElementsByTagName("head")[0].appendChild(style);</script><script type="text/javascript" data-cfasync="false" async src="https://www.rtl-sdr.com/wp-content/plugins/wp-youtube-lyte/lyte/lyte-min.js?wyl_version=1.7.22"></script><div class='wpdiscuz-fem-email' style='display: none;'></div><div class='wpdiscuz-fem-email-form' style='display: none;'><span class='wpdiscuz-fem-author'>You are going to send email to <em></em></span><i class='fas fa-times'></i><div class='wpdiscuz_clear'></div><input placeholder='Email Subject' type='text' class='wpdiscuz-fem-subj' value='' /><textarea class='wpdiscuz-fem-msg' placeholder='Enter your message here'></textarea><br /><div class='wpdiscuz-fem-button-align'><button type='button' class='wpdiscuz-fem-send'>Send</button></div><input type='hidden' id='wpdiscuz_fem_email_comment_id' /></div><div class='wpdiscuz-fem-moving' style='display: none;'></div><div class='wpdiscuz-fem-move-form' style='display: none;'><span class='wpdiscuz-fem-author'>Move Comment<br /><em></em></span><i class='fas fa-times'></i><div class='wpdiscuz_clear'></div><div class='wpdiscuz-fem-posts-search'><input type='text' class='wpdiscuz-fem-post' placeholder='Enter post title...' /><div class='wpdiscuz-fem-posts'></div></div><div class='wpdiscuz-fem-button-align'><button type='button' class='wpdiscuz-fem-move'>Move</button></div><input type='hidden' id='wpdiscuz_fem_move_comment_id' /></div><link rel='stylesheet' id='yarppRelatedCss-css' href='https://www.rtl-sdr.com/wp-content/plugins/yet-another-related-posts-plugin/style/related.css?ver=5.30.3' type='text/css' media='all' />
+<script type='text/javascript' id='flying-pages-js-before'>
+window.FPConfig= {
+	delay: 0,
+	ignoreKeywords: ["\/wp-admin","\/wp-login.php","\/cart","\/checkout","add-to-cart","logout","#","?",".png",".jpeg",".jpg",".gif",".svg",".webp"],
+	maxRPS: 3,
+    hoverDelay: 50
+};
+</script>
+<script type='text/javascript' src='https://www.rtl-sdr.com/wp-content/plugins/flying-pages/flying-pages.min.js?ver=2.4.6' id='flying-pages-js' defer></script>
+<script type='text/javascript' src='https://www.rtl-sdr.com/wp-content/plugins/honeypot/includes/js/wpa.js?ver=2.1.4' id='wpascript-js'></script>
+<script type='text/javascript' id='wpascript-js-after'>
+wpa_field_info = {"wpa_field_name":"pwoavy1448","wpa_field_value":965708,"wpa_add_test":"no"}
+</script>
+<script type='text/javascript' src='https://www.rtl-sdr.com/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.7.8.0' id='jquery-blockui-js'></script>
+<script type='text/javascript' id='wc-add-to-cart-js-extra'>
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/www.rtl-sdr.com\/buy-rtl-sdr-dvb-t-dongles\/","is_cart":"","cart_redirect_after_add":"yes"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rtl-sdr.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=7.8.0' id='wc-add-to-cart-js'></script>
+<script type='text/javascript' src='https://www.rtl-sdr.com/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.7.8.0' id='js-cookie-js'></script>
+<script type='text/javascript' id='woocommerce-js-extra'>
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rtl-sdr.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=7.8.0' id='woocommerce-js'></script>
+<script type='text/javascript' id='wp-polls-js-extra'>
+/* <![CDATA[ */
+var pollsL10n = {"ajax_url":"https:\/\/www.rtl-sdr.com\/wp-admin\/admin-ajax.php","text_wait":"Your last request is still being processed. Please wait a while ...","text_valid":"Please choose a valid poll answer.","text_multiple":"Maximum number of choices allowed: ","show_loading":"1","show_fading":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rtl-sdr.com/wp-content/plugins/wp-polls/polls-js.js?ver=2.77.1' id='wp-polls-js'></script>
+<script type='text/javascript' id='wpdiscuz-combo-js-js-extra'>
+/* <![CDATA[ */
+var wpdiscuzAjaxObj = {"wc_hide_replies_text":"Hide Replies","wc_show_replies_text":"View Replies","wc_msg_required_fields":"Please fill out required fields","wc_invalid_field":"Some of field value is invalid","wc_error_empty_text":"please fill out this field to comment","wc_error_url_text":"url is invalid","wc_error_email_text":"email address is invalid","wc_invalid_captcha":"Invalid Captcha Code","wc_login_to_vote":"You Must Be Logged In To Vote","wc_deny_voting_from_same_ip":"You are not allowed to vote for this comment","wc_self_vote":"You cannot vote for your comment","wc_vote_only_one_time":"You've already voted for this comment","wc_voting_error":"Voting Error","wc_comment_edit_not_possible":"Sorry, this comment is no longer possible to edit","wc_comment_not_updated":"Sorry, the comment was not updated","wc_comment_not_edited":"You've not made any changes","wc_msg_input_min_length":"Input is too short","wc_msg_input_max_length":"Input is too long","wc_spoiler_title":"Spoiler Title","wc_cannot_rate_again":"You cannot rate again","wc_not_allowed_to_rate":"You're not allowed to rate here","wc_follow_user":"Follow this user","wc_unfollow_user":"Unfollow this user","wc_follow_success":"You started following this comment author","wc_follow_canceled":"You stopped following this comment author.","wc_follow_email_confirm":"Please check your email and confirm the user following request.","wc_follow_email_confirm_fail":"Sorry, we couldn't send confirmation email.","wc_follow_login_to_follow":"Please login to follow users.","wc_follow_impossible":"We are sorry, but you can't follow this user.","wc_follow_not_added":"Following failed. Please try again later.","is_user_logged_in":"","commentListLoadType":"0","commentListUpdateType":"0","commentListUpdateTimer":"60","liveUpdateGuests":"0","wordpressThreadCommentsDepth":"10","wordpressIsPaginate":"1","commentTextMaxLength":"0","replyTextMaxLength":"0","commentTextMinLength":"1","replyTextMinLength":"1","storeCommenterData":"100000","socialLoginAgreementCheckbox":"1","enableFbLogin":"0","fbUseOAuth2":"0","enableFbShare":"0","facebookAppID":"646099090749145","facebookUseOAuth2":"0","enableGoogleLogin":"0","googleClientID":"","googleClientSecret":"","cookiehash":"e7affcf542c4288235d085f2b6ba2dc3","isLoadOnlyParentComments":"0","scrollToComment":"1","commentFormView":"collapsed","enableDropAnimation":"1","isNativeAjaxEnabled":"1","enableBubble":"1","bubbleLiveUpdate":"0","bubbleHintTimeout":"45","bubbleHintHideTimeout":"10","cookieHideBubbleHint":"wpdiscuz_hide_bubble_hint","bubbleShowNewCommentMessage":"1","bubbleLocation":"content_left","firstLoadWithAjax":"0","wc_copied_to_clipboard":"Copied to clipboard!","inlineFeedbackAttractionType":"blink","loadRichEditor":"1","wpDiscuzReCaptchaSK":"6Ld5YNMmAAAAAIqr6jLUYELNp2qB6kvywXCQsvyB","wpDiscuzReCaptchaTheme":"light","wpDiscuzReCaptchaVersion":"3.0","wc_captcha_show_for_guest":"1","wc_captcha_show_for_members":"1","wpDiscuzIsShowOnSubscribeForm":"1","wmuEnabled":"1","wmuInput":"wmu_files","wmuMaxFileCount":"1","wmuMaxFileSize":"2097152","wmuPostMaxSize":"134217728","wmuIsLightbox":"1","wmuMimeTypes":{"jpg":"image\/jpeg","jpeg":"image\/jpeg","jpe":"image\/jpeg","gif":"image\/gif","png":"image\/png","bmp":"image\/bmp","tiff":"image\/tiff","tif":"image\/tiff","ico":"image\/x-icon"},"wmuPhraseConfirmDelete":"Are you sure you want to delete this attachment?","wmuPhraseNotAllowedFile":"Not allowed file type","wmuPhraseMaxFileCount":"Maximum number of uploaded files is 1","wmuPhraseMaxFileSize":"Maximum upload file size is 2MB","wmuPhrasePostMaxSize":"Maximum post size is 128MB","wmuPhraseDoingUpload":"Uploading in progress! Please wait.","msgEmptyFile":"File is empty. Please upload something more substantial. This error could also be caused by uploads being disabled in your php.ini or by post_max_size being defined as smaller than upload_max_filesize in php.ini.","msgPostIdNotExists":"Post ID not exists","msgUploadingNotAllowed":"Sorry, uploading not allowed for this post","msgPermissionDenied":"You do not have sufficient permissions to perform this action","wmuKeyImages":"images","wmuSingleImageWidth":"auto","wmuSingleImageHeight":"200","version":"7.6.1","wc_post_id":"58164","isCookiesEnabled":"1","loadLastCommentId":"0","dataFilterCallbacks":[],"phraseFilters":[],"scrollSize":"32","is_email_field_required":"1","syntaxPackage":"small","syntaxLanguages":["apache","bash","cs","cpp","css","coffeescript","diff","xml","http","ini","json","java","javascript","makefile","markdown","nginx","objectivec","php","perl","properties","python","ruby","sql","shell"],"syntaxWorkerURL":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-syntax-highlighter\/assets\/js\/wpdiscuz-syntax-highligh-worker.js","syntaxCustomSelector":"","primaryColor":"#00B38F","wpdumc_text_posts":"Posts","wpdumc_text_comments":"Comments","wpdumc_is_id_mentioning":"0","wpdumc_displayNicename":"1","wpdumc_is_mobile":"","wpdemStickers":{":wpds_smile:":{"name":":wpds_smile:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/smile.svg"},":wpds_grin:":{"name":":wpds_grin:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/grin.svg"},":wpds_wink:":{"name":":wpds_wink:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/wink.svg"},":wpds_mrgreen:":{"name":":wpds_mrgreen:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/mrgreen.svg"},":wpds_neutral:":{"name":":wpds_neutral:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/neutral.svg"},":wpds_twisted:":{"name":":wpds_twisted:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/twisted.svg"},":wpds_arrow:":{"name":":wpds_arrow:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/arrow.svg"},":wpds_shock:":{"name":":wpds_shock:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/shock.svg"},":wpds_unamused:":{"name":":wpds_unamused:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/unamused.svg"},":wpds_cool:":{"name":":wpds_cool:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/cool.svg"},":wpds_evil:":{"name":":wpds_evil:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/evil.svg"},":wpds_oops:":{"name":":wpds_oops:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/oops.svg"},":wpds_razz:":{"name":":wpds_razz:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/razz.svg"},":wpds_roll:":{"name":":wpds_roll:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/roll.svg"},":wpds_cry:":{"name":":wpds_cry:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/cry.svg"},":wpds_eek:":{"name":":wpds_eek:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/eek.svg"},":wpds_lol:":{"name":":wpds_lol:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/lol.svg"},":wpds_mad:":{"name":":wpds_mad:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/mad.svg"},":wpds_sad:":{"name":":wpds_sad:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/sad.svg"},":wpds_exclamation:":{"name":":wpds_exclamation:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/exclamation.svg"},":wpds_question:":{"name":":wpds_question:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/question.svg"},":wpds_idea:":{"name":":wpds_idea:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/idea.svg"},":wpds_hmm:":{"name":":wpds_hmm:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/hmm.svg"},":wpds_beg:":{"name":":wpds_beg:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/beg.svg"},":wpds_whew:":{"name":":wpds_whew:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/whew.svg"},":wpds_chuckle:":{"name":":wpds_chuckle:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/chuckle.svg"},":wpds_silly:":{"name":":wpds_silly:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/silly.svg"},":wpds_envy:":{"name":":wpds_envy:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/envy.svg"},":wpds_shutmouth:":{"name":":wpds_shutmouth:","path":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz-emoticons\/emoticons\/img\/shutmouth.svg"}},"fem_confirm_approve":"Are you sure you want to set this comment as approved?","fem_confirm_unapprove":"Are you sure you want to set this comment as unapproved?","fem_confirm_trash":"Are you sure you want to set this comment as trashed?","fem_confirm_spam":"Are you sure you want to set this comment as spam?","fem_confirm_blacklist":"Are you sure you want to move this user into blacklist?","fem_confirm_delete":"Are you sure you want to delete this comment?","fem_please_fill":"Please fill out the field","fem_choose_post":"Please choose post","url":"https:\/\/www.rtl-sdr.com\/wp-admin\/admin-ajax.php","customAjaxUrl":"https:\/\/www.rtl-sdr.com\/wp-content\/plugins\/wpdiscuz\/utils\/ajax\/wpdiscuz-ajax.php","bubbleUpdateUrl":"https:\/\/www.rtl-sdr.com\/wp-json\/wpdiscuz\/v1\/update","restNonce":"405759338f","validateNonceForGuests":""};
+var wpdiscuzUCObj = {"msgConfirmDeleteComment":"Are you sure you want to delete this comment?","msgConfirmCancelSubscription":"Are you sure you want to cancel this subscription?","msgConfirmCancelFollow":"Are you sure you want to cancel this follow?","additionalTab":"0"};
+/* ]]> */
+</script>
+<script type='text/javascript' id='wpdiscuz-combo-js-js-before'>
+        var wpdiscuzEditorOptions = {
+        modules: {
+        toolbar: "",
+        counter: {
+        uniqueID: "",
+        commentmaxcount : 0,
+        replymaxcount : 0,
+        commentmincount : 1,
+        replymincount : 1,
+        },
+                mention: {
+        mentionDenotationChars: ["@"],
+        source: function(searchTerm, renderList, mentionChar){
+        wpdiscuzUMCRenderList(searchTerm, renderList, mentionChar);
+        },
+        onSelect(item, insertItem) {
+        wpdUMCInsertItem(item, insertItem);
+        },
+        renderItem(item, searchTerm){
+        return wpdUMCRenderItem(item, searchTerm);
+        },
+        listItemClass: 'wpducm-mention-list-item',
+        mentionContainerClass: 'wpducm-mention-list-container',
+        mentionListClass: 'wpducm-mention-list',
+        minChars: 1,
+        },
+                "emoji-toolbar": true,
+        "emoji-shortname": true,
+                },
+        wc_be_the_first_text: "Be the First to Comment!",
+        wc_comment_join_text: "Join the discussion",
+        theme: 'snow',
+        debug: 'error'
+        };
+        
+</script>
+<script type='text/javascript' src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz/assets/js/wpdiscuz-combo.min.js?ver=7.6.1' id='wpdiscuz-combo-js-js'></script>
+<script type='text/javascript' src='https://www.google.com/recaptcha/api.js?render=6Ld5YNMmAAAAAIqr6jLUYELNp2qB6kvywXCQsvyB&#038;ver=1.0.0' id='wpdiscuz-google-recaptcha-js'></script>
+<script type='text/javascript' src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-syntax-highlighter/assets/js/wpdiscuz-syntax-highlighter.js' id='wpdiscuz-syntax-highlighter-js-js'></script>
+<script type='text/javascript' src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-report-flagging/assets/js/flag.min.js?ver=7.0.11' id='wpdiscuz-flag-js-js'></script>
+<script type='text/javascript' src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/assets/third-party/quill-emoji/quill-emoji.min.js?ver=7.0.14' id='wpdiscuz-smile-js-js'></script>
+<script type='text/javascript' src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-emoticons/assets/js/wpdiscuz-smile.js?ver=7.0.14' id='wpdiscuz-sticker-js-js'></script>
+<script type='text/javascript' id='quill-mention-js-js-extra'>
+/* <![CDATA[ */
+var wpdUCMObj = {"is_rtl":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-user-comment-mentioning/js/third-party/quill-mention/quill.mention.min.js?ver=1.0.0' id='quill-mention-js-js'></script>
+<script type='text/javascript' src='https://www.rtl-sdr.com/wp-content/plugins/wpdiscuz-user-comment-mentioning/js/wpdiscuz-ucm.js?ver=1.0.0' id='wpdumc-script-js'></script>
+<script type='text/javascript' id='social_warfare_script-js-extra'>
+/* <![CDATA[ */
+var socialWarfare = {"addons":["pro"],"post_id":"58164","variables":{"emphasizeIcons":"0","powered_by_toggle":false,"affiliate_link":"https:\/\/warfareplugins.com"},"floatBeforeContent":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.rtl-sdr.com/wp-content/plugins/social-warfare/assets/js/script.min.js?ver=4.4.1' id='social_warfare_script-js'></script>
+<script type='text/javascript' id='twitter-wjs-js-extra'>
+/* <![CDATA[ */
+window.twttr=(function(w){t=w.twttr||{};t._e=[];t.ready=function(f){t._e.push(f);};return t;}(window));
+/* ]]> */
+</script>
+<script type="text/javascript" id="twitter-wjs" async defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script type='text/javascript' src='https://www.rtl-sdr.com/wp-includes/js/comment-reply.min.js?ver=6.2.2' id='comment-reply-js'></script>
+<script defer type='text/javascript' src='https://www.rtl-sdr.com/wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1687760335' id='akismet-frontend-js'></script>
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.rtl-sdr.com/wp-content/plugins/flying-analytics/js/analytics.js','ga');ga('create','UA-40052666-1','auto');ga('send','pageview');</script><script type="text/javascript"> var swp_nonce = "511ee288b2";var swpFloatBeforeContent = false; var swp_ajax_url = "https://www.rtl-sdr.com/wp-admin/admin-ajax.php"; var swp_post_id = "58164";var swpClickTracking = false; swpPinIt={"enabled":false};</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v2cb3a2ab87c5498db5ce7e6608cf55231689030342039" integrity="sha512-DI3rPuZDcpH/mSGyN22erN5QFnhl760f50/te7FTIYxodEF8jJnSFnfnmG/c+osmIQemvUrnBtxnMpNdzvx1/g==" data-cf-beacon='{"rayId":"7e75bfd92bcf0d32","version":"2023.4.0","b":1,"token":"8a02661b91f44fa6ba481010bc03205c","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>

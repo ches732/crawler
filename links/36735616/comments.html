@@ -1,0 +1,426 @@
+<html lang="en" op="item"><head><meta name="referrer" content="origin"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" type="text/css" href="news.css?5H9MtNw5DeqtfAm5Zd9Y">
+        <link rel="shortcut icon" href="favicon.ico">
+        <title>Snakemake – A framework for reproducible data analysis | Hacker News</title></head><body><center><table id="hnmain" border="0" cellpadding="0" cellspacing="0" width="85%" bgcolor="#f6f6ef">
+        <tr><td bgcolor="#ff6600"><table border="0" cellpadding="0" cellspacing="0" width="100%" style="padding:2px"><tr><td style="width:18px;padding-right:4px"><a href="https://news.ycombinator.com"><img src="y18.svg" width="18" height="18" style="border:1px white solid; display:block"></a></td>
+                  <td style="line-height:12pt; height:10px;"><span class="pagetop"><b class="hnname"><a href="news">Hacker News</a></b>
+                            <a href="newest">new</a> | <a href="front">past</a> | <a href="newcomments">comments</a> | <a href="ask">ask</a> | <a href="show">show</a> | <a href="jobs">jobs</a> | <a href="submit">submit</a>            </span></td><td style="text-align:right;padding-right:4px;"><span class="pagetop">
+                              <a href="login?goto=item%3Fid%3D36735616">login</a>
+                          </span></td>
+              </tr></table></td></tr>
+<tr id="pagespace" title="Snakemake – A framework for reproducible data analysis" style="height:10px"></tr><tr><td><table class="fatitem" border="0">
+        <tr class='athing' id='36735616'>
+      <td align="right" valign="top" class="title"><span class="rank"></span></td>      <td valign="top" class="votelinks"><center><a id='up_36735616'href='vote?id=36735616&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center></td><td class="title"><span class="titleline"><a href="https://snakemake.github.io/" rel="noreferrer">Snakemake – A framework for reproducible data analysis</a><span class="sitebit comhead"> (<a href="from?site=snakemake.github.io"><span class="sitestr">snakemake.github.io</span></a>)</span></span></td></tr><tr><td colspan="2"></td><td class="subtext"><span class="subline">
+          <span class="score" id="score_36735616">148 points</span> by <a href="user?id=gjvc" class="hnuser">gjvc</a> <span class="age" title="2023-07-15T11:35:33"><a href="item?id=36735616">11 hours ago</a></span> <span id="unv_36735616"></span> | <a href="hide?id=36735616&amp;goto=item%3Fid%3D36735616">hide</a> | <a href="https://hn.algolia.com/?query=Snakemake%20%E2%80%93%20A%20framework%20for%20reproducible%20data%20analysis&type=story&dateRange=all&sort=byDate&storyText=false&prefix&page=0" class="hnpast">past</a> | <a href="fave?id=36735616&amp;auth=abbbc4c356de2e1c956fcf6501db3810a9915f0b">favorite</a> | <a href="item?id=36735616">34&nbsp;comments</a>        </span>
+              </td></tr>
+            <tr style="height:10px"></tr><tr><td colspan="2"></td><td><form action="comment" method="post"><input type="hidden" name="parent" value="36735616"><input type="hidden" name="goto" value="item?id=36735616"><input type="hidden" name="hmac" value="37ca9ce2aceff22699f331adf7f6cf2acce58b02"><textarea name="text" rows="8" cols="80" wrap="virtual"></textarea><br><br>
+<input type="submit" value="add comment"></form></td></tr>  </table><br><br><table border="0" class='comment-tree'>
+            <tr class='athing comtr' id='36736549'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36736549'href='vote?id=36736549&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=samuell" class="hnuser">samuell</a> <span class="age" title="2023-07-15T13:28:23"><a href="item?id=36736549">9 hours ago</a></span> <span id="unv_36736549"></span>          <span class='navs'>
+             | <a href="#36735919" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36736549" n="6" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">In the (unusually long) introduction of our paper on SciPipe, we did a pretty thorough overview and contrasting of the pros and cons of the top similar tools, including Snakemake, as we basically tried most of them out before realizing they didn&#x27;t at the time solve our problems:<p><a href="https:&#x2F;&#x2F;academic.oup.com&#x2F;gigascience&#x2F;article&#x2F;8&#x2F;5&#x2F;giz044&#x2F;5480570" rel="nofollow noreferrer">https:&#x2F;&#x2F;academic.oup.com&#x2F;gigascience&#x2F;article&#x2F;8&#x2F;5&#x2F;giz044&#x2F;5480...</a><p>(A little background, FWIW: We had extra tough requirements as we were implementing the whole machine learning progress in the pipeline, so needed to combine parameter sweeps for hyperparameter optimization with cross-validation, and none of the tools, at least at the time did meet the needs for dynamic scheduling together with fully modular components.<p>Snakemake and similar tools in our experience are great for situations where you have a defined set of outputs you want to be able to easily reproduce (think, figures for an analysis), but can become harder to reason about when the workflow is highly dynamic and it might be hard to express in terms of file name patterns the desired output files.<p>Nextflow subsequently has implemented the modular components part which we missed (and implemented in SciPipe), but we are still happy with SciPipe as it provides things like an audit log per output file, workflows copileable to binaries and great debugging (because of plain Go), all with a very small codebase without external Go dependencies.)</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36736549&amp;goto=item%3Fid%3D36735616%2336736549">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36737492'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36737492'href='vote?id=36737492&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=krastanov" class="hnuser">krastanov</a> <span class="age" title="2023-07-15T15:08:26"><a href="item?id=36737492">8 hours ago</a></span> <span id="unv_36737492"></span>          <span class='navs'>
+             | <a href="#36736549" class="clicky" aria-hidden="true">parent</a> | <a href="#36737481" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36737492" n="2" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">You might like mandala (<a href="https:&#x2F;&#x2F;github.com&#x2F;amakelov&#x2F;mandala">https:&#x2F;&#x2F;github.com&#x2F;amakelov&#x2F;mandala</a>) - it is not a build recipe tool, rather it is a tool that tracks the history of how your builds &#x2F; computational graph has changed, and ties it to how the data looked like at each such step.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36737492&amp;goto=item%3Fid%3D36735616%2336737492">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36737541'><td><table border='0'>  <tr>    <td class='ind' indent='2'><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id='up_36737541'href='vote?id=36737541&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=samuell" class="hnuser">samuell</a> <span class="age" title="2023-07-15T15:13:32"><a href="item?id=36737541">7 hours ago</a></span> <span id="unv_36737541"></span>          <span class='navs'>
+             | <a href="#36736549" class="clicky" aria-hidden="true">root</a> | <a href="#36737492" class="clicky" aria-hidden="true">parent</a> | <a href="#36737481" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36737541" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">That&#x27;s a cool approach, thanks for sharing!</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36737541&amp;goto=item%3Fid%3D36735616%2336737541">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                  <tr class='athing comtr' id='36737481'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36737481'href='vote?id=36737481&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=dodslaser" class="hnuser">dodslaser</a> <span class="age" title="2023-07-15T15:07:24"><a href="item?id=36737481">8 hours ago</a></span> <span id="unv_36737481"></span>          <span class='navs'>
+             | <a href="#36736549" class="clicky" aria-hidden="true">parent</a> | <a href="#36737492" class="clicky" aria-hidden="true">prev</a> | <a href="#36737078" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36737481" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Shameless plug for a project I&#x27;m somewhat involved in: Hydra-genetics provides a growing set of well structured snakemake modules for bioinformatics (NGS) workflows.<p><a href="https:&#x2F;&#x2F;github.com&#x2F;hydra-genetics&#x2F;">https:&#x2F;&#x2F;github.com&#x2F;hydra-genetics&#x2F;</a></span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36737481&amp;goto=item%3Fid%3D36735616%2336737481">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36737078'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36737078'href='vote?id=36737078&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=remram" class="hnuser">remram</a> <span class="age" title="2023-07-15T14:26:29"><a href="item?id=36737078">8 hours ago</a></span> <span id="unv_36737078"></span>          <span class='navs'>
+             | <a href="#36736549" class="clicky" aria-hidden="true">parent</a> | <a href="#36737481" class="clicky" aria-hidden="true">prev</a> | <a href="#36735919" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36737078" n="2" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">FYI the link to the &quot;installation page&quot; in scipipe&#x27;s repo&#x27;s README is 404.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36737078&amp;goto=item%3Fid%3D36735616%2336737078">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36737175'><td><table border='0'>  <tr>    <td class='ind' indent='2'><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id='up_36737175'href='vote?id=36737175&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=samuell" class="hnuser">samuell</a> <span class="age" title="2023-07-15T14:35:58"><a href="item?id=36737175">8 hours ago</a></span> <span id="unv_36737175"></span>          <span class='navs'>
+             | <a href="#36736549" class="clicky" aria-hidden="true">root</a> | <a href="#36737078" class="clicky" aria-hidden="true">parent</a> | <a href="#36735919" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36737175" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Ouch, thanks, fixed!</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36737175&amp;goto=item%3Fid%3D36735616%2336737175">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                        <tr class='athing comtr' id='36735919'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735919'href='vote?id=36735919&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=teekert" class="hnuser">teekert</a> <span class="age" title="2023-07-15T12:20:40"><a href="item?id=36735919">10 hours ago</a></span> <span id="unv_36735919"></span>          <span class='navs'>
+             | <a href="#36736549" class="clicky" aria-hidden="true">prev</a> | <a href="#36737465" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735919" n="7" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Snakemake is a beautiful project and evolves and improves so fast. Years ago I realized I needed to up my game from the usual bash based NGS data processing pipelines I was writing. Based on several recommendation I choose Snakemake. I have never regretted it, It worked perfectly on our PBS cluster then on our Slurm cluster. I made some steps to make it run on K8s, which it supports, and most recently, I&#x27;m still&#x2F;again happy with my choice for Snakemake because it (together with Nextflow) seems to be the chosen framework for GA4GH&#x27;s cloud work stream&#x27;s &quot;products&quot; like WES and TES [0]. This seems to be the tech stack where Amazon Omics and Microsoft Genomics focus on [1]. It enables many cool things, like &quot;data visiting&quot;: Just submit your Snakefile (the definition of a workflow, a DAG basically) to a WES API in the same data center where your data lives, and data analysis starts, near the data. Brilliant.<p>I owe a lot to Snakemake and Johannes Köster, I hope some day I can repay him and his project.<p>[0] <a href="https:&#x2F;&#x2F;www.ga4gh.org&#x2F;work_stream&#x2F;cloud&#x2F;" rel="nofollow noreferrer">https:&#x2F;&#x2F;www.ga4gh.org&#x2F;work_stream&#x2F;cloud&#x2F;</a><p>[1] <a href="https:&#x2F;&#x2F;github.com&#x2F;Microsoft&#x2F;tes-azure">https:&#x2F;&#x2F;github.com&#x2F;Microsoft&#x2F;tes-azure</a></span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735919&amp;goto=item%3Fid%3D36735616%2336735919">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36741686'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36741686'href='vote?id=36741686&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=bsmith89" class="hnuser">bsmith89</a> <span class="age" title="2023-07-15T22:59:44"><a href="item?id=36741686">10 minutes ago</a></span> <span id="unv_36741686"></span>          <span class='navs'>
+             | <a href="#36735919" class="clicky" aria-hidden="true">parent</a> | <a href="#36738741" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36741686" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">I too owe a lot of my PhD and postdoc productivity to Snakemake. It&#x27;s my bioinformatics super-power, allowing me to run a complex analysis, including downloading containers (Singularity&#x2F;Apptainer) and other dependencies (conda), with one command.<p>Great for reproducibility. Great for development. Great for scaling analyses.<p>Snakemake is vital infrastructure for my work.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36741686&amp;goto=item%3Fid%3D36735616%2336741686">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36738741'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36738741'href='vote?id=36738741&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=matthew_stone" class="hnuser">matthew_stone</a> <span class="age" title="2023-07-15T16:53:47"><a href="item?id=36738741">6 hours ago</a></span> <span id="unv_36738741"></span>          <span class='navs'>
+             | <a href="#36735919" class="clicky" aria-hidden="true">parent</a> | <a href="#36741686" class="clicky" aria-hidden="true">prev</a> | <a href="#36735948" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36738741" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">100% agree, and it&#x27;s wonderful to see Snakemake on the top of HN.<p>Snakemake is an invaluable tool in bioinformatics analysis. It&#x27;s a testament to Johannes&#x27; talent and dedication that, even with the relatively limited resources of an academic developer, Snakemake has remained broadly useful and popular.<p>Super nice guy too, he&#x27;s always been remarkably responsive and helpful. I saw him present on Snakemake back when he was a postdoc, and it really changed my approach to pipeline development.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36738741&amp;goto=item%3Fid%3D36735616%2336738741">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36735948'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735948'href='vote?id=36735948&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=tetris11" class="hnuser">tetris11</a> <span class="age" title="2023-07-15T12:24:25"><a href="item?id=36735948">10 hours ago</a></span> <span id="unv_36735948"></span>          <span class='navs'>
+             | <a href="#36735919" class="clicky" aria-hidden="true">parent</a> | <a href="#36738741" class="clicky" aria-hidden="true">prev</a> | <a href="#36737465" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735948" n="4" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Its fantastic but it doesn&#x27;t scale laterelly particularly well, compared to just Make.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735948&amp;goto=item%3Fid%3D36735616%2336735948">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36737723'><td><table border='0'>  <tr>    <td class='ind' indent='2'><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id='up_36737723'href='vote?id=36737723&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=ta988" class="hnuser">ta988</a> <span class="age" title="2023-07-15T15:33:04"><a href="item?id=36737723">7 hours ago</a></span> <span id="unv_36737723"></span>          <span class='navs'>
+             | <a href="#36735919" class="clicky" aria-hidden="true">root</a> | <a href="#36735948" class="clicky" aria-hidden="true">parent</a> | <a href="#36737465" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36737723" n="3" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">What dimension are you referring to?</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36737723&amp;goto=item%3Fid%3D36735616%2336737723">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36738122'><td><table border='0'>  <tr>    <td class='ind' indent='3'><img src="s.gif" height="1" width="120"></td><td valign="top" class="votelinks">
+      <center><a id='up_36738122'href='vote?id=36738122&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=tetris11" class="hnuser">tetris11</a> <span class="age" title="2023-07-15T16:07:09"><a href="item?id=36738122">7 hours ago</a></span> <span id="unv_36738122"></span>          <span class='navs'>
+             | <a href="#36735919" class="clicky" aria-hidden="true">root</a> | <a href="#36737723" class="clicky" aria-hidden="true">parent</a> | <a href="#36737465" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36738122" n="2" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Large scale reproducibility was a problem a few years back for one. Conda and containers were a constant problem for us back then, especially if you had multiple NGS tools running in different environments. This has probably been solved by now, but we went with another workflow system</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36738122&amp;goto=item%3Fid%3D36735616%2336738122">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36740047'><td><table border='0'>  <tr>    <td class='ind' indent='4'><img src="s.gif" height="1" width="160"></td><td valign="top" class="votelinks">
+      <center><a id='up_36740047'href='vote?id=36740047&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=bafe" class="hnuser">bafe</a> <span class="age" title="2023-07-15T19:19:15"><a href="item?id=36740047">3 hours ago</a></span> <span id="unv_36740047"></span>          <span class='navs'>
+             | <a href="#36735919" class="clicky" aria-hidden="true">root</a> | <a href="#36738122" class="clicky" aria-hidden="true">parent</a> | <a href="#36737465" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36740047" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Nextflow seems to scale very well</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36740047&amp;goto=item%3Fid%3D36735616%2336740047">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                                    <tr class='athing comtr' id='36737465'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36737465'href='vote?id=36737465&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=krastanov" class="hnuser">krastanov</a> <span class="age" title="2023-07-15T15:06:06"><a href="item?id=36737465">8 hours ago</a></span> <span id="unv_36737465"></span>          <span class='navs'>
+             | <a href="#36735919" class="clicky" aria-hidden="true">prev</a> | <a href="#36740703" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36737465" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Snakemake is great, but it does feel like just a slightly more modern Make.<p>I am pretty excited about research projects that tie the recipe and the computation closer together so that you do not preserve just the last recipe, but the whole history of exploratory computation and analysis.<p>E.g. mandala (<a href="https:&#x2F;&#x2F;github.com&#x2F;amakelov&#x2F;mandala">https:&#x2F;&#x2F;github.com&#x2F;amakelov&#x2F;mandala</a>), a project of a colleague of mine which is basically semantic git for your computational graph and data at the same time.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36737465&amp;goto=item%3Fid%3D36735616%2336737465">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36740703'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36740703'href='vote?id=36740703&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=flanked-evergl" class="hnuser">flanked-evergl</a> <span class="age" title="2023-07-15T20:35:33"><a href="item?id=36740703">2 hours ago</a></span> <span id="unv_36740703"></span>          <span class='navs'>
+             | <a href="#36737465" class="clicky" aria-hidden="true">prev</a> | <a href="#36740083" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36740703" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">It&#x27;s really nice, but I think it would have been better if it did not mix YAML and Python source and rather provided an API for writing workflows completely in Python. All that you get from the YAML + Python mix is that tools that work with either YAML or Python does not work well.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36740703&amp;goto=item%3Fid%3D36735616%2336740703">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36740083'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36740083'href='vote?id=36740083&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=Protostome" class="hnuser">Protostome</a> <span class="age" title="2023-07-15T19:22:57"><a href="item?id=36740083">3 hours ago</a></span> <span id="unv_36740083"></span>          <span class='navs'>
+             | <a href="#36740703" class="clicky" aria-hidden="true">prev</a> | <a href="#36735908" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36740083" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">This is a fantastic project. It&#x27;s crucial to note that Snakemake is an extension of Python, meaning you can directly incorporate Python code into your makefiles.<p>In our team, we utilize Snakemake along with Singularity. The key operations, such as model training and inference that aren&#x27;t straightforward shell commands, are compartmentalized using containers. Snakemake significantly simplifies the process of integrating these various modules.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36740083&amp;goto=item%3Fid%3D36735616%2336740083">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36735908'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735908'href='vote?id=36735908&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=jerrygenser" class="hnuser">jerrygenser</a> <span class="age" title="2023-07-15T12:18:51"><a href="item?id=36735908">10 hours ago</a></span> <span id="unv_36735908"></span>          <span class='navs'>
+             | <a href="#36740083" class="clicky" aria-hidden="true">prev</a> | <a href="#36736490" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735908" n="7" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">I see it can be used to define and run workflows. But for reproducibility on top of the execution of operations on data, I&#x27;m wondering if there&#x27;s any way to version the underlying data?<p>Or would you typically use this -in addition- to a tool like dvc? I&#x27;ve used dvc a bit and while it&#x27;s quite good for data versioning, I find the workflow aspect is clunky.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735908&amp;goto=item%3Fid%3D36735616%2336735908">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36736629'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36736629'href='vote?id=36736629&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=samuell" class="hnuser">samuell</a> <span class="age" title="2023-07-15T13:38:40"><a href="item?id=36736629">9 hours ago</a></span> <span id="unv_36736629"></span>          <span class='navs'>
+             | <a href="#36735908" class="clicky" aria-hidden="true">parent</a> | <a href="#36737447" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36736629" n="2" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">The way a workflow like Snakemake can help here is generally by letting the filenames pretty much describe how each particular output was created, meaning data outputs can act as immutable in a sense.<p>What I mean is that rather than create a new version of a file, if you run the same analysis with different sets of parameters, it should generate a new file with a different name rather than a new version of the old one. This also helps comparing differences between output from different parameters etc.<p>That said, there are workflow platforms which support data versioning, such as Pachyderm (<a href="https:&#x2F;&#x2F;pachyderm.com" rel="nofollow noreferrer">https:&#x2F;&#x2F;pachyderm.com</a>), but it is a bit more heavyweight as it runs on top of Kubernetes.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36736629&amp;goto=item%3Fid%3D36735616%2336736629">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36737826'><td><table border='0'>  <tr>    <td class='ind' indent='2'><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id='up_36737826'href='vote?id=36737826&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=bafe" class="hnuser">bafe</a> <span class="age" title="2023-07-15T15:42:46"><a href="item?id=36737826">7 hours ago</a></span> <span id="unv_36737826"></span>          <span class='navs'>
+             | <a href="#36735908" class="clicky" aria-hidden="true">root</a> | <a href="#36736629" class="clicky" aria-hidden="true">parent</a> | <a href="#36737447" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36737826" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">The reliance on filenames to define (parametric) dependencies was among the reasons I later adopted nextflow. The model fit the type of computation dependencies better for my case. In the mean time snakemake grew and many DAG that were hard to describe back then are now expressed directly with snakemake primitives</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36737826&amp;goto=item%3Fid%3D36735616%2336737826">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                  <tr class='athing comtr' id='36737447'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36737447'href='vote?id=36737447&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=bafe" class="hnuser">bafe</a> <span class="age" title="2023-07-15T15:04:12"><a href="item?id=36737447">8 hours ago</a></span> <span id="unv_36737447"></span>          <span class='navs'>
+             | <a href="#36735908" class="clicky" aria-hidden="true">parent</a> | <a href="#36736629" class="clicky" aria-hidden="true">prev</a> | <a href="#36736213" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36737447" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">There is indeed an old issue asking whether they could return a provenance graph using the prov ontology in JSON format <a href="https:&#x2F;&#x2F;github.com&#x2F;snakemake&#x2F;snakemake&#x2F;issues&#x2F;2077">https:&#x2F;&#x2F;github.com&#x2F;snakemake&#x2F;snakemake&#x2F;issues&#x2F;2077</a>
+I think it&#x27;s a good task to work on if you like to contribute</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36737447&amp;goto=item%3Fid%3D36735616%2336737447">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36736213'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36736213'href='vote?id=36736213&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=jlduan" class="hnuser">jlduan</a> <span class="age" title="2023-07-15T12:54:52"><a href="item?id=36736213">10 hours ago</a></span> <span id="unv_36736213"></span>          <span class='navs'>
+             | <a href="#36735908" class="clicky" aria-hidden="true">parent</a> | <a href="#36737447" class="clicky" aria-hidden="true">prev</a> | <a href="#36736221" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36736213" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">I am very fond of <a href="https:&#x2F;&#x2F;zenodo.org" rel="nofollow noreferrer">https:&#x2F;&#x2F;zenodo.org</a>, especially for small datasets for scientific publications.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36736213&amp;goto=item%3Fid%3D36735616%2336736213">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36736221'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36736221'href='vote?id=36736221&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=samesense" class="hnuser">samesense</a> <span class="age" title="2023-07-15T12:55:18"><a href="item?id=36736221">10 hours ago</a></span> <span id="unv_36736221"></span>          <span class='navs'>
+             | <a href="#36735908" class="clicky" aria-hidden="true">parent</a> | <a href="#36736213" class="clicky" aria-hidden="true">prev</a> | <a href="#36737055" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36736221" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">I use snakemake along with dvc. It detects changes in files, and reruns steps to produce downstream files as needed.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36736221&amp;goto=item%3Fid%3D36735616%2336736221">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36737055'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36737055'href='vote?id=36737055&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=troymc" class="hnuser">troymc</a> <span class="age" title="2023-07-15T14:24:44"><a href="item?id=36737055">8 hours ago</a></span> <span id="unv_36737055"></span>          <span class='navs'>
+             | <a href="#36735908" class="clicky" aria-hidden="true">parent</a> | <a href="#36736221" class="clicky" aria-hidden="true">prev</a> | <a href="#36736490" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36737055" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Pachyderm has data versioning &#x2F; data version control built-in. I guess other tools do too.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36737055&amp;goto=item%3Fid%3D36735616%2336737055">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                  <tr class='athing comtr' id='36736490'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36736490'href='vote?id=36736490&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=bafe" class="hnuser">bafe</a> <span class="age" title="2023-07-15T13:22:44"><a href="item?id=36736490">9 hours ago</a></span> <span id="unv_36736490"></span>          <span class='navs'>
+             | <a href="#36735908" class="clicky" aria-hidden="true">prev</a> | <a href="#36739884" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36736490" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">I love snakemake. It almost saved my PhD, but then I found nextflow which suited my type of problems better. What&#x27;s is slightly off-putting about snakemake is that the internal API isn&#x27;t well documented, I wanted to contribute a new remote for SQL database and I had to figure out most of the method by comparing with other examples. Anyway my PR has been inactive since months, which surprised me since usually they tend to review and approve quickly</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36736490&amp;goto=item%3Fid%3D36735616%2336736490">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36739884'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36739884'href='vote?id=36739884&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=dwheeler" class="hnuser">dwheeler</a> <span class="age" title="2023-07-15T18:59:32"><a href="item?id=36739884">4 hours ago</a></span> <span id="unv_36739884"></span>          <span class='navs'>
+             | <a href="#36736490" class="clicky" aria-hidden="true">prev</a> | <a href="#36736259" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36739884" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">For a very different approach, check out make-booster:<p><a href="https:&#x2F;&#x2F;github.com&#x2F;david-a-wheeler&#x2F;make-booster">https:&#x2F;&#x2F;github.com&#x2F;david-a-wheeler&#x2F;make-booster</a><p>Make-booster provides utility routines intended to greatly simplify data processing (particularly a data pipeline) using GNU make. It includes some mechanisms specifically to help Python, as well as general-purpose mechanisms that can be useful in any system. In particular, it helps reliably reproduce results, and it automatically determines what needs to run and runs only that (producing a significant speedup in most cases). Released as open source software.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36739884&amp;goto=item%3Fid%3D36735616%2336739884">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36736259'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36736259'href='vote?id=36736259&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=spratzt" class="hnuser">spratzt</a> <span class="age" title="2023-07-15T12:58:27"><a href="item?id=36736259">10 hours ago</a></span> <span id="unv_36736259"></span>          <span class='navs'>
+             | <a href="#36739884" class="clicky" aria-hidden="true">prev</a> | <a href="#36738364" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36736259" n="4" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">How does this differ from something like  Airflow ?</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36736259&amp;goto=item%3Fid%3D36735616%2336736259">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36737347'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36737347'href='vote?id=36737347&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=samuell" class="hnuser">samuell</a> <span class="age" title="2023-07-15T14:56:23"><a href="item?id=36737347">8 hours ago</a></span> <span id="unv_36737347"></span>          <span class='navs'>
+             | <a href="#36736259" class="clicky" aria-hidden="true">parent</a> | <a href="#36738726" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36737347" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">One way to contrast these in broad terms is that tools like Airflow are generally much more focussed on continually running well defined production workflows, while tools like Snakemake are mostly focused on creating a reproducible pipeline for one particular analysis, or making it easy to perform exploratory analysis, exploring the effect of different input data and parameters.<p>One way this focus is reflected is how e.g. Snakemake are much more focused on naming files in a way that you can figure out what input data and parameters were used to produce them, making it easier to compare results from variations on the main analysis.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36737347&amp;goto=item%3Fid%3D36735616%2336737347">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36738726'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36738726'href='vote?id=36738726&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=chazeon" class="hnuser">chazeon</a> <span class="age" title="2023-07-15T16:52:40"><a href="item?id=36738726">6 hours ago</a></span> <span id="unv_36738726"></span>          <span class='navs'>
+             | <a href="#36736259" class="clicky" aria-hidden="true">parent</a> | <a href="#36737347" class="clicky" aria-hidden="true">prev</a> | <a href="#36737476" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36738726" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">There are a lot of differences.<p>By design, Airflow needs a centralized server&#x2F;daemon, whereas snakemake is just a command line tool, like make&#x2F;cmake. This would become an issue in the HPC environment.<p>In Airflow the workflow is assumed to be repetitively executed whereas in snakemake it is usually run once (like you will only compile the program when source files change).<p>Airflow has a queuing system, whereas Snakemake is to be used in conjuncture with other task management systems.<p>In Snakemake, shell script always feels like a second-order citizen, whereas with Snakemake, it has good support for shell scripting, which enables easy integration with tools made in other programming languages.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36738726&amp;goto=item%3Fid%3D36735616%2336738726">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36737476'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36737476'href='vote?id=36737476&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=Kalanos" class="hnuser">Kalanos</a> <span class="age" title="2023-07-15T15:07:00"><a href="item?id=36737476">8 hours ago</a></span> <span id="unv_36737476"></span>          <span class='navs'>
+             | <a href="#36736259" class="clicky" aria-hidden="true">parent</a> | <a href="#36738726" class="clicky" aria-hidden="true">prev</a> | <a href="#36738364" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36737476" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c5a">yaml</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36737476&amp;goto=item%3Fid%3D36735616%2336737476">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                  <tr class='athing comtr' id='36738364'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36738364'href='vote?id=36738364&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=derbOac" class="hnuser">derbOac</a> <span class="age" title="2023-07-15T16:25:31"><a href="item?id=36738364">6 hours ago</a></span> <span id="unv_36738364"></span>          <span class='navs'>
+             | <a href="#36736259" class="clicky" aria-hidden="true">prev</a> | <a href="#36737392" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36738364" n="3" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Snakemake seems really interesting (in a good way). I was going to say I wasn&#x27;t aware of it but then in watching the Intro video I realized I had seen it before.<p>However, I find myself scratching my head about when I would use it, or what need it&#x27;s fulfilling.<p>It seems like most of what it brings to the table should be directly inferrable from the analysis and presentation code and comments. If you&#x27;re working with multiple systems, isn&#x27;t this what scripting languages were originally for?<p>It seems like another layer of complexity on top of what&#x27;s already there, which ... just adds complexity.<p>Or is the idea to make a data analysis-specific scripting DSL?</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36738364&amp;goto=item%3Fid%3D36735616%2336738364">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36740544'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36740544'href='vote?id=36740544&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=teekert" class="hnuser">teekert</a> <span class="age" title="2023-07-15T20:15:00"><a href="item?id=36740544">2 hours ago</a></span> <span id="unv_36740544"></span>          <span class='navs'>
+             | <a href="#36738364" class="clicky" aria-hidden="true">parent</a> | <a href="#36738529" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36740544" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00"><i>However, I find myself scratching my head about when I would use it, or what need it&#x27;s fulfilling.</i><p>When you are in Next Generation Sequencing data analysis, it is basically THE tool. Snakemake comes with anything I ever needed, since it uses conda to install workflow dependencies, tools like BWA, fastqc, multiqc etc, are all present and fresh. I feel that Snakemake was made for NGS data analysis.<p>Many Snakemake users, like me, are biologists that know some Python and bash, I have never used Make for example. The people pointing out weaknesses here have complex, CS related use cases it seems, for bio-informaticians in the NGS field it&#x27;s a godsend.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36740544&amp;goto=item%3Fid%3D36735616%2336740544">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36738529'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36738529'href='vote?id=36738529&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=matthew_stone" class="hnuser">matthew_stone</a> <span class="age" title="2023-07-15T16:37:38"><a href="item?id=36738529">6 hours ago</a></span> <span id="unv_36738529"></span>          <span class='navs'>
+             | <a href="#36738364" class="clicky" aria-hidden="true">parent</a> | <a href="#36740544" class="clicky" aria-hidden="true">prev</a> | <a href="#36737392" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36738529" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Yes, it&#x27;s a DSL.<p>Here&#x27;s a simple scatter-gather example. Let&#x27;s say you want to count the number of lines in each file for a list of samples, and report a table of counts collected from each sample. Define a rule to process each input file, and a rule to collect the results.<p>I find this much less complex than an equivalent bash workflow. Additionally, these rules can be easily containerized, the workflow can be parallelized, and the workflow is robust to interruption and the addition of new samples. Snakemake manages checking for existing files and running rules as necessary to create missing files, logic that is much more finicky to implement by hand in bash.<p><pre><code>    with open(&#x27;data&#x2F;samples.txt&#x27;) as slist:
+        SAMPLES = [l.strip() for l in slist.readlines()]
+    
+    rule all:
+        input:
+            &quot;results&#x2F;line_counts.txt&quot;
+    
+    rule count_lines:
+        input:
+            &quot;data&#x2F;lines&#x2F;{sample}.txt&quot;
+        output:
+            &quot;processed&#x2F;count_lines&#x2F;{sample}.txt&quot;
+        shell:
+            &quot;&quot;&quot;
+            cat {input} |
+              wc -l | 
+              paste &lt;(echo -e {wildcards.sample}) - &gt; {output}
+            &quot;&quot;&quot;
+    
+    rule collect_counts:
+        input:
+            expand(&quot;processed&#x2F;count_lines&#x2F;{sample}.txt&quot;, sample=SAMPLES)
+        output:
+            &quot;results&#x2F;line_counts.txt&quot;
+        shell:
+            &quot;&quot;&quot;
+            cat &lt;(echo -e &quot;sample\tn_lines&quot;) {input} &gt; {output}
+            &quot;&quot;&quot;</code></pre></span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36738529&amp;goto=item%3Fid%3D36735616%2336738529">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                  <tr class='athing comtr' id='36737392'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36737392'href='vote?id=36737392&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=Decabytes" class="hnuser">Decabytes</a> <span class="age" title="2023-07-15T15:00:23"><a href="item?id=36737392">8 hours ago</a></span> <span id="unv_36737392"></span>          <span class='navs'>
+             | <a href="#36738364" class="clicky" aria-hidden="true">prev</a> | <a href="#36738029" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36737392" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">When I was doing my bioinformatics masters I learned how to make all my pipelines in Snakemake, so I never learned how to set up pipelines by chaining bash scripts. I was confused when I encountered pipelines that weren’t written in snakemake or nextflow.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36737392&amp;goto=item%3Fid%3D36735616%2336737392">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36738029'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36738029'href='vote?id=36738029&amp;how=up&amp;goto=item%3Fid%3D36735616'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=gschoeni" class="hnuser">gschoeni</a> <span class="age" title="2023-07-15T15:58:22"><a href="item?id=36738029">7 hours ago</a></span> <span id="unv_36738029"></span>          <span class='navs'>
+             | <a href="#36737392" class="clicky" aria-hidden="true">prev</a> <a class="togg clicky" id="36738029" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Super cool! Would love to see an integration with Oxen and their data version control <a href="https:&#x2F;&#x2F;github.com&#x2F;Oxen-AI&#x2F;oxen-release">https:&#x2F;&#x2F;github.com&#x2F;Oxen-AI&#x2F;oxen-release</a></span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36738029&amp;goto=item%3Fid%3D36735616%2336738029">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            </table>
+  <br><br>
+</td></tr>
+<tr><td><img src="s.gif" height="10" width="0"><table width="100%" cellspacing="0" cellpadding="1"><tr><td bgcolor="#ff6600"></td></tr></table><br>
+<center><span class="yclinks"><a href="newsguidelines.html">Guidelines</a> | <a href="newsfaq.html">FAQ</a> | <a href="lists">Lists</a> | <a href="https://github.com/HackerNews/API">API</a> | <a href="security.html">Security</a> | <a href="https://www.ycombinator.com/legal/">Legal</a> | <a href="https://www.ycombinator.com/apply/">Apply to YC</a> | <a href="mailto:hn@ycombinator.com">Contact</a></span><br><br>
+<form method="get" action="//hn.algolia.com/">Search: <input type="text" name="q" size="17" autocorrect="off" spellcheck="false" autocapitalize="off" autocomplete="false"></form></center></td></tr>      </table></center></body>
+      <script type='text/javascript' src='hn.js?5H9MtNw5DeqtfAm5Zd9Y'></script>
+  </html>

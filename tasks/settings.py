@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from typing import List
 
 MAIN_URL = 'https://news.ycombinator.com/'
-DOWNLOADS_DIR = 'C:/crawler/links'
+DOWNLOADS_DIR = 'C:/crawler/links/'
 URL_WRONG = 'https://twitter.com/'
 
 

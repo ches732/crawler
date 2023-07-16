@@ -1,0 +1,1 @@
+['https://en.wikipedia.org/wiki/Nobel_disease', 'https://www.theatlantic.com/health/archive/2013/07/the-vitamin-myth-why-we-think-we-need-supplements/277947/', 'https://pubmed.ncbi.nlm.nih.gov/23440782/']

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8">
+  <title>PostgreSQL: No More VACUUM, No More Bloat</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="description" content="This is meta description">
+  
+  <meta name="generator" content="Hugo 0.89.4" />
+
+  <!-- plugins -->
+  
+  <link rel="stylesheet" href="https://www.orioledata.com/plugins/bootstrap/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="https://www.orioledata.com/plugins/themify-icons/themify-icons.css">
+  
+  <link rel="stylesheet" href="https://www.orioledata.com/plugins/slick/slick.css">
+  
+
+  <!-- Main Stylesheet -->
+  
+  <link href="https://www.orioledata.com/scss/style.min.css" rel="stylesheet" media="screen"/>
+
+  <!--Favicon-->
+  <link rel="apple-touch-icon" sizes="180x180" href="https://www.orioledata.com/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://www.orioledata.com/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://www.orioledata.com/favicon-16x16.png">
+  <link rel="manifest" href="https://www.orioledata.com/site.webmanifest">
+  <link rel="mask-icon" href="https://www.orioledata.com/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  
+  
+  <meta property="og:image" content="https://www.orioledata.com/images/no-vacuum.png" />
+  
+  <meta property="og:title" content="PostgreSQL: No More VACUUM, No More Bloat" />
+<meta property="og:description" content="This is meta description" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.orioledata.com/blog/no-more-vacuum-in-postgresql/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2023-07-15T12:14:00+00:00" />
+<meta property="article:modified_time" content="2023-07-15T12:14:00+00:00" />
+
+
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T1EJTPNRQS"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-T1EJTPNRQS', { 'anonymize_ip': false });
+}
+</script>
+
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-T1EJTPNRQS', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  <iframe src="https://tag.trovo-tag.com/0d3f55e2d254dfb31517d0c1fa07edd2" width="1" height="1" style="visibility:hidden;display:none;"></iframe>
+
+</head><body><!-- navigation -->
+<header class="navigation">
+  <div class="container">
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+      <a class="navbar-brand" href="https://www.orioledata.com/">
+        
+        <img width="150px" class="img-fluid" src="https://www.orioledata.com/images/logo.png" alt="OrioleDB – the next generation storage engine for PostgreSQL">
+        
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+        <i class="ti-menu h3"></i>
+      </button>
+
+      <div class="collapse navbar-collapse text-center" id="navigation">
+        <ul class="navbar-nav mx-auto">
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.orioledata.com/blog">Blog</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.orioledata.com/contact">Contact</a>
+          </li>
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.orioledata.com/faq">FAQ</a>
+          </li>
+          
+          
+        </ul>
+
+        
+        <a class="github-button"
+           href="https://github.com/orioledb/orioledb"
+           data-size="large"
+           data-show-count="true"
+           aria-label="Star orioledb/orioledb on GitHub">Star</a>
+      </div>
+    </nav>
+  </div>
+</header>
+<!-- /navigation -->
+
+
+
+
+
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <img src="https://www.orioledata.com/images/no-vacuum.png" alt="PostgreSQL: No More VACUUM, No More Bloat" class="img-fluid title-image rounded mb-4">
+        <h2 class="mb-4">PostgreSQL: No More VACUUM, No More Bloat</h2>
+        <div class="content"><p>PostgreSQL, a powerful open-source object-relational database system, has been lauded for its robustness, functionality, and flexibility. However, it is not without its challenges – one of which is the notorious VACUUM process. However, the dawn of a new era is upon us with <a href="https://github.com/orioledb/orioledb">OrioleDB</a>, a novel engine designed for PostgreSQL that promises to eliminate the need for the resource-consuming VACUUM.</p>
+<h3 id="the-terrifying-tale-of-vacuum-in-postgresql">The Terrifying Tale of VACUUM in PostgreSQL</h3>
+<p>The VACUUM process in PostgreSQL is a historical artifact that traces its roots back to the Berkley Postgres project, which implemented a concept known as infinite time-travel. The concept, while innovative at the time, was eventually dropped by the PostgreSQL community. However, it led to the implementation of a Multi-Version Concurrency Control (MVCC) system prone to table bloat.</p>
+<p>The PostgreSQL MVCC system, while beneficial for handling concurrent transactions, introduced the need for manual vacuuming. This was a process in which old, unneeded data was purged to free up space and ensure efficient database operations. Manual vacuuming, however, was a labor-intensive task and a potential source of inefficiencies in the system.</p>
+<p>The PostgreSQL community, in their continued efforts to improve the system, introduced autovacuum - an automatic vacuuming process designed to alleviate the need for manual vacuuming. This was a significant step forward, but it was not a perfect solution. The autovacuum process, while automatic, still consumed substantial system resources. This is  one of the reasons why <a href="https://www.uber.com/en-US/blog/postgres-to-mysql-migration/">Uber decided to migrate from PostgreSQL to MySQL</a> and one of the <a href="https://rbranson.medium.com/10-things-i-hate-about-postgresql-20dbab8c2791">10 things that Richard Branson hates about PostgreSQL</a>.</p>
+<p>Further enhancements came with the implementation of Heap-Only Tuples (HOT) updates and microvacuum, both significant improvements that reduced the need for full table vacuums. However, despite these advancements, the VACUUM process still remained a resource-intensive operation. Furthermore, PostgreSQL tables remained prone to bloat, an issue that continues to plague many users today. This is the <a href="https://ottertune.com/blog/the-part-of-postgresql-we-hate-the-most/">part of PostgreSQL that the team at OtterTune hates the most</a>.</p>
+<p>Despite these challenges, many organizations and developers continue to use and support PostgreSQL. Its robustness, extensibility, and strong community are just a few reasons why. For instance, <a href="https://ottertune.com/blog/yes-postgresql-has-problems-but-were-sticking-with-it/">OtterTune, despite acknowledging PostgreSQL&rsquo;s problems, has decided to stick with it</a>. They explain their reasons in a separate blog post, highlighting the importance of considering the overall benefits and drawbacks of a system before making a decision.</p>
+<h3 id="enter-orioledb-the-engine-of-the-future">Enter OrioleDB: The Engine of the Future</h3>
+<p>OrioleDB is a groundbreaking new engine for PostgreSQL, developed with a primary goal: to save tables from bloat and eliminate the need for regular maintenance like VACUUM. It achieves this through the implementation of row-level and block-level undo logs, as well as automatic page merging.</p>
+<p>The undo logs at the row and block level provide a more granular level of control, allowing for more efficient handling of data changes. The automatic page merging feature works tirelessly in the background to consolidate fragmented data, further enhancing the efficiency of the system.</p>
+<figure><img src="/images/techniques.png" width="800px"/>
+</figure>
+
+<p>The figure above illustrates this techniques. Row-level undo log allows in-place updates. Block-level undo log allows to evict tuples, which are deleted but visible to some transactions, from the primary storage leaving more space for new tuples. Automatic merge of sparse pages saves tables and indexes from bloat after many deletes.</p>
+<p>The implementation of these features in OrioleDB results in a system that requires less manual intervention, consumes fewer resources, and is less prone to table bloat. This promises a significant improvement in the performance and user experience of PostgreSQL.</p>
+<h3 id="benchmarks">Benchmarks</h3>
+<p>The following synthetic benchmark can illustrate the OrioleDB advantages of the above as well as some others.  The following initialization script creates a table and 5 indexes on it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> test (
+    id integer <span style="color:#66d9ef">primary</span> <span style="color:#66d9ef">key</span>,
+    value1 float8 <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>,
+    value2 float8 <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>,
+    value3 float8 <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>,
+    value4 float8 <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>,
+    ts <span style="color:#66d9ef">timestamp</span> <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">null</span>
+);
+
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> test_value1_idx <span style="color:#66d9ef">ON</span> test (value1);
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> test_value2_idx <span style="color:#66d9ef">ON</span> test (value2);
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> test_value3_idx <span style="color:#66d9ef">ON</span> test (value3);
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> test_value4_idx <span style="color:#66d9ef">ON</span> test (value4);
+<span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> test_ts_idx <span style="color:#66d9ef">ON</span> test (ts);
+</code></pre></div><p>The pgbench script is given below.  It&rsquo;s an upsert that performs sparse updates of the one of indexes on conflict.  The sparse update causes this index to bloat when using regular heap PostgreSQL tables.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#960050;background-color:#1e0010">\</span><span style="color:#66d9ef">set</span> id random(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">10000000</span>)
+<span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> test <span style="color:#66d9ef">VALUES</span>(:id, random(), random(), random(), random(), now() <span style="color:#f92672">-</span> random() <span style="color:#f92672">*</span> random() <span style="color:#f92672">*</span> <span style="color:#ae81ff">1800</span> <span style="color:#f92672">*</span> interval <span style="color:#e6db74">&#39;1 second&#39;</span>)
+<span style="color:#66d9ef">ON</span> CONFLICT (id) <span style="color:#66d9ef">DO</span> <span style="color:#66d9ef">UPDATE</span> <span style="color:#66d9ef">SET</span> ts <span style="color:#f92672">=</span> now();
+</code></pre></div><p>This benchmark illustrates the following advantages of OrioleDB design.</p>
+<ol>
+<li>Thanks to undo log and in-place updates, OrioleDB needs to update only one index, whose value has been changed.  With the PostgreSQL heap engine, the update of a single indexed field disables HOT, so all indexes get updated.</li>
+<li>Automatic page merge saves sparse index from bloat.  Sparse pages are automatically merged.</li>
+<li>Row-level WAL takes much less space than block-level WAL.  That saves IOPS on WAL writing.</li>
+</ol>
+<p>See the results of the benchmark on the graphs below.</p>
+<figure><img src="/images/bloat.png" width="800px"/>
+</figure>
+
+<p>As the cumulative result of the improvements discussed above, OrioleDB provides:</p>
+<ul>
+<li><strong>5X higher TPS</strong>,</li>
+<li><strong>2.3X less CPU load per transaction</strong>,</li>
+<li><strong>22X less IOPS per transaction</strong>,</li>
+<li><strong>No table and index bloat</strong>.</li>
+</ul>
+<h3 id="embrace-the-future-try-orioledb-today">Embrace the Future: Try OrioleDB Today</h3>
+<p>With the introduction of OrioleDB, the PostgreSQL community stands on the brink of a new era where the haunting specter of VACUUM is a thing of the past. This novel engine offers a compelling solution to one of PostgreSQL&rsquo;s longest-standing challenges, promising users increased efficiency and fewer maintenance headaches.</p>
+<p>So why wait? <a href="https://github.com/orioledb/orioledb">Visit our github</a> and try OrioleDB today and join the revolution to a more streamlined, efficient, and VACUUM-free PostgreSQL experience.</p></div>
+        <h5 class="mb-4">
+          
+            <a href="/authors/alexander-korotkov">Alexander Korotkov</a>
+           at 15 Jul 23 12:14 UTC
+        </h5>
+        
+        
+        <div class="mt-5">
+          <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "akorotkov" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<footer class="bg-light section pb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-6 mb-5">
+        
+        <div class="h3 mb-4">Company</div>
+        <ul class="list-unstyled footer-list">
+          
+          <li><a href="https://www.orioledata.com/contact">Contact</a></li>
+          
+          <li><a href="https://www.orioledata.com/faq">FAQ</a></li>
+          
+        </ul>
+        
+      </div>
+      <div class="col-md-3 col-sm-6 mb-5">
+        
+      </div>
+      <div class="col-md-3 col-sm-6 mb-5">
+        
+      </div>
+      <div class="col-md-3 col-sm-6 mb-5">
+        <a class="d-block mb-3" href="https://www.orioledata.com/"><img width="150px"  class="img-fluid" src="https://www.orioledata.com/images/logo.png" alt="OrioleDB – the next generation storage engine for PostgreSQL"></a>
+        <p class="mb-4"></p>
+        
+        
+      </div>
+    </div>
+    
+  </div>
+</footer>
+
+<!-- JS Plugins -->
+
+<script src="https://www.orioledata.com/plugins/jQuery/jquery.min.js"></script>
+
+<script src="https://www.orioledata.com/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="https://www.orioledata.com/plugins/slick/slick.min.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+
+<!-- Main Script -->
+
+<script src="https://www.orioledata.com/js/script.min.js"></script></body>
+
+</html>

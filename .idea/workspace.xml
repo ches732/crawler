@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a8fd182d-8e91-4fe2-8044-2233c3e97548" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/aiohttp_prodject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36688735/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36688735/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36688735/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36722267/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36722267/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36722267/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36725910/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36725910/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36725910/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36729125/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36729125/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36729125/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36731778/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36731778/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36731778/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36734266/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36734266/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36734266/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36734426/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36734426/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36734426/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36735616/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36735616/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36735616/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36735620/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36735620/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36735620/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36735881/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36735881/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36735881/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36736002/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36736002/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36736002/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36737733/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36737733/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36737733/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36738347/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36738347/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36738347/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36738828/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36738828/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36738828/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36739067/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36739067/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36739067/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36739258/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36739258/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36739258/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36739283/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36739283/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36739283/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36739320/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36739320/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36739320/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36739688/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36739688/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36739688/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36739906/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36739906/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36739906/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36739920/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36739920/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36739920/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36740133/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36740133/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36740133/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36740357/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36740357/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36740357/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36740385/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36740385/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36740385/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36740400/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36740400/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36740400/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36740430/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36740430/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36740430/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36740921/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36740921/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36740921/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36741153/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36741153/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36741153/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36741236/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36741236/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36741236/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36741270/comments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36741270/links_from_comments.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/links/36741270/post.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/test_crawler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/crawler.py" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/crawler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/services.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tasks/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/tasks/settings.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2RsS8hxqjntMfKObnfTrZS62M0Y" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/crawler",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="pytest for test_crawler.test" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="aiohttp_prodject" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_crawler.test&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.pytest for test_crawler.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a8fd182d-8e91-4fe2-8044-2233c3e97548" name="Changes" comment="" />
+      <created>1688037137601</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1688037137601</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
+  </component>
+</project>

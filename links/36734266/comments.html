@@ -1,0 +1,1012 @@
+<html lang="en" op="item"><head><meta name="referrer" content="origin"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" type="text/css" href="news.css?5H9MtNw5DeqtfAm5Zd9Y">
+        <link rel="shortcut icon" href="favicon.ico">
+        <title>The day I locked everyone out of the company intranet | Hacker News</title></head><body><center><table id="hnmain" border="0" cellpadding="0" cellspacing="0" width="85%" bgcolor="#f6f6ef">
+        <tr><td bgcolor="#ff6600"><table border="0" cellpadding="0" cellspacing="0" width="100%" style="padding:2px"><tr><td style="width:18px;padding-right:4px"><a href="https://news.ycombinator.com"><img src="y18.svg" width="18" height="18" style="border:1px white solid; display:block"></a></td>
+                  <td style="line-height:12pt; height:10px;"><span class="pagetop"><b class="hnname"><a href="news">Hacker News</a></b>
+                            <a href="newest">new</a> | <a href="front">past</a> | <a href="newcomments">comments</a> | <a href="ask">ask</a> | <a href="show">show</a> | <a href="jobs">jobs</a> | <a href="submit">submit</a>            </span></td><td style="text-align:right;padding-right:4px;"><span class="pagetop">
+                              <a href="login?goto=item%3Fid%3D36734266">login</a>
+                          </span></td>
+              </tr></table></td></tr>
+<tr id="pagespace" title="The day I locked everyone out of the company intranet" style="height:10px"></tr><tr><td><table class="fatitem" border="0">
+        <tr class='athing' id='36734266'>
+      <td align="right" valign="top" class="title"><span class="rank"></span></td>      <td valign="top" class="votelinks"><center><a id='up_36734266'href='vote?id=36734266&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center></td><td class="title"><span class="titleline"><a href="https://www.dancowell.com/balls-the-day-i-locked-ev/" rel="noreferrer">The day I locked everyone out of the company intranet</a><span class="sitebit comhead"> (<a href="from?site=dancowell.com"><span class="sitestr">dancowell.com</span></a>)</span></span></td></tr><tr><td colspan="2"></td><td class="subtext"><span class="subline">
+          <span class="score" id="score_36734266">123 points</span> by <a href="user?id=dfcowell" class="hnuser">dfcowell</a> <span class="age" title="2023-07-15T06:53:25"><a href="item?id=36734266">9 hours ago</a></span> <span id="unv_36734266"></span> | <a href="hide?id=36734266&amp;goto=item%3Fid%3D36734266">hide</a> | <a href="https://hn.algolia.com/?query=The%20day%20I%20locked%20everyone%20out%20of%20the%20company%20intranet&type=story&dateRange=all&sort=byDate&storyText=false&prefix&page=0" class="hnpast">past</a> | <a href="fave?id=36734266&amp;auth=f4418c826a246df4ab48f6353715622c9b057e82">favorite</a> | <a href="item?id=36734266">88&nbsp;comments</a>        </span>
+              </td></tr>
+            <tr style="height:10px"></tr><tr><td colspan="2"></td><td><form action="comment" method="post"><input type="hidden" name="parent" value="36734266"><input type="hidden" name="goto" value="item?id=36734266"><input type="hidden" name="hmac" value="c461943052bb53b471cf0baa66e7f70d67e7c483"><textarea name="text" rows="8" cols="80" wrap="virtual"></textarea><br><br>
+<input type="submit" value="add comment"></form></td></tr>  </table><br><br><table border="0" class='comment-tree'>
+            <tr class='athing comtr' id='36734798'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36734798'href='vote?id=36734798&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=fukawi2" class="hnuser">fukawi2</a> <span class="age" title="2023-07-15T08:33:44"><a href="item?id=36734798">7 hours ago</a></span> <span id="unv_36734798"></span>          <span class='navs'>
+             | <a href="#36737815" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36734798" n="13" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">I was working on an old old old &quot;ERP&quot; system written in D3 PICK. It&#x27;s a database, programming language and OS all in one with roots in tracking military helicopter parts in the 1960&#x27;s. I was working on it in the mid-2000s.<p>It had SQL like syntax for manipulating data, but it was interactive. So you would SELECT the rows from the table that you wanted, then those rows would be part of your state. You would then do UPDATE or DELETE without any kind of WHERE, because the state had your filter from the previous SELECT.<p>It has a fun quirk though - if your SELECT matched no rows, the state would be empty. So SELECT foo WHERE 1=2 would select nothing.<p>UPDATE and DELETE are perfectly valid actions even without a state...<p>Working late one night, I ran a SELECT STKM WHERE something that matched nothing, then before I realised I realised my state had no rows matched, I followed up with DELETE STKM.<p>Yep, the entire Stock Movements table four the last 20+ years of business were gone.<p>The nightly backup had not run, and I didn&#x27;t want to lose an entire day of processing to roll back to the previous night.<p>I spent the entire night writing a program to recreate that data based on invoices, purchase orders, stocktake data, etc. I was able to recreate every record and got home about 9am. Lots of lessons learnt that night.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36734798&amp;goto=item%3Fid%3D36734266%2336734798">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36736809'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36736809'href='vote?id=36736809&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=cvoss" class="hnuser">cvoss</a> <span class="age" title="2023-07-15T13:58:41"><a href="item?id=36736809">1 hour ago</a></span> <span id="unv_36736809"></span>          <span class='navs'>
+             | <a href="#36734798" class="clicky" aria-hidden="true">parent</a> | <a href="#36734818" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36736809" n="2" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">&gt; if your SELECT matched no rows, the state would be empty<p>&gt; UPDATE and DELETE are perfectly valid actions even without a state<p>Some may call this a fun quirk :) but I&#x27;d call it a horrible mistake in the design of the system! It should have been conceptually obvious to the designer that an empty set of rows is a perfectly valid state and is fundamentally different from &quot;no state&quot;.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36736809&amp;goto=item%3Fid%3D36734266%2336736809">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36737782'><td><table border='0'>  <tr>    <td class='ind' indent='2'><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id='up_36737782'href='vote?id=36737782&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=bombolo" class="hnuser">bombolo</a> <span class="age" title="2023-07-15T15:38:54"><a href="item?id=36737782">40 minutes ago</a></span> <span id="unv_36737782"></span>          <span class='navs'>
+             | <a href="#36734798" class="clicky" aria-hidden="true">root</a> | <a href="#36736809" class="clicky" aria-hidden="true">parent</a> | <a href="#36734818" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36737782" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">At university I had to use a programming language to do some specific calculations.<p>It was obviously designed by someone who had not taken any courses in formal languages, compilers and algorithms.<p>It had a fun quirk, the final result would change depending on which names you used for your variables.<p>When the phd student guiding our lab session told me to not use underscores in my variable names, I thought i&#x27;d humor her just to show her it was a stupid suggestion. But she knew more than me.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36737782&amp;goto=item%3Fid%3D36734266%2336737782">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                  <tr class='athing comtr' id='36734818'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36734818'href='vote?id=36734818&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=albert_e" class="hnuser">albert_e</a> <span class="age" title="2023-07-15T08:36:24"><a href="item?id=36734818">7 hours ago</a></span> <span id="unv_36734818"></span>          <span class='navs'>
+             | <a href="#36734798" class="clicky" aria-hidden="true">parent</a> | <a href="#36736809" class="clicky" aria-hidden="true">prev</a> | <a href="#36739486" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36734818" n="8" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">You recreated a production database of 20 years data by hand overnight?<p>You deserve an award !!!</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36734818&amp;goto=item%3Fid%3D36734266%2336734818">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36734992'><td><table border='0'>  <tr>    <td class='ind' indent='2'><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id='up_36734992'href='vote?id=36734992&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=fukawi2" class="hnuser">fukawi2</a> <span class="age" title="2023-07-15T09:11:55"><a href="item?id=36734992">6 hours ago</a></span> <span id="unv_36734992"></span>          <span class='navs'>
+             | <a href="#36734798" class="clicky" aria-hidden="true">root</a> | <a href="#36734818" class="clicky" aria-hidden="true">parent</a> | <a href="#36734874" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36734992" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Yep, the entire table. I figured since I had to write it to do the day at a minimum, doing the whole table would help me find corner cases and errors since it was a much larger range of data</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36734992&amp;goto=item%3Fid%3D36734266%2336734992">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36734874'><td><table border='0'>  <tr>    <td class='ind' indent='2'><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id='up_36734874'href='vote?id=36734874&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=testemailfordg2" class="hnuser">testemailfordg2</a> <span class="age" title="2023-07-15T08:47:44"><a href="item?id=36734874">7 hours ago</a></span> <span id="unv_36734874"></span>          <span class='navs'>
+             | <a href="#36734798" class="clicky" aria-hidden="true">root</a> | <a href="#36734818" class="clicky" aria-hidden="true">parent</a> | <a href="#36734992" class="clicky" aria-hidden="true">prev</a> | <a href="#36734881" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36734874" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Only that day&#x27;s data was added on top of backup from last night...</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36734874&amp;goto=item%3Fid%3D36734266%2336734874">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36734881'><td><table border='0'>  <tr>    <td class='ind' indent='2'><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id='up_36734881'href='vote?id=36734881&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=unnouinceput" class="hnuser">unnouinceput</a> <span class="age" title="2023-07-15T08:48:50"><a href="item?id=36734881">7 hours ago</a></span> <span id="unv_36734881"></span>          <span class='navs'>
+             | <a href="#36734798" class="clicky" aria-hidden="true">root</a> | <a href="#36734818" class="clicky" aria-hidden="true">parent</a> | <a href="#36734874" class="clicky" aria-hidden="true">prev</a> | <a href="#36739486" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36734881" n="5" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">he only recreated the ones not saved by the nightly backup, meaning he used the previous nightly backup and recreated from invoices the last ~23 hours.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36734881&amp;goto=item%3Fid%3D36734266%2336734881">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36734996'><td><table border='0'>  <tr>    <td class='ind' indent='3'><img src="s.gif" height="1" width="120"></td><td valign="top" class="votelinks">
+      <center><a id='up_36734996'href='vote?id=36734996&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=fukawi2" class="hnuser">fukawi2</a> <span class="age" title="2023-07-15T09:12:42"><a href="item?id=36734996">6 hours ago</a></span> <span id="unv_36734996"></span>          <span class='navs'>
+             | <a href="#36734798" class="clicky" aria-hidden="true">root</a> | <a href="#36734881" class="clicky" aria-hidden="true">parent</a> | <a href="#36739486" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36734996" n="4" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">No, I did the entire table. That helped me find corner cases and errors in my logic having such a bigger range of source data.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36734996&amp;goto=item%3Fid%3D36734266%2336734996">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36735286'><td><table border='0'>  <tr>    <td class='ind' indent='4'><img src="s.gif" height="1" width="160"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735286'href='vote?id=36735286&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=stevezsa8" class="hnuser">stevezsa8</a> <span class="age" title="2023-07-15T10:25:01"><a href="item?id=36735286">5 hours ago</a></span> <span id="unv_36735286"></span>          <span class='navs'>
+             | <a href="#36734798" class="clicky" aria-hidden="true">root</a> | <a href="#36734996" class="clicky" aria-hidden="true">parent</a> | <a href="#36736925" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735286" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Maybe I don&#x27;t fully comprehend what you&#x27;re saying... but is it even possible to do this?<p>I mean what if at some point particular entries were manually tweaked and the database was updated to fix an error in an invoice or something. And then you recreated data from what you assume is 100% reliable data.<p>I&#x27;m happy to try to understand if you don&#x27;t mind simplifying the explanation.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735286&amp;goto=item%3Fid%3D36734266%2336735286">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36736925'><td><table border='0'>  <tr>    <td class='ind' indent='4'><img src="s.gif" height="1" width="160"></td><td valign="top" class="votelinks">
+      <center><a id='up_36736925'href='vote?id=36736925&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=Aardwolf" class="hnuser">Aardwolf</a> <span class="age" title="2023-07-15T14:10:56"><a href="item?id=36736925">1 hour ago</a></span> <span id="unv_36736925"></span>          <span class='navs'>
+             | <a href="#36734798" class="clicky" aria-hidden="true">root</a> | <a href="#36734996" class="clicky" aria-hidden="true">parent</a> | <a href="#36735286" class="clicky" aria-hidden="true">prev</a> | <a href="#36735235" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36736925" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Where did you get the 20 year old data from in that case? Actual paper in drawers, a directory of all invoices on disk, or some other database?</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36736925&amp;goto=item%3Fid%3D36734266%2336736925">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36735235'><td><table border='0'>  <tr>    <td class='ind' indent='4'><img src="s.gif" height="1" width="160"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735235'href='vote?id=36735235&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=tester756" class="hnuser">tester756</a> <span class="age" title="2023-07-15T10:12:18"><a href="item?id=36735235">5 hours ago</a></span> <span id="unv_36735235"></span>          <span class='navs'>
+             | <a href="#36734798" class="clicky" aria-hidden="true">root</a> | <a href="#36734996" class="clicky" aria-hidden="true">parent</a> | <a href="#36736925" class="clicky" aria-hidden="true">prev</a> | <a href="#36739486" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735235" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Wow,<p>I&#x27;d still not touch previous data.<p>I&#x27;d use it just for ensuring correctness, but I&#x27;d not touch it</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735235&amp;goto=item%3Fid%3D36734266%2336735235">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                              <tr class='athing comtr' id='36739486'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36739486'href='vote?id=36739486&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=EricBetts" class="hnuser">EricBetts</a> <span class="age" title="2023-07-15T18:08:51"><a href="item?id=36739486">40 minutes ago</a></span> <span id="unv_36739486"></span>          <span class='navs'>
+             | <a href="#36734798" class="clicky" aria-hidden="true">parent</a> | <a href="#36734818" class="clicky" aria-hidden="true">prev</a> | <a href="#36736215" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36739486" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">PICK is giving be flashbacks of my tenure at ADP’s dealership services (I think it became CDK)</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36739486&amp;goto=item%3Fid%3D36734266%2336739486">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36736215'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36736215'href='vote?id=36736215&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=vivekv" class="hnuser">vivekv</a> <span class="age" title="2023-07-15T12:55:07"><a href="item?id=36736215">2 hours ago</a></span> <span id="unv_36736215"></span>          <span class='navs'>
+             | <a href="#36734798" class="clicky" aria-hidden="true">parent</a> | <a href="#36739486" class="clicky" aria-hidden="true">prev</a> | <a href="#36737815" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36736215" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Whe. I first learned SQL on an oracle cli client I was told to type begin; then any other command.  For a brief while until i learned about transactions, I assumed that it was part of the cli startup :)</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36736215&amp;goto=item%3Fid%3D36734266%2336736215">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                  <tr class='athing comtr' id='36737815'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36737815'href='vote?id=36737815&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=IronWolve" class="hnuser">IronWolve</a> <span class="age" title="2023-07-15T15:42:02"><a href="item?id=36737815">40 minutes ago</a></span> <span id="unv_36737815"></span>          <span class='navs'>
+             | <a href="#36734798" class="clicky" aria-hidden="true">prev</a> | <a href="#36739605" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36737815" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">My first sysadmin job at a call center, the call center reps use the same directory for all the users.  And, I&#x27;m working tickets to delete old users accounts...<p>The old grey haired sysadmin backs up the directory so he can instantly restore it.  Seems this happens all the time.<p>Whew.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36737815&amp;goto=item%3Fid%3D36734266%2336737815">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36739605'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36739605'href='vote?id=36739605&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=rrrrrrrrrrrryan" class="hnuser">rrrrrrrrrrrryan</a> <span class="age" title="2023-07-15T18:24:22"><a href="item?id=36739605">41 minutes ago</a></span> <span id="unv_36739605"></span>          <span class='navs'>
+             | <a href="#36737815" class="clicky" aria-hidden="true">prev</a> | <a href="#36737079" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36739605" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">A few months into my first job out of college, I brought down the main production server in the middle of the workday. It took us about an hour to recover. Afterward, I was very embarrassed and apologetic, but my boss just shrugged and said:<p>&quot;You&#x27;re not a real technology worker until you&#x27;ve brought the company down. Welcome.&quot;<p>Might not be the best words to live by, but it was exactly what I needed to hear at that time early in my career.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36739605&amp;goto=item%3Fid%3D36734266%2336739605">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36737079'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36737079'href='vote?id=36737079&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=philderbeast" class="hnuser">philderbeast</a> <span class="age" title="2023-07-15T14:26:37"><a href="item?id=36737079">1 hour ago</a></span> <span id="unv_36737079"></span>          <span class='navs'>
+             | <a href="#36739605" class="clicky" aria-hidden="true">prev</a> | <a href="#36735789" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36737079" n="2" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">&quot;All of your colleagues have done something dumb. Don&#x27;t be afraid to tell us when you make a mistake. We all remember our first screw up and will be happy to help.&quot;<p>Never have truer words been spoken.<p>As I tell all the new juniors at work doing sysadmin type tasks, everyone has deleted the production database at least once. Mistakes will always happen, it&#x27;s how you deal with them that defines how good you are at the end of the day.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36737079&amp;goto=item%3Fid%3D36734266%2336737079">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36737307'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36737307'href='vote?id=36737307&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=russfink" class="hnuser">russfink</a> <span class="age" title="2023-07-15T14:51:13"><a href="item?id=36737307">1 hour ago</a></span> <span id="unv_36737307"></span>          <span class='navs'>
+             | <a href="#36737079" class="clicky" aria-hidden="true">parent</a> | <a href="#36735789" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36737307" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">It’s also a measure of how well management does in response.  We were transferring a software production repository from one machine to another, Lord knows why, when a junior admin I was supposed to supervise had arrived a half hour early and started the operation without me.  He got the source and destination arguments reversed in the file transfer; we were using DD for this one part of it.<p>Management reacted pretty well. They assured both of us that while we made the mistake, it was not our fault that data was lost: the problem was that backups were not being checked, which caused us to lose the resulting three days (120 developer days) of work. The manager in charge of the folks doing the backup got taken to task - but nobody else did.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36737307&amp;goto=item%3Fid%3D36734266%2336737307">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                  <tr class='athing comtr' id='36735789'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735789'href='vote?id=36735789&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=croo" class="hnuser">croo</a> <span class="age" title="2023-07-15T12:01:01"><a href="item?id=36735789">3 hours ago</a></span> <span id="unv_36735789"></span>          <span class='navs'>
+             | <a href="#36737079" class="clicky" aria-hidden="true">prev</a> | <a href="#36734632" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735789" n="7" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">My chooosen database explorer is Dbeaver. Horrible name but great app.<p>You can set colours for local&#x2F;test&#x2F;prod servers and a red colored tab will scream at you to be cautious. And with red color every edit will pop up an &quot;are you sure?&quot; question. And autocommit is off.<p>I sorta stopped making unrecoverable mistakes.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735789&amp;goto=item%3Fid%3D36734266%2336735789">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36737120'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36737120'href='vote?id=36737120&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=reaperducer" class="hnuser">reaperducer</a> <span class="age" title="2023-07-15T14:30:40"><a href="item?id=36737120">1 hour ago</a></span> <span id="unv_36737120"></span>          <span class='navs'>
+             | <a href="#36735789" class="clicky" aria-hidden="true">parent</a> | <a href="#36738920" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36737120" n="2" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00"><i>My chooosen database explorer is Dbeaver</i><p>I just checked it out, and it looks promising.<p>Con: There are too many licensing options. I&#x27;m not even sure which one I would need.<p>Pro: They&#x27;ll send out an invoice, like a real company. I work for a billion-dollar healthcare company, and if your company only takes PayPal, or Venmo, or something else that makes it look like two guys in a basement, it&#x27;ll never get through our purchase approval process. Big companies do business with other big companies. Startups have to learn to interface with businesses on a business level if they ever want to grow out of being a startup.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36737120&amp;goto=item%3Fid%3D36734266%2336737120">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36737209'><td><table border='0'>  <tr>    <td class='ind' indent='2'><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id='up_36737209'href='vote?id=36737209&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=fbdab103" class="hnuser">fbdab103</a> <span class="age" title="2023-07-15T14:40:34"><a href="item?id=36737209">1 hour ago</a></span> <span id="unv_36737209"></span>          <span class='navs'>
+             | <a href="#36735789" class="clicky" aria-hidden="true">root</a> | <a href="#36737120" class="clicky" aria-hidden="true">parent</a> | <a href="#36738920" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36737209" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Start with the Community Edition and see where it takes you.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36737209&amp;goto=item%3Fid%3D36734266%2336737209">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                  <tr class='athing comtr' id='36738920'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36738920'href='vote?id=36738920&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=jareklupinski" class="hnuser">jareklupinski</a> <span class="age" title="2023-07-15T17:11:27"><a href="item?id=36738920">41 minutes ago</a></span> <span id="unv_36738920"></span>          <span class='navs'>
+             | <a href="#36735789" class="clicky" aria-hidden="true">parent</a> | <a href="#36737120" class="clicky" aria-hidden="true">prev</a> | <a href="#36737196" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36738920" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">i&#x27;m using it on Mac, and it seems to want to update every time I turn it on... i get that having timely updates is great, but the way to update the app on a mac is:<p>click ok on the update dialog, wait until the download finishes, shut down the app, drag the new app over to Applications, click Replace, wait for the actual moving dialog to pop up, wait for the moving dialog to finish, minimize all your windows so you can see the desktop, unmount the dbeaver image, click dbeaver again<p>and you can get back to work! now if only I could remember all the details that were in my head when i opened the app in the first place...<p>dbeaver team: can you do what paint.net did please? that is, only bother me to update as i&#x27;m turning the app off, not on?</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36738920&amp;goto=item%3Fid%3D36734266%2336738920">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36737196'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36737196'href='vote?id=36737196&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=fbdab103" class="hnuser">fbdab103</a> <span class="age" title="2023-07-15T14:38:49"><a href="item?id=36737196">1 hour ago</a></span> <span id="unv_36737196"></span>          <span class='navs'>
+             | <a href="#36735789" class="clicky" aria-hidden="true">parent</a> | <a href="#36738920" class="clicky" aria-hidden="true">prev</a> | <a href="#36736030" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36737196" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">My only complaint about DBeaver is how powerful it is -I feel like I have only ever scratched 1% of the functionality it offers. I need a tutorial class on all of the goodies the platform can do.<p>All of the tutorials I seem to find online are basic level and&#x2F;or mixed with introducing SQL.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36737196&amp;goto=item%3Fid%3D36734266%2336737196">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36736030'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36736030'href='vote?id=36736030&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=acomjean" class="hnuser">acomjean</a> <span class="age" title="2023-07-15T12:33:40"><a href="item?id=36736030">3 hours ago</a></span> <span id="unv_36736030"></span>          <span class='navs'>
+             | <a href="#36735789" class="clicky" aria-hidden="true">parent</a> | <a href="#36737196" class="clicky" aria-hidden="true">prev</a> | <a href="#36737534" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36736030" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">DBeaver is great.   I came from a different tool, and had to get used to persisting the changes. I’m totally use to it.<p>I run a local copy of the database I connect to remotely and I have to be careful about which database&#x2F;table I’m connected too.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36736030&amp;goto=item%3Fid%3D36734266%2336736030">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36737534'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36737534'href='vote?id=36737534&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=psnehanshu" class="hnuser">psnehanshu</a> <span class="age" title="2023-07-15T15:12:59"><a href="item?id=36737534">40 minutes ago</a></span> <span id="unv_36737534"></span>          <span class='navs'>
+             | <a href="#36735789" class="clicky" aria-hidden="true">parent</a> | <a href="#36736030" class="clicky" aria-hidden="true">prev</a> | <a href="#36734632" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36737534" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">I love DBeaver too.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36737534&amp;goto=item%3Fid%3D36734266%2336737534">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                  <tr class='athing comtr' id='36734632'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36734632'href='vote?id=36734632&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=drsim" class="hnuser">drsim</a> <span class="age" title="2023-07-15T08:05:00"><a href="item?id=36734632">7 hours ago</a></span> <span id="unv_36734632"></span>          <span class='navs'>
+             | <a href="#36735789" class="clicky" aria-hidden="true">prev</a> | <a href="#36734597" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36734632" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">I wrap all of my production manipulations in a transaction, and commit only if the results are expected. Yes, it may take locks that block customer-facing transactions, so I have selects ready to go in the transaction to minimise this.<p>15 years and counting since wiping out a large production table and taking a day to restore from backup.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36734632&amp;goto=item%3Fid%3D36734266%2336734632">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36734597'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36734597'href='vote?id=36734597&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=freetanga" class="hnuser">freetanga</a> <span class="age" title="2023-07-15T07:57:28"><a href="item?id=36734597">7 hours ago</a></span> <span id="unv_36734597"></span>          <span class='navs'>
+             | <a href="#36734632" class="clicky" aria-hidden="true">prev</a> | <a href="#36735333" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36734597" n="22" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Always do a select with your criteria before doing a Delete or update.<p>Don’t ask me how I learned this.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36734597&amp;goto=item%3Fid%3D36734266%2336734597">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36735481'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735481'href='vote?id=36735481&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=justinclift" class="hnuser">justinclift</a> <span class="age" title="2023-07-15T11:05:06"><a href="item?id=36735481">4 hours ago</a></span> <span id="unv_36735481"></span>          <span class='navs'>
+             | <a href="#36734597" class="clicky" aria-hidden="true">parent</a> | <a href="#36734604" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735481" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">At a previous place I worked, if they were working on the cli (eg in psql or similar) they&#x27;d always use these two steps, either of which would provide adequate protection:<p>1. Start a transaction before even thinking of writing the delete&#x2F;update&#x2F;etc (BEGIN; ...)<p>2. Always write the WHERE query out first, THEN go back to the start of the line and fill out the DELETE&#x2F;UPDATE&#x2F;etc.<p>It worked well, and it&#x27;s a habit I&#x27;ve since tried to keep on doing myself as well.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735481&amp;goto=item%3Fid%3D36734266%2336735481">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36734604'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36734604'href='vote?id=36734604&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=gumballindie" class="hnuser">gumballindie</a> <span class="age" title="2023-07-15T07:59:14"><a href="item?id=36734604">7 hours ago</a></span> <span id="unv_36734604"></span>          <span class='navs'>
+             | <a href="#36734597" class="clicky" aria-hidden="true">parent</a> | <a href="#36735481" class="clicky" aria-hidden="true">prev</a> | <a href="#36734920" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36734604" n="3" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Came here to say exactly that! I do a select count and then a limit against the returned count. At least it may reduce the blast radius.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36734604&amp;goto=item%3Fid%3D36734266%2336734604">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36735937'><td><table border='0'>  <tr>    <td class='ind' indent='2'><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735937'href='vote?id=36735937&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=menacingly" class="hnuser">menacingly</a> <span class="age" title="2023-07-15T12:23:26"><a href="item?id=36735937">3 hours ago</a></span> <span id="unv_36735937"></span>          <span class='navs'>
+             | <a href="#36734597" class="clicky" aria-hidden="true">root</a> | <a href="#36734604" class="clicky" aria-hidden="true">parent</a> | <a href="#36734920" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735937" n="2" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">In most of my scenarios, I&#x27;d actually rather cause a catastrophic global change than a silent subtle corruption of a handful of rows</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735937&amp;goto=item%3Fid%3D36734266%2336735937">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36736323'><td><table border='0'>  <tr>    <td class='ind' indent='3'><img src="s.gif" height="1" width="120"></td><td valign="top" class="votelinks">
+      <center><a id='up_36736323'href='vote?id=36736323&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=gumballindie" class="hnuser">gumballindie</a> <span class="age" title="2023-07-15T13:05:50"><a href="item?id=36736323">2 hours ago</a></span> <span id="unv_36736323"></span>          <span class='navs'>
+             | <a href="#36734597" class="clicky" aria-hidden="true">root</a> | <a href="#36735937" class="clicky" aria-hidden="true">parent</a> | <a href="#36734920" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36736323" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">That may be fun in a trivial setup such as op’s but when millions of customers or billions of transactions are affected it’s a nightmare. A competent engineer runs queries against a local and then a uat db, verifies results and then on prod. But if you must do it in prod then it must be limited in scope.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36736323&amp;goto=item%3Fid%3D36734266%2336736323">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                        <tr class='athing comtr' id='36734920'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36734920'href='vote?id=36734920&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=_nalply" class="hnuser">_nalply</a> <span class="age" title="2023-07-15T08:57:00"><a href="item?id=36734920">6 hours ago</a></span> <span id="unv_36734920"></span>          <span class='navs'>
+             | <a href="#36734597" class="clicky" aria-hidden="true">parent</a> | <a href="#36734604" class="clicky" aria-hidden="true">prev</a> | <a href="#36734815" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36734920" n="7" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Once I wanted to do `rm -fr *~` to delete backup files, but the `~` key didn&#x27;t register...<p>Now I have learnt to instinctively stop before doing anything destructive and double-check and double-check again! This also applies to SQL `DELETE` and `UPDATE`!<p>I know that `-r` was not neccessary but hey that was a biiiig mistake of mine!</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36734920&amp;goto=item%3Fid%3D36734266%2336734920">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36735334'><td><table border='0'>  <tr>    <td class='ind' indent='2'><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735334'href='vote?id=36735334&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=tetha" class="hnuser">tetha</a> <span class="age" title="2023-07-15T10:34:39"><a href="item?id=36735334">5 hours ago</a></span> <span id="unv_36735334"></span>          <span class='navs'>
+             | <a href="#36734597" class="clicky" aria-hidden="true">root</a> | <a href="#36734920" class="clicky" aria-hidden="true">parent</a> | <a href="#36735245" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735334" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">For entirely critical systems, I by now rather generate a reviewable script and run that. Something along the lines of:<p><pre><code>    find &#x2F;backups&#x2F; -mtime &#x27;-30&#x27; -printf &#x27;rm -f %p\n&#x27; &gt; very_scary_deletes.sh
+</code></pre>
+This gives you a static script with a bunch of rm&#x27;s. You can read that, check it, give it to people to validate and when you eventually run it, it deletes exactly those files.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735334&amp;goto=item%3Fid%3D36734266%2336735334">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36735245'><td><table border='0'>  <tr>    <td class='ind' indent='2'><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735245'href='vote?id=36735245&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=ht85" class="hnuser">ht85</a> <span class="age" title="2023-07-15T10:17:09"><a href="item?id=36735245">5 hours ago</a></span> <span id="unv_36735245"></span>          <span class='navs'>
+             | <a href="#36734597" class="clicky" aria-hidden="true">root</a> | <a href="#36734920" class="clicky" aria-hidden="true">parent</a> | <a href="#36735334" class="clicky" aria-hidden="true">prev</a> | <a href="#36741300" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735245" n="2" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">If you ever type really dangerous commands, it is good practice to prefix them with a space (or whatever your favorite shell convention is) to make sure they not saved in your history.<p>One of my &quot;oopsies&quot; involved aggressive &lt;up&gt; and &lt;enter&gt; usage and a previous `rm -rf *` running in &#x2F;home...</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735245&amp;goto=item%3Fid%3D36734266%2336735245">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36735469'><td><table border='0'>  <tr>    <td class='ind' indent='3'><img src="s.gif" height="1" width="120"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735469'href='vote?id=36735469&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=CoastalCoder" class="hnuser">CoastalCoder</a> <span class="age" title="2023-07-15T11:02:01"><a href="item?id=36735469">4 hours ago</a></span> <span id="unv_36735469"></span>          <span class='navs'>
+             | <a href="#36734597" class="clicky" aria-hidden="true">root</a> | <a href="#36735245" class="clicky" aria-hidden="true">parent</a> | <a href="#36741300" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735469" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">I didn&#x27;t know about the space thing!<p>Though for me, I think the greater risk would be from not having a record of what I&#x27;d run.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735469&amp;goto=item%3Fid%3D36734266%2336735469">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                  <tr class='athing comtr' id='36741300'><td><table border='0'>  <tr>    <td class='ind' indent='2'><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id='up_36741300'href='vote?id=36741300&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=lostmsu" class="hnuser">lostmsu</a> <span class="age" title="2023-07-15T21:54:08"><a href="item?id=36741300">40 minutes ago</a></span> <span id="unv_36741300"></span>          <span class='navs'>
+             | <a href="#36734597" class="clicky" aria-hidden="true">root</a> | <a href="#36734920" class="clicky" aria-hidden="true">parent</a> | <a href="#36735245" class="clicky" aria-hidden="true">prev</a> | <a href="#36735139" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36741300" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">I click in Explorer. Have to confirm too. Never been confused.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36741300&amp;goto=item%3Fid%3D36734266%2336741300">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36735139'><td><table border='0'>  <tr>    <td class='ind' indent='2'><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735139'href='vote?id=36735139&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=_shantaram" class="hnuser">_shantaram</a> <span class="age" title="2023-07-15T09:46:57"><a href="item?id=36735139">6 hours ago</a></span> <span id="unv_36735139"></span>          <span class='navs'>
+             | <a href="#36734597" class="clicky" aria-hidden="true">root</a> | <a href="#36734920" class="clicky" aria-hidden="true">parent</a> | <a href="#36741300" class="clicky" aria-hidden="true">prev</a> | <a href="#36734957" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735139" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">One time I was debugging the path resolver in a static site generator I was writing. I generated a site ~&#x2F;foo, thinking it would do &#x2F;home&#x2F;shantaram&#x2F;foo, but instead it made a dir &#x27;~&#x27; in the current directory. I did `rm -rf ~` without thinking. Command took super long, wondered what was going on, ctrl-c&#x27;d in horror... that was fun.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735139&amp;goto=item%3Fid%3D36734266%2336735139">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36734957'><td><table border='0'>  <tr>    <td class='ind' indent='2'><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id='up_36734957'href='vote?id=36734957&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=laurensr" class="hnuser">laurensr</a> <span class="age" title="2023-07-15T09:05:38"><a href="item?id=36734957">6 hours ago</a></span> <span id="unv_36734957"></span>          <span class='navs'>
+             | <a href="#36734597" class="clicky" aria-hidden="true">root</a> | <a href="#36734920" class="clicky" aria-hidden="true">parent</a> | <a href="#36735139" class="clicky" aria-hidden="true">prev</a> | <a href="#36734815" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36734957" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">You remind me of that time I wanted to `rm -rf .&#x2F;*` but the dot hadn&#x27;t registered...
+I now avoid that statement.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36734957&amp;goto=item%3Fid%3D36734266%2336734957">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                  <tr class='athing comtr' id='36734815'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36734815'href='vote?id=36734815&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=tgv" class="hnuser">tgv</a> <span class="age" title="2023-07-15T08:35:50"><a href="item?id=36734815">7 hours ago</a></span> <span id="unv_36734815"></span>          <span class='navs'>
+             | <a href="#36734597" class="clicky" aria-hidden="true">parent</a> | <a href="#36734920" class="clicky" aria-hidden="true">prev</a> | <a href="#36734806" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36734815" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Then start a transaction, and only commit when the row numbers match.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36734815&amp;goto=item%3Fid%3D36734266%2336734815">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36734806'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36734806'href='vote?id=36734806&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=chrisandchris" class="hnuser">chrisandchris</a> <span class="age" title="2023-07-15T08:34:29"><a href="item?id=36734806">7 hours ago</a></span> <span id="unv_36734806"></span>          <span class='navs'>
+             | <a href="#36734597" class="clicky" aria-hidden="true">parent</a> | <a href="#36734815" class="clicky" aria-hidden="true">prev</a> | <a href="#36734639" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36734806" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">That, and some DB tools (line JetBrains DataGrip) block UPDATEs and DELETEs without a WHERE condition.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36734806&amp;goto=item%3Fid%3D36734266%2336734806">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36734639'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36734639'href='vote?id=36734639&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=jojobas" class="hnuser">jojobas</a> <span class="age" title="2023-07-15T08:06:24"><a href="item?id=36734639">7 hours ago</a></span> <span id="unv_36734639"></span>          <span class='navs'>
+             | <a href="#36734597" class="clicky" aria-hidden="true">parent</a> | <a href="#36734806" class="clicky" aria-hidden="true">prev</a> | <a href="#36735360" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36734639" n="4" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">&gt;Don’t ask me how I learned this.<p>Joke&#x27;s on you, we all learned it this exact way.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36734639&amp;goto=item%3Fid%3D36734266%2336734639">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36734766'><td><table border='0'>  <tr>    <td class='ind' indent='2'><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id='up_36734766'href='vote?id=36734766&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=seanthemon" class="hnuser">seanthemon</a> <span class="age" title="2023-07-15T08:26:49"><a href="item?id=36734766">7 hours ago</a></span> <span id="unv_36734766"></span>          <span class='navs'>
+             | <a href="#36734597" class="clicky" aria-hidden="true">root</a> | <a href="#36734639" class="clicky" aria-hidden="true">parent</a> | <a href="#36735179" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36734766" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">This gives my heart pains I can&#x27;t explain to my therapist..</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36734766&amp;goto=item%3Fid%3D36734266%2336734766">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36735179'><td><table border='0'>  <tr>    <td class='ind' indent='2'><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735179'href='vote?id=36735179&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=fernandotakai" class="hnuser">fernandotakai</a> <span class="age" title="2023-07-15T09:57:45"><a href="item?id=36735179">5 hours ago</a></span> <span id="unv_36735179"></span>          <span class='navs'>
+             | <a href="#36734597" class="clicky" aria-hidden="true">root</a> | <a href="#36734639" class="clicky" aria-hidden="true">parent</a> | <a href="#36734766" class="clicky" aria-hidden="true">prev</a> | <a href="#36734917" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735179" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">i can still feel the pain in the pit of my stomach when i saw the amount of rows affected.<p>thankfully my boss at the time was a amazing db admin and he helped me fixing my mistake.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735179&amp;goto=item%3Fid%3D36734266%2336735179">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36734917'><td><table border='0'>  <tr>    <td class='ind' indent='2'><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id='up_36734917'href='vote?id=36734917&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=maccard" class="hnuser">maccard</a> <span class="age" title="2023-07-15T08:56:39"><a href="item?id=36734917">6 hours ago</a></span> <span id="unv_36734917"></span>          <span class='navs'>
+             | <a href="#36734597" class="clicky" aria-hidden="true">root</a> | <a href="#36734639" class="clicky" aria-hidden="true">parent</a> | <a href="#36735179" class="clicky" aria-hidden="true">prev</a> | <a href="#36735360" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36734917" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Luckily I learned from someone else. I did figure out start with a transaction the hard way though</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36734917&amp;goto=item%3Fid%3D36734266%2336734917">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                  <tr class='athing comtr' id='36735360'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735360'href='vote?id=36735360&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=iJesus" class="hnuser">iJesus</a> <span class="age" title="2023-07-15T10:37:41"><a href="item?id=36735360">5 hours ago</a></span> <span id="unv_36735360"></span>          <span class='navs'>
+             | <a href="#36734597" class="clicky" aria-hidden="true">parent</a> | <a href="#36734639" class="clicky" aria-hidden="true">prev</a> | <a href="#36734603" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735360" n="3" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Gone are the days of hard deletes in my approach; it&#x27;s exclusively soft deletes now!</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735360&amp;goto=item%3Fid%3D36734266%2336735360">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36735847'><td><table border='0'>  <tr>    <td class='ind' indent='2'><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735847'href='vote?id=36735847&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=okeuro49" class="hnuser">okeuro49</a> <span class="age" title="2023-07-15T12:09:51"><a href="item?id=36735847">3 hours ago</a></span> <span id="unv_36735847"></span>          <span class='navs'>
+             | <a href="#36734597" class="clicky" aria-hidden="true">root</a> | <a href="#36735360" class="clicky" aria-hidden="true">parent</a> | <a href="#36734603" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735847" n="2" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">In the EU soft deletes can violate GDPR, so not always an available strategy.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735847&amp;goto=item%3Fid%3D36734266%2336735847">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36737158'><td><table border='0'>  <tr>    <td class='ind' indent='3'><img src="s.gif" height="1" width="120"></td><td valign="top" class="votelinks">
+      <center><a id='up_36737158'href='vote?id=36737158&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=vntok" class="hnuser">vntok</a> <span class="age" title="2023-07-15T14:34:55"><a href="item?id=36737158">1 hour ago</a></span> <span id="unv_36737158"></span>          <span class='navs'>
+             | <a href="#36734597" class="clicky" aria-hidden="true">root</a> | <a href="#36735847" class="clicky" aria-hidden="true">parent</a> | <a href="#36734603" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36737158" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Soft delete items immediately, purge the soft deleted rows automatically after 30 days or so.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36737158&amp;goto=item%3Fid%3D36734266%2336737158">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                        <tr class='athing comtr' id='36734603'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36734603'href='vote?id=36734603&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=lemper" class="hnuser">lemper</a> <span class="age" title="2023-07-15T07:59:06"><a href="item?id=36734603">7 hours ago</a></span> <span id="unv_36734603"></span>          <span class='navs'>
+             | <a href="#36734597" class="clicky" aria-hidden="true">parent</a> | <a href="#36735360" class="clicky" aria-hidden="true">prev</a> | <a href="#36735333" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36734603" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">how did you learn it?</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36734603&amp;goto=item%3Fid%3D36734266%2336734603">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                  <tr class='athing comtr' id='36735333'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735333'href='vote?id=36735333&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=lormayna" class="hnuser">lormayna</a> <span class="age" title="2023-07-15T10:34:17"><a href="item?id=36735333">5 hours ago</a></span> <span id="unv_36735333"></span>          <span class='navs'>
+             | <a href="#36734597" class="clicky" aria-hidden="true">prev</a> | <a href="#36735106" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735333" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">I did something worst many years ago: I was working for a regional ISP and during a major incident, I had to reroute traffic through a different path. Under big pressure, I did the infamous Cisco mistake &quot;switchport trunk allowed vlan 50&quot; instead that &quot;switchport trunk allowed add vlan 50&quot; and I locked out myself and all the customer from our broadband customers. We had to call a DC technician and ask him to share a console through a local console server.<p>Lesson learned: even if you are under big pressure take your time to plan and review the modification
+15 minutes can save hours.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735333&amp;goto=item%3Fid%3D36734266%2336735333">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36735106'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735106'href='vote?id=36735106&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=cesaref" class="hnuser">cesaref</a> <span class="age" title="2023-07-15T09:37:17"><a href="item?id=36735106">6 hours ago</a></span> <span id="unv_36735106"></span>          <span class='navs'>
+             | <a href="#36735333" class="clicky" aria-hidden="true">prev</a> | <a href="#36734841" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735106" n="9" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Back in the 90s I remember a work colleague asking &#x27;can you rollback a drop table?&#x27;, to which I replied &#x27;no&#x27;, and all the blood drained from his face in seconds. It&#x27;s one of those things you&#x27;ve heard happens to people, but until you see it, you can&#x27;t quite believe it.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735106&amp;goto=item%3Fid%3D36734266%2336735106">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36735741'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735741'href='vote?id=36735741&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=msravi" class="hnuser">msravi</a> <span class="age" title="2023-07-15T11:54:08"><a href="item?id=36735741">3 hours ago</a></span> <span id="unv_36735741"></span>          <span class='navs'>
+             | <a href="#36735106" class="clicky" aria-hidden="true">parent</a> | <a href="#36735131" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735741" n="2" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Since this seems to be such a common occurrence, why haven&#x27;t databases evolved to maintain some limited form of history that can be rolled back? Have no idea of the complexity, so forgive me if that sounds daft.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735741&amp;goto=item%3Fid%3D36734266%2336735741">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36736787'><td><table border='0'>  <tr>    <td class='ind' indent='2'><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id='up_36736787'href='vote?id=36736787&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=kayodelycaon" class="hnuser">kayodelycaon</a> <span class="age" title="2023-07-15T13:55:55"><a href="item?id=36736787">1 hour ago</a></span> <span id="unv_36736787"></span>          <span class='navs'>
+             | <a href="#36735106" class="clicky" aria-hidden="true">root</a> | <a href="#36735741" class="clicky" aria-hidden="true">parent</a> | <a href="#36735131" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36736787" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Long story short, you’re holding multiple transactions open. That’s a lot of bookkeeping overhead if there’s a lot of changes. A system with a few million rows and moderate load on a reasonably-sized server for that load will slam to a halt.<p>Then come the “site is down and the world is ending” tickets, messages, emails, and phone calls.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36736787&amp;goto=item%3Fid%3D36734266%2336736787">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                  <tr class='athing comtr' id='36735131'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735131'href='vote?id=36735131&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=jdsalaro" class="hnuser">jdsalaro</a> <span class="age" title="2023-07-15T09:44:42"><a href="item?id=36735131">6 hours ago</a></span> <span id="unv_36735131"></span>          <span class='navs'>
+             | <a href="#36735106" class="clicky" aria-hidden="true">parent</a> | <a href="#36735741" class="clicky" aria-hidden="true">prev</a> | <a href="#36734841" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735131" n="6" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">&gt; can you rollback a drop table<p>&gt;_&lt; , something similar happened to me when I did an rm -Rf * in the old pictures directory on my system ... Well ... It wasn&#x27;t the old pictures directory, it was the backup directory with all pictures from my older phone !! To say that blood drained from my face would be an understatement, thankfully I was able to recover most of it.<p>The first thing I did after the recovery marathon was to alias rm so that it instead works by moving stuff to &#x2F;tmp</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735131&amp;goto=item%3Fid%3D36734266%2336735131">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36739609'><td><table border='0'>  <tr>    <td class='ind' indent='2'><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id='up_36739609'href='vote?id=36739609&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=euroderf" class="hnuser">euroderf</a> <span class="age" title="2023-07-15T18:24:35"><a href="item?id=36739609">41 minutes ago</a></span> <span id="unv_36739609"></span>          <span class='navs'>
+             | <a href="#36735106" class="clicky" aria-hidden="true">root</a> | <a href="#36735131" class="clicky" aria-hidden="true">parent</a> | <a href="#36735189" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36739609" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">My boss was doing housecleaning in his PDP-11 (Unix v.6) account and did a &quot;rm *&quot; in the bin directory but OOPS it was the system bin.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36739609&amp;goto=item%3Fid%3D36734266%2336739609">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36735189'><td><table border='0'>  <tr>    <td class='ind' indent='2'><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735189'href='vote?id=36735189&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=eCa" class="hnuser">eCa</a> <span class="age" title="2023-07-15T09:59:13"><a href="item?id=36735189">5 hours ago</a></span> <span id="unv_36735189"></span>          <span class='navs'>
+             | <a href="#36735106" class="clicky" aria-hidden="true">root</a> | <a href="#36735131" class="clicky" aria-hidden="true">parent</a> | <a href="#36739609" class="clicky" aria-hidden="true">prev</a> | <a href="#36736946" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735189" n="3" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">In the late 90’s I wanted to try this Linux thing, so I followed a tutorial. First step:<p><pre><code>    fdisk
+</code></pre>
+Yes, that was my Windows partition going bye-bye.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735189&amp;goto=item%3Fid%3D36734266%2336735189">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36735534'><td><table border='0'>  <tr>    <td class='ind' indent='3'><img src="s.gif" height="1" width="120"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735534'href='vote?id=36735534&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=CoastalCoder" class="hnuser">CoastalCoder</a> <span class="age" title="2023-07-15T11:17:34"><a href="item?id=36735534">4 hours ago</a></span> <span id="unv_36735534"></span>          <span class='navs'>
+             | <a href="#36735106" class="clicky" aria-hidden="true">root</a> | <a href="#36735189" class="clicky" aria-hidden="true">parent</a> | <a href="#36736946" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735534" n="2" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">So... success?  ;)</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735534&amp;goto=item%3Fid%3D36734266%2336735534">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36735642'><td><table border='0'>  <tr>    <td class='ind' indent='4'><img src="s.gif" height="1" width="160"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735642'href='vote?id=36735642&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=jdsalaro" class="hnuser">jdsalaro</a> <span class="age" title="2023-07-15T11:39:18"><a href="item?id=36735642">4 hours ago</a></span> <span id="unv_36735642"></span>          <span class='navs'>
+             | <a href="#36735106" class="clicky" aria-hidden="true">root</a> | <a href="#36735534" class="clicky" aria-hidden="true">parent</a> | <a href="#36736946" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735642" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">:D task failed successfully !</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735642&amp;goto=item%3Fid%3D36734266%2336735642">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                        <tr class='athing comtr' id='36736946'><td><table border='0'>  <tr>    <td class='ind' indent='2'><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id='up_36736946'href='vote?id=36736946&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=noAnswer" class="hnuser">noAnswer</a> <span class="age" title="2023-07-15T14:13:06"><a href="item?id=36736946">1 hour ago</a></span> <span id="unv_36736946"></span>          <span class='navs'>
+             | <a href="#36735106" class="clicky" aria-hidden="true">root</a> | <a href="#36735131" class="clicky" aria-hidden="true">parent</a> | <a href="#36735189" class="clicky" aria-hidden="true">prev</a> | <a href="#36734841" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36736946" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">inb4: &#x2F;tmp partition gets full. Causing things to brake. :-)</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36736946&amp;goto=item%3Fid%3D36734266%2336736946">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                        <tr class='athing comtr' id='36734841'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36734841'href='vote?id=36734841&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=stuaxo" class="hnuser">stuaxo</a> <span class="age" title="2023-07-15T08:40:57"><a href="item?id=36734841">7 hours ago</a></span> <span id="unv_36734841"></span>          <span class='navs'>
+             | <a href="#36735106" class="clicky" aria-hidden="true">prev</a> | <a href="#36741546" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36734841" n="2" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">My manager had got me to look at backups.. but for cheap.<p>I decided on bacula - I had the clients installed on all the computers in the office, and it worked for some small tests.<p>My manager decided we would try this with a USB drive attached to one of the servers (somehow this didn&#x27;t seem like a bad idea).<p>In the morning, very uncaffinated he sent me to the other site - an unmanned basement office with the servers.<p>Being uncaffinated I forgot the door password and set off the alarm.<p>I had to go into the office and phone him with the alarm going to get the code to turn the alarm off.<p>OK, that was stressful but sorted out at least.<p>I plugged in the hard drive to the selected server and headed back.<p>Once I got back it turned out all the websites on that server had gone down - trying to send all the backups to this poor USB harddrive had overwhelmed the IO on that-era Linux server and the poor thing just froze.<p>Fairly soon after I was let go, and joined my friends at a much more fun company making mobile games.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36734841&amp;goto=item%3Fid%3D36734266%2336734841">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36734877'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36734877'href='vote?id=36734877&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=sacnoradhq" class="hnuser">sacnoradhq</a> <span class="age" title="2023-07-15T08:48:12"><a href="item?id=36734877">7 hours ago</a></span> <span id="unv_36734877"></span>          <span class='navs'>
+             | <a href="#36734841" class="clicky" aria-hidden="true">parent</a> | <a href="#36741546" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36734877" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">It&#x27;s the responsibility of the technical person to uphold engineering ethics, especially in the face of potentially inadequate recovery and security solutions.<p>I was once let go from a big name university for refusing to weaken and rush changes to a payment processing network (PCI-DSS) when there was &quot;no time&quot; to review them in detail. That&#x27;s a future FBI press conference sort of thing when it all comes crashing down. Not long after, all SS#s, DOBs, and deets for every employee was stolen from a &quot;rogue&quot; laptop taken by a consultant, likely to be sold on carder and identity theft forums because of an utter failure at data protection processes. That place was a shitshow because they didn&#x27;t have the professional ethics or leadership backbone to do what was prudent and necessary.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36734877&amp;goto=item%3Fid%3D36734266%2336734877">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                  <tr class='athing comtr' id='36741546'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36741546'href='vote?id=36741546&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=m348e912" class="hnuser">m348e912</a> <span class="age" title="2023-07-15T22:33:26"><a href="item?id=36741546">36 minutes ago</a></span> <span id="unv_36741546"></span>          <span class='navs'>
+             | <a href="#36734841" class="clicky" aria-hidden="true">prev</a> | <a href="#36735109" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36741546" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">We had this saying: &quot;If you fix it before anyone realized it was broken, you didn&#x27;t break it.&quot;</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36741546&amp;goto=item%3Fid%3D36734266%2336741546">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36735109'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735109'href='vote?id=36735109&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=alexmolas" class="hnuser">alexmolas</a> <span class="age" title="2023-07-15T09:38:01"><a href="item?id=36735109">6 hours ago</a></span> <span id="unv_36735109"></span>          <span class='navs'>
+             | <a href="#36741546" class="clicky" aria-hidden="true">prev</a> | <a href="#36735496" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735109" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">The other learning I get from this story is &quot;never hide your errors&quot; or &quot;own your errors as you own your victories&quot;.<p>If the author had decided to say nothing the problem would have been bigger - an unhappy boss and probably fired.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735109&amp;goto=item%3Fid%3D36734266%2336735109">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36735496'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735496'href='vote?id=36735496&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=asmor" class="hnuser">asmor</a> <span class="age" title="2023-07-15T11:08:27"><a href="item?id=36735496">4 hours ago</a></span> <span id="unv_36735496"></span>          <span class='navs'>
+             | <a href="#36735109" class="clicky" aria-hidden="true">prev</a> | <a href="#36741577" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735496" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">I did worse.<p>We had a redis with sessions. Early on, someone decided every write to redis should also cause a write to S3 as backup. My first task was to get rid of this 4-digits a month extra cost in PUT requests. I decided to instead write all changed session objects into a set keyed by half-hour timestamps and then write only those sessions every 30 minutes. Unfortunately initially I used a KEYS to find the set corresponding to my half-hour stamp, not having read up exactly on what it does. It&#x27;s not exactly advisable to do on a redis with a million or so objects. A later version of the archiver wrote the last emptied set to a stable key instead and then checked the set keys between then and now instead...</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735496&amp;goto=item%3Fid%3D36734266%2336735496">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36741577'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36741577'href='vote?id=36741577&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=Animats" class="hnuser">Animats</a> <span class="age" title="2023-07-15T22:39:02"><a href="item?id=36741577">30 minutes ago</a></span> <span id="unv_36741577"></span>          <span class='navs'>
+             | <a href="#36735496" class="clicky" aria-hidden="true">prev</a> | <a href="#36738454" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36741577" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">If you locked out everyone today, many would assume they had been laid off. Some of them would have other jobs before the login problem was fixed.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36741577&amp;goto=item%3Fid%3D36734266%2336741577">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36738454'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36738454'href='vote?id=36738454&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=liampulles" class="hnuser">liampulles</a> <span class="age" title="2023-07-15T16:32:00"><a href="item?id=36738454">40 minutes ago</a></span> <span id="unv_36738454"></span>          <span class='navs'>
+             | <a href="#36741577" class="clicky" aria-hidden="true">prev</a> | <a href="#36735565" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36738454" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">I switched companies, and moving from a MySQL cli to pgadmin is a godsend. Would still like a confirmation dialogue, but having to click a button seems less error prone than pressing enter too quickly.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36738454&amp;goto=item%3Fid%3D36734266%2336738454">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36735565'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735565'href='vote?id=36735565&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=mootzville" class="hnuser">mootzville</a> <span class="age" title="2023-07-15T11:26:37"><a href="item?id=36735565">4 hours ago</a></span> <span id="unv_36735565"></span>          <span class='navs'>
+             | <a href="#36738454" class="clicky" aria-hidden="true">prev</a> | <a href="#36735169" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735565" n="3" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">I was taught to:<p>1. Write your WHERE clause first
+2. Return to the beginning of the line to finish writing the statement
+3. Check your statement
+4. If it looks good, then -- and only then -- add your closing semicolon<p>Having said that, once during my second week at a new company, I plugged in an ethernet cable to an APC UPS, so I could set up networking on it.  It shut down production.  Why?  APC makes (for that model at least) proprietary ethernet cables for networking, and if you plug in a regular cable it does an autoshutdown...an engineers attempt at marketing perhaps!?  I did RTFM before, and after out of confusion, and there was no mention of this.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735565&amp;goto=item%3Fid%3D36734266%2336735565">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36735637'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735637'href='vote?id=36735637&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=sokoloff" class="hnuser">sokoloff</a> <span class="age" title="2023-07-15T11:38:58"><a href="item?id=36735637">4 hours ago</a></span> <span id="unv_36735637"></span>          <span class='navs'>
+             | <a href="#36735565" class="clicky" aria-hidden="true">parent</a> | <a href="#36735169" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735637" n="2" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">I will typically do something like this when writing SQL in an interactive tool:<p><pre><code>  SELECT * from table
+  WHERE id = 12345
+</code></pre>
+and once that&#x27;s giving me the selection I want, insert the update statement into the middle:<p><pre><code>  SELECT * from table
+  -- UPDATE table set c1 = v1, c2 = v2
+  WHERE id = 12345
+</code></pre>
+Then, accidentally running the entire buffer doesn&#x27;t do anything destructive, but selecting the query from update to the end of the statement lets me do the update. (It&#x27;s still imperfect, because selecting only the update line will still be destructive.)<p>(Most of the RDBMS tools that I&#x27;ve used would happily ignore the lack of a closing semi-colon and that will not save you for a single-statement case.)</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735637&amp;goto=item%3Fid%3D36734266%2336735637">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36741603'><td><table border='0'>  <tr>    <td class='ind' indent='2'><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id='up_36741603'href='vote?id=36741603&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=mootzville" class="hnuser">mootzville</a> <span class="age" title="2023-07-15T22:44:29"><a href="item?id=36741603">25 minutes ago</a></span> <span id="unv_36741603"></span>          <span class='navs'>
+             | <a href="#36735565" class="clicky" aria-hidden="true">root</a> | <a href="#36735637" class="clicky" aria-hidden="true">parent</a> | <a href="#36735169" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36741603" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">True, thought I didn&#x27;t include the lookup first, it is how it happens in practice.  Also, we use the mysql client, so semicolon is a must, and I would avoid anything that let you submit the statement without it...that&#x27;s your safety net.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36741603&amp;goto=item%3Fid%3D36734266%2336741603">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                        <tr class='athing comtr' id='36735169'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735169'href='vote?id=36735169&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=nytesky" class="hnuser">nytesky</a> <span class="age" title="2023-07-15T09:53:40"><a href="item?id=36735169">5 hours ago</a></span> <span id="unv_36735169"></span>          <span class='navs'>
+             | <a href="#36735565" class="clicky" aria-hidden="true">prev</a> | <a href="#36735194" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735169" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">For some reason your title made me think of this classic IT Crowd<p><a href="https:&#x2F;&#x2F;youtu.be&#x2F;Vywf48Dhyns" rel="nofollow noreferrer">https:&#x2F;&#x2F;youtu.be&#x2F;Vywf48Dhyns</a></span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735169&amp;goto=item%3Fid%3D36734266%2336735169">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36735194'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735194'href='vote?id=36735194&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=makach" class="hnuser">makach</a> <span class="age" title="2023-07-15T10:01:46"><a href="item?id=36735194">5 hours ago</a></span> <span id="unv_36735194"></span>          <span class='navs'>
+             | <a href="#36735169" class="clicky" aria-hidden="true">prev</a> | <a href="#36734655" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735194" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">A charming story which almost everyone can relate to! Only one of your rules will ever save you. “Don&#x27;t run updates directly in the database console”. Whole methodologies are crafted around this rule&#x2F;principle to not do development in production environment.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735194&amp;goto=item%3Fid%3D36734266%2336735194">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36734655'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36734655'href='vote?id=36734655&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=Nextgrid" class="hnuser">Nextgrid</a> <span class="age" title="2023-07-15T08:10:24"><a href="item?id=36734655">7 hours ago</a></span> <span id="unv_36734655"></span>          <span class='navs'>
+             | <a href="#36735194" class="clicky" aria-hidden="true">prev</a> | <a href="#36735081" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36734655" n="2" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">In the top bar of the site:<p>&gt; Sorry! Subscriptions were broken last week, but are now working. If you tried to subscribe and ran into issues, please try again!<p>I wonder if a similar incident involving a “UPDATE subscriptions” query happened recently.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36734655&amp;goto=item%3Fid%3D36734266%2336734655">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36734680'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36734680'href='vote?id=36734680&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=dfcowell" class="hnuser">dfcowell</a> <span class="age" title="2023-07-15T08:14:08"><a href="item?id=36734680">7 hours ago</a></span> <span id="unv_36734680"></span>          <span class='navs'>
+             | <a href="#36734655" class="clicky" aria-hidden="true">parent</a> | <a href="#36735081" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36734680" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Ha, no, that was a far more mundane issue. The CMS I&#x27;m using requires double opt-in to subscribe, meaning you need to enter your email address <i>and</i> click the confirmation link.<p>It also apparently requires double email configuration, meaning it has two places where you can configure your mailer. I had only set it up in one place, meaning the confirmations never got sent.<p>Bit of a facepalm moment.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36734680&amp;goto=item%3Fid%3D36734266%2336734680">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                  <tr class='athing comtr' id='36735081'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735081'href='vote?id=36735081&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=matsemann" class="hnuser">matsemann</a> <span class="age" title="2023-07-15T09:31:11"><a href="item?id=36735081">6 hours ago</a></span> <span id="unv_36735081"></span>          <span class='navs'>
+             | <a href="#36734655" class="clicky" aria-hidden="true">prev</a> | <a href="#36734783" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735081" n="2" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">I wish a DELETE or UPDATE only affected a single row by default (and perhaps even wouldn&#x27;t commit if it would hit multiple rows), unless a keyword for MANY or something similar was added.<p>Aka DELETE ALL where x == y or DELETE MANY where x == y or perhaps you need an explicit limit for it to not be 1, so DELETE where x == y LIMIT ALL</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735081&amp;goto=item%3Fid%3D36734266%2336735081">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36735166'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735166'href='vote?id=36735166&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=sangriafria" class="hnuser">sangriafria</a> <span class="age" title="2023-07-15T09:53:00"><a href="item?id=36735166">6 hours ago</a></span> <span id="unv_36735166"></span>          <span class='navs'>
+             | <a href="#36735081" class="clicky" aria-hidden="true">parent</a> | <a href="#36734783" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735166" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">There are some SQL GUIs that require confirmation before running an update&#x2F;delete query without a where clause</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735166&amp;goto=item%3Fid%3D36734266%2336735166">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                  <tr class='athing comtr' id='36734783'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36734783'href='vote?id=36734783&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=headline" class="hnuser">headline</a> <span class="age" title="2023-07-15T08:30:59"><a href="item?id=36734783">7 hours ago</a></span> <span id="unv_36734783"></span>          <span class='navs'>
+             | <a href="#36735081" class="clicky" aria-hidden="true">prev</a> | <a href="#36735160" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36734783" n="3" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">I&#x27;ve just started my career - I wonder what my first fuck-up will be :)</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36734783&amp;goto=item%3Fid%3D36734266%2336734783">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36735569'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735569'href='vote?id=36735569&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=james-skemp" class="hnuser">james-skemp</a> <span class="age" title="2023-07-15T11:26:52"><a href="item?id=36735569">4 hours ago</a></span> <span id="unv_36735569"></span>          <span class='navs'>
+             | <a href="#36734783" class="clicky" aria-hidden="true">parent</a> | <a href="#36735145" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735569" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Own up to it when it happens. Can only get worse if you don&#x27;t.<p>Hopefully you work with people that follow that as well.<p>I can still remember a more senior coworker copying a directory from a network share (Ctrl + C), deleting the directory, and then trying to paste it somewhere else.<p>I didn&#x27;t speak up (he also rarely touched the mouse so flew through it), so we both got a chuckle when he realized his mistake and pinged network folks for a backup from tape.<p>It happens. The real world is messy. Can always learn something new. Can always do something you know not to do.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735569&amp;goto=item%3Fid%3D36734266%2336735569">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36735145'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735145'href='vote?id=36735145&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=jdsalaro" class="hnuser">jdsalaro</a> <span class="age" title="2023-07-15T09:48:03"><a href="item?id=36735145">6 hours ago</a></span> <span id="unv_36735145"></span>          <span class='navs'>
+             | <a href="#36734783" class="clicky" aria-hidden="true">parent</a> | <a href="#36735569" class="clicky" aria-hidden="true">prev</a> | <a href="#36735160" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735145" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Don&#x27;t wonder! Plan it and execute it so you can be more chill !!<p>&#x2F;s</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735145&amp;goto=item%3Fid%3D36734266%2336735145">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                  <tr class='athing comtr' id='36735160'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735160'href='vote?id=36735160&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=FreshStart" class="hnuser">FreshStart</a> <span class="age" title="2023-07-15T09:51:45"><a href="item?id=36735160">6 hours ago</a></span> <span id="unv_36735160"></span>          <span class='navs'>
+             | <a href="#36734783" class="clicky" aria-hidden="true">prev</a> | <a href="#36735580" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735160" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">5. Deadlines do more damage than good, but the costs they produce get swiped under the rug by company internal accounting.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735160&amp;goto=item%3Fid%3D36734266%2336735160">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36735580'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735580'href='vote?id=36735580&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=Gordonjcp" class="hnuser">Gordonjcp</a> <span class="age" title="2023-07-15T11:27:25"><a href="item?id=36735580">4 hours ago</a></span> <span id="unv_36735580"></span>          <span class='navs'>
+             | <a href="#36735160" class="clicky" aria-hidden="true">prev</a> | <a href="#36735098" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735580" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">I had a thing recently where someone was updating some entries on a system I look after, decided the changes hadn&#x27;t applied properly, and clicked &quot;Roll back&quot; to put it back to its original state.<p>Whatever had gotten into it, it rolled back to 2009. It rolled everything back, including user accounts.<p>No-one who worked there in 2009 still worked there, so no-one had a valid password any more.<p>Fortunately it was easy enough to copy the last-but-one backup over the top and lose the day before&#x27;s config updates, and cure its Flowers for Algernon state, but it was a pretty hairy afternoon.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735580&amp;goto=item%3Fid%3D36734266%2336735580">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36735098'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735098'href='vote?id=36735098&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=nonameiguess" class="hnuser">nonameiguess</a> <span class="age" title="2023-07-15T09:35:06"><a href="item?id=36735098">6 hours ago</a></span> <span id="unv_36735098"></span>          <span class='navs'>
+             | <a href="#36735580" class="clicky" aria-hidden="true">prev</a> | <a href="#36735141" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735098" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Early on when I&#x27;d first started making the transition from pure developer role working only on product to a platform role running the development environment, I was encountering problems with build scripts on CI servers leaving behind a bunch of dead symlinks. Tired of tracking them down manually, I wrote a nice script that automatically found all dead symlinks and deleted them.<p>It turned out, for some arcane reason I still don&#x27;t understand, our production instance of Artifactory was running on top of Docker Compose with host path volume mounts, and somehow, symlinks that were not valid from the perspective of the host actually were valid from inside the container, and doing this on all of our servers broke Artifactory. For some even stupider reason, we weren&#x27;t doing full filesystem-level snapshots at any regular interval (which we started doing after this), so instead I needed to enlist the help of the classic wizard ninja guy who had been acting as a mostly unsupervised one-man team for the past six years who had hacked all of this mess together, documented none of it, and was the only person on the planet who knew how to reconstruct everything.<p>This was probably still only the second-stupidest full on-prem lab outage I remember, behind the time the whole network stopped working and the only person who had been around long enough remembered they had trialed a temporary demo hardware firewall years earlier, management abandoned the evaluation effort, and it somehow remained there as the production firewall for years without ever being updated before finally breaking.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735098&amp;goto=item%3Fid%3D36734266%2336735098">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36735141'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735141'href='vote?id=36735141&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=user6723" class="hnuser">user6723</a> <span class="age" title="2023-07-15T09:47:30"><a href="item?id=36735141">6 hours ago</a></span> <span id="unv_36735141"></span>          <span class='navs'>
+             | <a href="#36735098" class="clicky" aria-hidden="true">prev</a> | <a href="#36736768" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735141" n="4" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c5a">These kinds of scenarios happen when money is &quot;cheap&quot;, and highlight why the current recession, and coming 2nd great depression aren&#x27;t really a bad thing.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735141&amp;goto=item%3Fid%3D36734266%2336735141">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36735542'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735542'href='vote?id=36735542&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=CoastalCoder" class="hnuser">CoastalCoder</a> <span class="age" title="2023-07-15T11:20:15"><a href="item?id=36735542">4 hours ago</a></span> <span id="unv_36735542"></span>          <span class='navs'>
+             | <a href="#36735141" class="clicky" aria-hidden="true">parent</a> | <a href="#36736408" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735542" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">I think you&#x27;ll need to flesh out your logic if you want to convince people that a depression is somehow a net positive.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735542&amp;goto=item%3Fid%3D36734266%2336735542">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36736408'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36736408'href='vote?id=36736408&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=rsynnott" class="hnuser">rsynnott</a> <span class="age" title="2023-07-15T13:15:20"><a href="item?id=36736408">2 hours ago</a></span> <span id="unv_36736408"></span>          <span class='navs'>
+             | <a href="#36735141" class="clicky" aria-hidden="true">parent</a> | <a href="#36735542" class="clicky" aria-hidden="true">prev</a> | <a href="#36735561" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36736408" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">... Okay, I&#x27;ve seen people blame monetary policy for a lot of things, but I&#x27;m really struggling to see how this one works.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36736408&amp;goto=item%3Fid%3D36734266%2336736408">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36735561'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735561'href='vote?id=36735561&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=dfcowell" class="hnuser">dfcowell</a> <span class="age" title="2023-07-15T11:26:16"><a href="item?id=36735561">4 hours ago</a></span> <span id="unv_36735561"></span>          <span class='navs'>
+             | <a href="#36735141" class="clicky" aria-hidden="true">parent</a> | <a href="#36736408" class="clicky" aria-hidden="true">prev</a> | <a href="#36736768" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735561" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">This was 13 years ago in a small business with no significant investment. No “cheap money” was involved, just the realities of a small business with chronic NIH syndrome.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735561&amp;goto=item%3Fid%3D36734266%2336735561">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                  <tr class='athing comtr' id='36736768'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36736768'href='vote?id=36736768&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=justsomehnguy" class="hnuser">justsomehnguy</a> <span class="age" title="2023-07-15T13:53:40"><a href="item?id=36736768">1 hour ago</a></span> <span id="unv_36736768"></span>          <span class='navs'>
+             | <a href="#36735141" class="clicky" aria-hidden="true">prev</a> | <a href="#36734641" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36736768" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">pfft<p><pre><code>   rmdir . &#x2F;s &#x2F;q
+</code></pre>
+only to notice what I am in the wrong folder, way up in the hierarchy.<p>And repeat the same error years later when the batch file failed to cd to the destination folder. Added<p><pre><code>   if %CD% == %DESTDIR% 
+</code></pre>
+to avoid that problem.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36736768&amp;goto=item%3Fid%3D36734266%2336736768">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36734641'><td><table border='0'>  <tr>    <td class='ind' indent='0'><img src="s.gif" height="1" width="0"></td><td valign="top" class="votelinks">
+      <center><a id='up_36734641'href='vote?id=36734641&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=quijoteuniv" class="hnuser">quijoteuniv</a> <span class="age" title="2023-07-15T08:06:45"><a href="item?id=36734641">7 hours ago</a></span> <span id="unv_36734641"></span>          <span class='navs'>
+             | <a href="#36736768" class="clicky" aria-hidden="true">prev</a> <a class="togg clicky" id="36734641" n="4" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext cbe">Use chatGPT to double check too.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36734641&amp;goto=item%3Fid%3D36734266%2336734641">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36734820'><td><table border='0'>  <tr>    <td class='ind' indent='1'><img src="s.gif" height="1" width="40"></td><td valign="top" class="votelinks">
+      <center><a id='up_36734820'href='vote?id=36734820&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=throwbadubadu" class="hnuser">throwbadubadu</a> <span class="age" title="2023-07-15T08:37:29"><a href="item?id=36734820">7 hours ago</a></span> <span id="unv_36734820"></span>          <span class='navs'>
+             | <a href="#36734641" class="clicky" aria-hidden="true">parent</a> <a class="togg clicky" id="36734820" n="3" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">&quot;Yes, you can delete those items via that query.&quot;<p>&quot;But now all has been deleted??!?! WTF HEEELP&quot;<p>&quot;I apologize for my previous answer, you are correct, you now deleted everything!&quot;</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36734820&amp;goto=item%3Fid%3D36734266%2336734820">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                <tr class='athing comtr' id='36735936'><td><table border='0'>  <tr>    <td class='ind' indent='2'><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id='up_36735936'href='vote?id=36735936&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=quijoteuniv" class="hnuser">quijoteuniv</a> <span class="age" title="2023-07-15T12:23:09"><a href="item?id=36735936">3 hours ago</a></span> <span id="unv_36735936"></span>          <span class='navs'>
+             | <a href="#36734641" class="clicky" aria-hidden="true">root</a> | <a href="#36734820" class="clicky" aria-hidden="true">parent</a> | <a href="#36734886" class="clicky" aria-hidden="true">next</a> <a class="togg clicky" id="36735936" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Mmm… you can ask to explain what the query will do… yes you can mess thing up if you do not understand, therefore you try to understand. There is a lot to learn, i did not recommend running code in production frOm chatGPT, funny with downvoting</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36735936&amp;goto=item%3Fid%3D36734266%2336735936">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+            <tr class='athing comtr' id='36734886'><td><table border='0'>  <tr>    <td class='ind' indent='2'><img src="s.gif" height="1" width="80"></td><td valign="top" class="votelinks">
+      <center><a id='up_36734886'href='vote?id=36734886&amp;how=up&amp;goto=item%3Fid%3D36734266'><div class='votearrow' title='upvote'></div></a></center>    </td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=archerx" class="hnuser">archerx</a> <span class="age" title="2023-07-15T08:49:54"><a href="item?id=36734886">7 hours ago</a></span> <span id="unv_36734886"></span>          <span class='navs'>
+             | <a href="#36734641" class="clicky" aria-hidden="true">root</a> | <a href="#36734820" class="clicky" aria-hidden="true">parent</a> | <a href="#36735936" class="clicky" aria-hidden="true">prev</a> <a class="togg clicky" id="36734886" n="1" href="javascript:void(0)">[–]</a><span class="onstory"></span>          </span>
+                  </span></div><br><div class="comment">
+                  <span class="commtext c00">Thank you for the laugh, I can imagine someone running untested chatGPT code on prod and this actually happening.</span>
+              <div class='reply'>        <p><font size="1">
+                      <u><a href="reply?id=36734886&amp;goto=item%3Fid%3D36734266%2336734886">reply</a></u>
+                  </font>
+      </div></div></td></tr>
+        </table></td></tr>
+                        </table>
+  <br><br>
+</td></tr>
+<tr><td><img src="s.gif" height="10" width="0"><table width="100%" cellspacing="0" cellpadding="1"><tr><td bgcolor="#ff6600"></td></tr></table><br>
+<center><span class="yclinks"><a href="newsguidelines.html">Guidelines</a> | <a href="newsfaq.html">FAQ</a> | <a href="lists">Lists</a> | <a href="https://github.com/HackerNews/API">API</a> | <a href="security.html">Security</a> | <a href="https://www.ycombinator.com/legal/">Legal</a> | <a href="https://www.ycombinator.com/apply/">Apply to YC</a> | <a href="mailto:hn@ycombinator.com">Contact</a></span><br><br>
+<form method="get" action="//hn.algolia.com/">Search: <input type="text" name="q" size="17" autocorrect="off" spellcheck="false" autocapitalize="off" autocomplete="false"></form></center></td></tr>      </table></center></body>
+      <script type='text/javascript' src='hn.js?5H9MtNw5DeqtfAm5Zd9Y'></script>
+  </html>
