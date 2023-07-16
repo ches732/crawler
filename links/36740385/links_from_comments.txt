@@ -1,1 +1,0 @@
-['https://www.metaculus.com/help/scoring/', 'https://astralcodexten.substack.com/p/prediction-market-faq']

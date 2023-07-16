@@ -1,1 +1,0 @@
-['https://debugagent.com/everything-bad-in-java-is-good-for-you', 'https://www.artima.com/articles/the-trouble-with-checked-exceptions', 'https://forum.dlang.org/thread/hxhjcchsulqejwxywfbn@forum.dlang.org', 'https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1031']
