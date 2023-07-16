@@ -23,7 +23,6 @@ async def func():
         d = x["id"]
         list_urls = [News(post=a, comments=b, links_from_comments=c, id=d)]
         await save_data(list_urls)
-        return print(save_data(list_urls))
 
 
 async def process_request(MAIN_URL) -> str:
@@ -33,11 +32,13 @@ async def process_request(MAIN_URL) -> str:
             async with session.get(MAIN_URL) as response:
                 print(MAIN_URL, response.status)
                 data = await response.text()
-            return data
+                return data
     except ClientPayloadError:
         return f'Ответ не получен'
     except ClientConnectorError:
         return f'Превышен таймаут'
+    except UnicodeDecodeError:
+        return f'Неправильное декодирование байтов'
 
 
 async def main():

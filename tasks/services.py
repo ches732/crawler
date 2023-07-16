@@ -1,4 +1,3 @@
-import logging
 import os
 from typing import List
 from urllib.parse import urljoin
@@ -68,4 +67,3 @@ async def save_data(link_urls):
         async with aiofiles.open(os.path.join(folder_name, 'links_from_comments.txt'), 'w') as file:
             await file.write(str(links_from_comments))
 
-        logging.debug()
