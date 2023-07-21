@@ -1,0 +1,8 @@
+aiohttp~=3.7.3
+pytest~=7.4.0
+pytest-mock
+aiofiles~=23.1.0
+beautifulsoup4~=4.9.3
+requests~=2.31.0
+pytest-asyncio
+urllib3~=2.0.3

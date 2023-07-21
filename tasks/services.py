@@ -3,10 +3,10 @@ from typing import List
 from urllib.parse import urljoin
 from bs4 import BeautifulSoup
 import aiofiles
-from settings import MAIN_URL, URL_WRONG, DOWNLOADS_DIR
+from settings import MAIN_URL, URL_WRONG, DOWNLOADS_DIR, News
 
 
-async def parser_news(data) -> list[dict[str, str, str]]:
+async def parser_news(data: str) -> list[dict[str, str, str]]:
     """Получение ссылок на новость и комментарии к ней, id новости"""
     soup = BeautifulSoup(data, 'lxml')
     list_comments = []
@@ -30,7 +30,7 @@ async def parser_news(data) -> list[dict[str, str, str]]:
     return list_comments
 
 
-async def parser_comment(data) -> List:
+async def parser_comment(data: str) -> List:
     """Получение ссылок из переданных данных"""
     soup = BeautifulSoup(data, 'lxml')
     list_urls_comments = []
@@ -46,7 +46,7 @@ async def parser_comment(data) -> List:
     return list_urls_comments
 
 
-async def save_data(link_urls):
+async def save_data(link_urls: List[News]):
     """Создание 3 файлов post, comments, links_from_comments в отдельной папкe с названием id новости"""
     for news in link_urls:
         post = news.post

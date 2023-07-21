@@ -1,6 +1,7 @@
 import aiohttp
 import asyncio
 from aiohttp import ClientPayloadError, ClientConnectorError
+from urllib3.util import url
 from services import parser_news, parser_comment, save_data
 from settings import MAIN_URL, News
 
@@ -25,7 +26,7 @@ async def func():
         await save_data(list_urls)
 
 
-async def process_request(MAIN_URL) -> str:
+async def process_request(MAIN_URL: url) -> str:
     """Запрос по URL и получение данных"""
     try:
         async with aiohttp.ClientSession() as session:
